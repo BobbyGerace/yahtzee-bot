@@ -510,3 +510,148 @@ WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/tes
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+INFO  started: Metals version 0.8.0 in workspace '/home/bobby/Documents/programming/yahtzee-bot'
+INFO  time: initialize in 2.17s
+INFO  skipping build import with status 'Requested'
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+INFO  no build target: using presentation compiler with only scala-library
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala, 44, 44, 54)
+May 12, 2020 11:52:09 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 100
+May 12, 2020 11:52:09 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 101
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+May 12, 2020 11:54:58 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 608
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala, 134, 134, 149)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala, 134, 134, 142)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala, 134, 134, 144)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala, 134, 134, 144)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala, 134, 134, 144)
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+INFO  started: Metals version 0.8.0 in workspace '/home/bobby/Documents/programming/yahtzee-bot'
+INFO  time: initialize in 2.84s
+INFO  skipping build import with status 'Requested'
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+May 12, 2020 7:50:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+May 12, 2020 7:50:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6
+May 12, 2020 7:50:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4
+May 12, 2020 7:50:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
+May 12, 2020 7:50:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 8
+May 12, 2020 7:50:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7
+May 12, 2020 7:50:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 9
+May 12, 2020 7:50:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 13
+May 12, 2020 7:50:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 12
+INFO  no build target: using presentation compiler with only scala-library
+May 12, 2020 7:50:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 19
+May 12, 2020 7:50:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 17
+May 12, 2020 7:50:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 20
+May 12, 2020 7:50:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 22
+May 12, 2020 7:50:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14
+May 12, 2020 7:50:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16
+May 12, 2020 7:50:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 25
+May 12, 2020 7:50:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 24
+May 12, 2020 7:50:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 26
+May 12, 2020 7:50:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 28
+May 12, 2020 7:50:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 31
+May 12, 2020 7:50:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 30
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala, 160, 160, 175)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala, 160, 160, 168)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala, 160, 160, 169)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala, 160, 160, 170)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala, 160, 160, 170)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala, 160, 160, 170)
+May 12, 2020 7:52:58 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+May 12, 2020 7:54:12 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 855
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+May 12, 2020 7:59:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2141
+May 12, 2020 8:00:09 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2213
+May 12, 2020 8:00:48 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2445
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec copy.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+May 12, 2020 8:02:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2672
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala, 433, 433, 448)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala, 433, 433, 441)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala, 433, 433, 443)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala, 433, 433, 443)
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala, 183, 183, 193)
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+May 12, 2020 8:24:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4062
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+May 12, 2020 8:32:42 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5109
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala

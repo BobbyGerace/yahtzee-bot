@@ -27,7 +27,7 @@ class CombinationSpec extends FlatSpec with Matchers {
   }
 
   "The allRolls function" should "work for happy path" in {
-    val result = Combinations.allRolls(5, Array(0, 0, 0, 0, 0, 0))
+    val result = Combinations.allRolls(5)
 
     result.length shouldEqual 252
   }

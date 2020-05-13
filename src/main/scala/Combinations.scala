@@ -1,6 +1,6 @@
 
 object Combinations {
-    type DiceGroup = Array[Int]
+    val emptyDiceGroup = Array(0, 0, 0, 0, 0, 0)
 
     def choose(n: Int, k: Int, startIdx: Int = 0): List[List[Int]] = {
         if (k == 0) List.empty
@@ -10,7 +10,7 @@ object Combinations {
         )
     }
 
-    def allRolls(n: Int, initial: DiceGroup, startIdx: Int = 0): Vector[DiceGroup] = {
+    def allRolls(n: Int, initial: Array[Int] = emptyDiceGroup, startIdx: Int = 0): Vector[Array[Int]] = {
         val current = initial(startIdx);
         if (startIdx == initial.length - 1) {
             Vector(initial.updated(startIdx, n + current));
