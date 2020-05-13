@@ -1,6 +1,6 @@
-[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala:10:34: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : Double[0m
-[0m[[0m[31merror[0m] [0m[0m required: Float[0m
-[0m[[0m[31merror[0m] [0m[0m       factorial(count).toDouble / (denom * Math.pow(6, count)).toDouble [0m
-[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala:35:18: missing argument list for method diceSum in object Score[0m
+[0m[[0m[31merror[0m] [0m[0mUnapplied methods are only converted to functions when a function type is expected.[0m
+[0m[[0m[31merror[0m] [0m[0mYou can make this conversion explicit by writing `diceSum _` or `diceSum(_)` instead of `diceSum`.[0m
+[0m[[0m[31merror[0m] [0m[0m    val chance = diceSum[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

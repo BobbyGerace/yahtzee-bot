@@ -655,3 +655,52 @@ WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/tes
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Game.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala, 36, 36, 51)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala, 36, 36, 44)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala, 36, 36, 45)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala, 36, 36, 46)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala, 36, 36, 46)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala, 36, 36, 46)
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala, 31, 31, 41)
+May 12, 2020 9:11:58 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5929
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+May 12, 2020 9:32:17 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 8643
+May 12, 2020 9:33:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 8961
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+May 12, 2020 9:43:35 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 9960
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+May 12, 2020 9:45:04 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10257
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
