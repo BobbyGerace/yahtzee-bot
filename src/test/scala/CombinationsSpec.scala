@@ -28,10 +28,16 @@ class CombinationSpec extends FlatSpec with Matchers {
 
   "The allRolls function" should "work for happy path" in {
     val result = Combinations.allRolls(5)
-
+    println(result.map(_.mkString(",")).mkString("\n"))
     result.length shouldEqual 252
   }
 
+  "The allRolls function" should "work with initial" in {
+    val initial = Array(0, 0, 0, 2, 0, 1)
+    val result = Combinations.allRolls(3, initial)
+
+    result.length shouldEqual 56
+  }
 
   "The allRolls function" should "work for one dice" in {
     val initial = Array(0, 0, 0, 0, 0, 4)

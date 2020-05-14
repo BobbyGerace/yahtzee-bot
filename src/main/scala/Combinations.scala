@@ -16,8 +16,8 @@ object Combinations {
             Vector(initial.updated(startIdx, n + current));
         }
         else {
-            (current to n).toVector.flatMap((count: Int) => {
-                allRolls(n - count, initial.updated(startIdx, count), startIdx + 1)
+            (0 to n).toVector.flatMap((count: Int) => {
+                allRolls(n - count, initial.updated(startIdx, count + current), startIdx + 1)
             })
         }
     }

@@ -1,7 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ScoreSpec.scala:58:10: reassignment to val[0m
-[0m[[0m[31merror[0m] [0m[0m    dice = Array(0, 1, 1, 1, 1, 1)[0m
-[0m[[0m[31merror[0m] [0m[0m         ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ScoreSpec.scala:61:10: reassignment to val[0m
-[0m[[0m[31merror[0m] [0m[0m    dice = Array(1, 0, 1, 1, 1, 1)[0m
-[0m[[0m[31merror[0m] [0m[0m         ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala:31:13: not found: value allRolls[0m
+[0m[[0m[31merror[0m] [0m[0m    println(allRolls.mkString(","))[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
