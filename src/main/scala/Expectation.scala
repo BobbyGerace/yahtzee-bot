@@ -30,33 +30,44 @@ object Expectation {
         LARGE_STRAIGHT,
         CHANCE,
         YAHTZEE,
-        YAHTZEE_BONUS,
     );
 
-    def endOfTurn(state: Int, roll: Array[Int], cache: Array[Int]): (Double, Either[Array[Int], Int]) = {
-        println(YAHTZEE)
-        println(state)
-        val useJoker = canUseJoker(state, roll)
+    def endOfTurn(state: Int, roll: Array[Int], cache: Array[Float]): (Double, Int) = {
+        val yahtzeeIdx = roll.indexOf(5)
+        val hasUnusableYahtzee = yahtzeeIdx != -1 && !((state & YAHTZEE) > 0)
+        val hasYahtzeeBonus = (YAHTZEE_BONUS & state) > 0 && hasUnusableYahtzee
+        val canUseJoker = hasUnusableYahtzee && (Math.pow(2, yahtzeeIdx + 6).toInt & state) == 0
         
         val openCategories = categories.filter((c: Int) => (c & state) > 0)
 
-        val potentialScores = openCategories.map(c => (c, score(c, roll, useJoker)))
+        val currentUpperTotal = upperScoreFromState(state)
 
-        val (maxCategory, maxScore) = potentialScores.maxBy(_._2)
+        val potentialScores = openCategories.map(category => {
+            val catScore = score(category, roll, canUseJoker)
 
-        (maxScore.toDouble, Right(maxCategory))
+            val nextUpperTotal = 
+                if (categoryIsUpper(category)) Math.min(currentUpperTotal + catScore, 63)
+                else currentUpperTotal
+
+            val nextState  = (state ^ category) - currentUpperTotal + nextUpperTotal
+
+            val yahtzeeBonus = if (hasYahtzeeBonus) 100d else 0d
+            val upperBonus = if (currentUpperTotal < 63 && nextUpperTotal == 63) 35d else 0d
+
+            val addedScore = catScore.toDouble + yahtzeeBonus + upperBonus
+            val nextStateExpectation = if (openCategories.length == 1) 0 else cache(nextState)
+
+            (addedScore + nextStateExpectation, category)
+        })
+
+        potentialScores.maxBy(_._1)
     }
 
     private def upperScoreFromState(state: Int) = state & 63
+    private def categoryIsUpper(c: Int) = c >= UPPER_ONE && c <= UPPER_SIX
 
-    private def canUseJoker(state: Int, roll: Array[Int]) = {
-        val yahtzeeIdx = roll.indexOf(5)
-
-        yahtzeeIdx != -1 && !((state & YAHTZEE) > 0) && ((Math.pow(2, yahtzeeIdx + 6).toInt & state) > 0)
-    }
 
     private def score(category: Int, roll: Array[Int], useJoker: Boolean) = {
-        println(category)
         category match {
             case UPPER_ONE => upperCategory(1)(roll)
             case UPPER_TWO => upperCategory(2)(roll)

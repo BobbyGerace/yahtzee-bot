@@ -33,8 +33,6 @@ object Score {
     }
 
     def yahtzee(dice: Dice) = {
-        println("got here")
-        println(dice.mkString(","))
         if (dice.exists(_ == 5)) 50
         else 0
     }
