@@ -823,3 +823,674 @@ WARNING: Unmatched cancel notification for request id 4312
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Main.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Categories.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 13, 2020 10:02:32 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+May 13, 2020 10:02:32 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:137)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:155)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:22)
+
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 57, 57, 72)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 57, 57, 65)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 57, 57, 66)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 57, 57, 67)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 57, 57, 67)
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 57, 57, 67)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 57, 57, 67)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 57, 57, 67)
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+INFO  started: Metals version 0.8.0 in workspace '/home/bobby/Documents/programming/yahtzee-bot'
+INFO  time: initialize in 2.18s
+INFO  skipping build import with status 'Requested'
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "textDocument/didOpen",
+  "params": {
+    "textDocument": {
+      "uri": "file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala",
+      "languageId": "scala",
+      "version": 4,
+      "text": "object Expectation {\n    def endOfTurn(state: Int, roll: Array[Int]): () \u003d {\n\n    }\n}"
+    }
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: org.scalameta.UnreachableError: this code path should've been unreachable
+	at org.scalameta.UnreachableError$.raise(package.scala:39)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$makeTupleType$2(ScalametaParser.scala:787)
+	at scala.meta.internal.parsers.ScalametaParser.makeTuple(ScalametaParser.scala:763)
+	at scala.meta.internal.parsers.ScalametaParser.makeTupleType(ScalametaParser.scala:787)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.$anonfun$tupleInfixType$7(ScalametaParser.scala:880)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.$anonfun$tupleInfixType$1(ScalametaParser.scala:880)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:380)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.tupleInfixType(ScalametaParser.scala:798)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.$anonfun$typRest$1(ScalametaParser.scala:922)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:380)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.typRest(ScalametaParser.scala:917)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.typRest$(ScalametaParser.scala:916)
+	at scala.meta.internal.parsers.ScalametaParser$outPattern$.typRest(ScalametaParser.scala:2311)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.$anonfun$typ$1(ScalametaParser.scala:912)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:380)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.typ(ScalametaParser.scala:903)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.typ$(ScalametaParser.scala:902)
+	at scala.meta.internal.parsers.ScalametaParser$outPattern$.typ(ScalametaParser.scala:2311)
+	at scala.meta.internal.parsers.ScalametaParser.typ(ScalametaParser.scala:2329)
+	at scala.meta.internal.parsers.ScalametaParser.typedOpt(ScalametaParser.scala:1390)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$funDefRest$2(ScalametaParser.scala:2822)
+	at scala.meta.internal.parsers.ScalametaParser.fromWithinReturnType(ScalametaParser.scala:391)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$funDefRest$1(ScalametaParser.scala:2822)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.funDefRest(ScalametaParser.scala:2811)
+	at scala.meta.internal.parsers.ScalametaParser.funDefOrDclOrSecondaryCtor(ScalametaParser.scala:2807)
+	at scala.meta.internal.parsers.ScalametaParser.defOrDclOrSecondaryCtor(ScalametaParser.scala:2760)
+	at scala.meta.internal.parsers.ScalametaParser.nonLocalDefOrDcl(ScalametaParser.scala:2748)
+	at scala.meta.internal.parsers.ScalametaParser$$anonfun$templateStat$1.applyOrElse(ScalametaParser.scala:3287)
+	at scala.meta.internal.parsers.ScalametaParser$$anonfun$templateStat$1.applyOrElse(ScalametaParser.scala:3283)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:3234)
+	at scala.meta.internal.parsers.ScalametaParser.templateStats(ScalametaParser.scala:3282)
+	at scala.meta.internal.parsers.ScalametaParser.templateStatSeq(ScalametaParser.scala:3279)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$templateBody$1(ScalametaParser.scala:3155)
+	at scala.meta.internal.parsers.ScalametaParser.inBraces(ScalametaParser.scala:312)
+	at scala.meta.internal.parsers.ScalametaParser.templateBody(ScalametaParser.scala:3155)
+	at scala.meta.internal.parsers.ScalametaParser.templateBodyOpt(ScalametaParser.scala:3160)
+	at scala.meta.internal.parsers.ScalametaParser.templateOpt(ScalametaParser.scala:3149)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$objectDef$1(ScalametaParser.scala:2934)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.objectDef(ScalametaParser.scala:2929)
+	at scala.meta.internal.parsers.ScalametaParser.tmplDef(ScalametaParser.scala:2884)
+	at scala.meta.internal.parsers.ScalametaParser.topLevelTmplDef(ScalametaParser.scala:2870)
+	at scala.meta.internal.parsers.ScalametaParser$$anonfun$topStat$1.applyOrElse(ScalametaParser.scala:3253)
+	at scala.meta.internal.parsers.ScalametaParser$$anonfun$topStat$1.applyOrElse(ScalametaParser.scala:3243)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:3234)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:3242)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:3436)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:380)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:3406)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:3389)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:380)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:3388)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:3394)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:128)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:38)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:128)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$189.apply(ScalametaParser.scala:3446)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:21)
+	at scala.meta.internal.metals.Trees.$anonfun$parse$1(Trees.scala:48)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.metals.Trees.parse(Trees.scala:46)
+	at scala.meta.internal.metals.Trees.didChange(Trees.scala:31)
+	at scala.meta.internal.metals.MetalsLanguageServer.didOpen(MetalsLanguageServer.scala:671)
+	... 16 more
+
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.util.concurrent.ExecutionException: Boxed Error
+java.util.concurrent.CompletionException: java.util.concurrent.ExecutionException: Boxed Error
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:331)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:346)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:704)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2088)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:38)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:36)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.util.concurrent.ExecutionException: Boxed Error
+	at scala.concurrent.impl.Promise$.resolver(Promise.scala:87)
+	at scala.concurrent.impl.Promise$.scala$concurrent$impl$Promise$$resolveTry(Promise.scala:79)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:284)
+	at scala.concurrent.Promise.complete(Promise.scala:53)
+	at scala.concurrent.Promise.complete$(Promise.scala:52)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:187)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	... 4 more
+Caused by: org.scalameta.UnreachableError: this code path should've been unreachable
+	at org.scalameta.UnreachableError$.raise(package.scala:39)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$makeTupleType$2(ScalametaParser.scala:787)
+	at scala.meta.internal.parsers.ScalametaParser.makeTuple(ScalametaParser.scala:763)
+	at scala.meta.internal.parsers.ScalametaParser.makeTupleType(ScalametaParser.scala:787)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.$anonfun$tupleInfixType$7(ScalametaParser.scala:880)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.$anonfun$tupleInfixType$1(ScalametaParser.scala:880)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:380)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.tupleInfixType(ScalametaParser.scala:798)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.$anonfun$typRest$1(ScalametaParser.scala:922)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:380)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.typRest(ScalametaParser.scala:917)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.typRest$(ScalametaParser.scala:916)
+	at scala.meta.internal.parsers.ScalametaParser$outPattern$.typRest(ScalametaParser.scala:2311)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.$anonfun$typ$1(ScalametaParser.scala:912)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:380)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.typ(ScalametaParser.scala:903)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.typ$(ScalametaParser.scala:902)
+	at scala.meta.internal.parsers.ScalametaParser$outPattern$.typ(ScalametaParser.scala:2311)
+	at scala.meta.internal.parsers.ScalametaParser.typ(ScalametaParser.scala:2329)
+	at scala.meta.internal.parsers.ScalametaParser.typedOpt(ScalametaParser.scala:1390)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$funDefRest$2(ScalametaParser.scala:2822)
+	at scala.meta.internal.parsers.ScalametaParser.fromWithinReturnType(ScalametaParser.scala:391)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$funDefRest$1(ScalametaParser.scala:2822)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.funDefRest(ScalametaParser.scala:2811)
+	at scala.meta.internal.parsers.ScalametaParser.funDefOrDclOrSecondaryCtor(ScalametaParser.scala:2807)
+	at scala.meta.internal.parsers.ScalametaParser.defOrDclOrSecondaryCtor(ScalametaParser.scala:2760)
+	at scala.meta.internal.parsers.ScalametaParser.nonLocalDefOrDcl(ScalametaParser.scala:2748)
+	at scala.meta.internal.parsers.ScalametaParser$$anonfun$templateStat$1.applyOrElse(ScalametaParser.scala:3287)
+	at scala.meta.internal.parsers.ScalametaParser$$anonfun$templateStat$1.applyOrElse(ScalametaParser.scala:3283)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:3234)
+	at scala.meta.internal.parsers.ScalametaParser.templateStats(ScalametaParser.scala:3282)
+	at scala.meta.internal.parsers.ScalametaParser.templateStatSeq(ScalametaParser.scala:3279)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$templateBody$1(ScalametaParser.scala:3155)
+	at scala.meta.internal.parsers.ScalametaParser.inBraces(ScalametaParser.scala:312)
+	at scala.meta.internal.parsers.ScalametaParser.templateBody(ScalametaParser.scala:3155)
+	at scala.meta.internal.parsers.ScalametaParser.templateBodyOpt(ScalametaParser.scala:3160)
+	at scala.meta.internal.parsers.ScalametaParser.templateOpt(ScalametaParser.scala:3149)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$objectDef$1(ScalametaParser.scala:2934)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.objectDef(ScalametaParser.scala:2929)
+	at scala.meta.internal.parsers.ScalametaParser.tmplDef(ScalametaParser.scala:2884)
+	at scala.meta.internal.parsers.ScalametaParser.topLevelTmplDef(ScalametaParser.scala:2870)
+	at scala.meta.internal.parsers.ScalametaParser$$anonfun$topStat$1.applyOrElse(ScalametaParser.scala:3253)
+	at scala.meta.internal.parsers.ScalametaParser$$anonfun$topStat$1.applyOrElse(ScalametaParser.scala:3243)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:3234)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:3242)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:3436)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:380)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:3406)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:3389)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:380)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:3388)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:3394)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:128)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:38)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:128)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$189.apply(ScalametaParser.scala:3446)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:21)
+	at scala.meta.internal.metals.Trees.$anonfun$parse$1(Trees.scala:48)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.metals.Trees.parse(Trees.scala:46)
+	at scala.meta.internal.metals.Trees.$anonfun$get$1(Trees.scala:22)
+	at scala.Option.orElse(Option.scala:447)
+	at scala.meta.internal.metals.Trees.get(Trees.scala:22)
+	at scala.meta.internal.metals.DocumentSymbolProvider.documentSymbols(DocumentSymbolProvider.scala:22)
+	at scala.meta.internal.metals.MetalsLanguageServer.documentSymbolResult(MetalsLanguageServer.scala:1894)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$documentSymbol$1(MetalsLanguageServer.scala:945)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:24)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	... 5 more
+
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.util.concurrent.ExecutionException: Boxed Error
+java.util.concurrent.CompletionException: java.util.concurrent.ExecutionException: Boxed Error
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:331)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptNow(CompletableFuture.java:743)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:731)
+	at java.base/java.util.concurrent.CompletableFuture.thenAccept(CompletableFuture.java:2108)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:279)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.util.concurrent.ExecutionException: Boxed Error
+	at scala.concurrent.impl.Promise$.resolver(Promise.scala:87)
+	at scala.concurrent.impl.Promise$.scala$concurrent$impl$Promise$$resolveTry(Promise.scala:79)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:284)
+	at scala.concurrent.Promise.complete(Promise.scala:53)
+	at scala.concurrent.Promise.complete$(Promise.scala:52)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:187)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	... 3 more
+Caused by: org.scalameta.UnreachableError: this code path should've been unreachable
+	at org.scalameta.UnreachableError$.raise(package.scala:39)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$makeTupleType$2(ScalametaParser.scala:787)
+	at scala.meta.internal.parsers.ScalametaParser.makeTuple(ScalametaParser.scala:763)
+	at scala.meta.internal.parsers.ScalametaParser.makeTupleType(ScalametaParser.scala:787)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.$anonfun$tupleInfixType$7(ScalametaParser.scala:880)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.$anonfun$tupleInfixType$1(ScalametaParser.scala:880)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:380)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.tupleInfixType(ScalametaParser.scala:798)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.$anonfun$typRest$1(ScalametaParser.scala:922)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:380)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.typRest(ScalametaParser.scala:917)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.typRest$(ScalametaParser.scala:916)
+	at scala.meta.internal.parsers.ScalametaParser$outPattern$.typRest(ScalametaParser.scala:2311)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.$anonfun$typ$1(ScalametaParser.scala:912)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:380)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.typ(ScalametaParser.scala:903)
+	at scala.meta.internal.parsers.ScalametaParser$PatternContextSensitive.typ$(ScalametaParser.scala:902)
+	at scala.meta.internal.parsers.ScalametaParser$outPattern$.typ(ScalametaParser.scala:2311)
+	at scala.meta.internal.parsers.ScalametaParser.typ(ScalametaParser.scala:2329)
+	at scala.meta.internal.parsers.ScalametaParser.typedOpt(ScalametaParser.scala:1390)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$funDefRest$2(ScalametaParser.scala:2822)
+	at scala.meta.internal.parsers.ScalametaParser.fromWithinReturnType(ScalametaParser.scala:391)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$funDefRest$1(ScalametaParser.scala:2822)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.funDefRest(ScalametaParser.scala:2811)
+	at scala.meta.internal.parsers.ScalametaParser.funDefOrDclOrSecondaryCtor(ScalametaParser.scala:2807)
+	at scala.meta.internal.parsers.ScalametaParser.defOrDclOrSecondaryCtor(ScalametaParser.scala:2760)
+	at scala.meta.internal.parsers.ScalametaParser.nonLocalDefOrDcl(ScalametaParser.scala:2748)
+	at scala.meta.internal.parsers.ScalametaParser$$anonfun$templateStat$1.applyOrElse(ScalametaParser.scala:3287)
+	at scala.meta.internal.parsers.ScalametaParser$$anonfun$templateStat$1.applyOrElse(ScalametaParser.scala:3283)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:3234)
+	at scala.meta.internal.parsers.ScalametaParser.templateStats(ScalametaParser.scala:3282)
+	at scala.meta.internal.parsers.ScalametaParser.templateStatSeq(ScalametaParser.scala:3279)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$templateBody$1(ScalametaParser.scala:3155)
+	at scala.meta.internal.parsers.ScalametaParser.inBraces(ScalametaParser.scala:312)
+	at scala.meta.internal.parsers.ScalametaParser.templateBody(ScalametaParser.scala:3155)
+	at scala.meta.internal.parsers.ScalametaParser.templateBodyOpt(ScalametaParser.scala:3160)
+	at scala.meta.internal.parsers.ScalametaParser.templateOpt(ScalametaParser.scala:3149)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$objectDef$1(ScalametaParser.scala:2934)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.objectDef(ScalametaParser.scala:2929)
+	at scala.meta.internal.parsers.ScalametaParser.tmplDef(ScalametaParser.scala:2884)
+	at scala.meta.internal.parsers.ScalametaParser.topLevelTmplDef(ScalametaParser.scala:2870)
+	at scala.meta.internal.parsers.ScalametaParser$$anonfun$topStat$1.applyOrElse(ScalametaParser.scala:3253)
+	at scala.meta.internal.parsers.ScalametaParser$$anonfun$topStat$1.applyOrElse(ScalametaParser.scala:3243)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:3234)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:3242)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:3436)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:380)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:3406)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:3389)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:374)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:380)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:3388)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:3394)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:128)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:38)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:128)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$189.apply(ScalametaParser.scala:3446)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:21)
+	at scala.meta.internal.metals.Trees.$anonfun$parse$1(Trees.scala:48)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.metals.Trees.parse(Trees.scala:46)
+	at scala.meta.internal.metals.Trees.$anonfun$get$1(Trees.scala:22)
+	at scala.Option.orElse(Option.scala:447)
+	at scala.meta.internal.metals.Trees.get(Trees.scala:22)
+	at scala.meta.internal.metals.FoldingRangeProvider.getRangedFor(FoldingRangeProvider.scala:19)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$foldingRange$1(MetalsLanguageServer.scala:1125)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:24)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	... 5 more
+
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4
+INFO  no build target: using presentation compiler with only scala-library
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 8
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 11
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 13
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 19
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 18
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 20
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 22
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 26
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 21
+May 15, 2020 8:42:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 23
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 15, 2020 8:47:06 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 661
+May 15, 2020 8:47:09 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 687
+May 15, 2020 8:47:59 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 928
+May 15, 2020 8:48:13 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 974
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 596, 596, 606)
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+May 15, 2020 8:54:35 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2304
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 772, 772, 787)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 772, 772, 780)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 772, 772, 781)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 772, 772, 782)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 772, 772, 782)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 772, 772, 782)
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+INFO  started: Metals version 0.8.0 in workspace '/home/bobby/Documents/programming/yahtzee-bot'
+INFO  time: initialize in 2.16s
+INFO  skipping build import with status 'Requested'
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+INFO  no build target: using presentation compiler with only scala-library
+May 15, 2020 9:51:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4
+May 15, 2020 9:51:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3
+May 15, 2020 9:51:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7
+May 15, 2020 9:51:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10
+May 15, 2020 9:51:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 9
+May 15, 2020 9:51:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
+May 15, 2020 9:51:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 12
+May 15, 2020 9:51:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 13
+May 15, 2020 9:51:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 17
+May 15, 2020 9:51:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16
+May 15, 2020 9:51:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 19
+May 15, 2020 9:51:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 23
+May 15, 2020 9:51:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 22
+May 15, 2020 9:51:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 18
+May 15, 2020 9:53:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 281
+May 15, 2020 9:54:15 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 432
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 15, 2020 9:56:11 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: offset 674, count -2, length 949
+java.lang.StringIndexOutOfBoundsException: offset 674, count -2, length 949
+	at java.base/java.lang.String.checkBoundsOffCount(String.java:3304)
+	at java.base/java.lang.String.rangeCheck(String.java:280)
+	at java.base/java.lang.String.<init>(String.java:276)
+	at scala.tools.nsc.interactive.Global.typeCompletions$1(Global.scala:1230)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1253)
+	at scala.meta.internal.pc.SignatureHelpProvider.$anonfun$treeSymbol$1(SignatureHelpProvider.scala:369)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.pc.SignatureHelpProvider.treeSymbol(SignatureHelpProvider.scala:368)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCall$.unapply(SignatureHelpProvider.scala:197)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.visit(SignatureHelpProvider.scala:305)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.traverse(SignatureHelpProvider.scala:300)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.fromTree(SignatureHelpProvider.scala:269)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:26)
+
+May 15, 2020 9:56:12 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: offset 674, count -2, length 951
+java.lang.StringIndexOutOfBoundsException: offset 674, count -2, length 951
+	at java.base/java.lang.String.checkBoundsOffCount(String.java:3304)
+	at java.base/java.lang.String.rangeCheck(String.java:280)
+	at java.base/java.lang.String.<init>(String.java:276)
+	at scala.tools.nsc.interactive.Global.typeCompletions$1(Global.scala:1230)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1253)
+	at scala.meta.internal.pc.SignatureHelpProvider.$anonfun$treeSymbol$1(SignatureHelpProvider.scala:369)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.pc.SignatureHelpProvider.treeSymbol(SignatureHelpProvider.scala:368)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCall$.unapply(SignatureHelpProvider.scala:197)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.visit(SignatureHelpProvider.scala:305)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.traverse(SignatureHelpProvider.scala:300)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.fromTree(SignatureHelpProvider.scala:269)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:26)
+
+May 15, 2020 9:56:13 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: offset 674, count -2, length 944
+java.lang.StringIndexOutOfBoundsException: offset 674, count -2, length 944
+	at java.base/java.lang.String.checkBoundsOffCount(String.java:3304)
+	at java.base/java.lang.String.rangeCheck(String.java:280)
+	at java.base/java.lang.String.<init>(String.java:276)
+	at scala.tools.nsc.interactive.Global.typeCompletions$1(Global.scala:1230)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1253)
+	at scala.meta.internal.pc.SignatureHelpProvider.$anonfun$treeSymbol$1(SignatureHelpProvider.scala:369)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.pc.SignatureHelpProvider.treeSymbol(SignatureHelpProvider.scala:368)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCall$.unapply(SignatureHelpProvider.scala:197)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.visit(SignatureHelpProvider.scala:305)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.traverse(SignatureHelpProvider.scala:300)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.fromTree(SignatureHelpProvider.scala:269)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:26)
+
+May 15, 2020 9:56:13 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: offset 674, count -2, length 947
+java.lang.StringIndexOutOfBoundsException: offset 674, count -2, length 947
+	at java.base/java.lang.String.checkBoundsOffCount(String.java:3304)
+	at java.base/java.lang.String.rangeCheck(String.java:280)
+	at java.base/java.lang.String.<init>(String.java:276)
+	at scala.tools.nsc.interactive.Global.typeCompletions$1(Global.scala:1230)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1253)
+	at scala.meta.internal.pc.SignatureHelpProvider.$anonfun$treeSymbol$1(SignatureHelpProvider.scala:369)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.pc.SignatureHelpProvider.treeSymbol(SignatureHelpProvider.scala:368)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCall$.unapply(SignatureHelpProvider.scala:197)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.visit(SignatureHelpProvider.scala:305)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.traverse(SignatureHelpProvider.scala:300)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.fromTree(SignatureHelpProvider.scala:269)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:26)
+
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 15, 2020 10:00:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1516
+May 15, 2020 10:00:48 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: offset 692, count -2, length 1430
+java.lang.StringIndexOutOfBoundsException: offset 692, count -2, length 1430
+	at java.base/java.lang.String.checkBoundsOffCount(String.java:3304)
+	at java.base/java.lang.String.rangeCheck(String.java:280)
+	at java.base/java.lang.String.<init>(String.java:276)
+	at scala.tools.nsc.interactive.Global.typeCompletions$1(Global.scala:1230)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1253)
+	at scala.meta.internal.pc.SignatureHelpProvider.$anonfun$treeSymbol$1(SignatureHelpProvider.scala:369)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.pc.SignatureHelpProvider.treeSymbol(SignatureHelpProvider.scala:368)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCall$.unapply(SignatureHelpProvider.scala:179)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.visit(SignatureHelpProvider.scala:305)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.traverse(SignatureHelpProvider.scala:300)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.fromTree(SignatureHelpProvider.scala:269)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:26)
+
+May 15, 2020 10:02:29 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1951
+May 15, 2020 10:02:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2032
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 15, 2020 10:04:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2471
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+May 15, 2020 10:08:57 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3319
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+May 15, 2020 10:13:12 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4525
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 15, 2020 10:16:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4921
+May 15, 2020 10:16:32 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5041
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 15, 2020 10:20:56 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5325
+May 15, 2020 10:20:58 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5343
+May 15, 2020 10:21:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5369
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 15, 2020 10:22:07 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5472
+May 15, 2020 10:22:07 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5474
+May 15, 2020 10:22:10 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5502
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 15, 2020 10:22:37 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5619
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 1605, 1605, 1620)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 1605, 1605, 1613)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 1605, 1605, 1614)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 1605, 1605, 1615)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 1605, 1605, 1615)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 1605, 1605, 1615)
+May 15, 2020 10:25:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6437
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 15, 2020 10:31:39 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7546
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ScoreSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ScoreSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 1030, 1030, 1040)
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 15, 2020 10:54:41 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 9675
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Score.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala

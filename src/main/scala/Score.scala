@@ -1,33 +1,40 @@
+package main
+
 object Score {
     type Dice = Array[Int]
     def upperCategory(n: Int)(dice: Dice) = dice(n - 1) * n
 
-    def threeOfAKind(dice: Dice) = {
-        if (dice.exists(_ >= 3)) diceSum(dice)
+    def threeOfAKind(dice: Dice, useJoker: Boolean = false) = {
+        if (dice.exists(_ >= 3) || useJoker) diceSum(dice)
         else 0
     }
 
-    def fourOfAKind(dice: Dice) = {
-        if (dice.exists(_ >= 4)) diceSum(dice)
+    def fourOfAKind(dice: Dice, useJoker: Boolean = false) = {
+        if (dice.exists(_ >= 4) || useJoker) diceSum(dice)
         else 0
     }
 
-    def fullHouse(dice: Dice) = {
-        if (dice.exists(_ == 2) && dice.exists(_ == 3)) 25
+    def fullHouse(dice: Dice, useJoker: Boolean = false) = {
+        if (
+            (dice.exists(_ == 2) && dice.exists(_ == 3))
+            || useJoker
+        ) 25
         else 0
     }
 
-    def smallStraight(dice: Dice) = {
-        if (countConsecutive(dice) >= 4) 30
+    def smallStraight(dice: Dice, useJoker: Boolean = false) = {
+        if (countConsecutive(dice) >= 4 || useJoker) 30
         else 0
     }
 
-    def largeStraight(dice: Dice) = {
-        if (countConsecutive(dice) >= 5) 40
+    def largeStraight(dice: Dice, useJoker: Boolean = false) = {
+        if (countConsecutive(dice) >= 5 || useJoker) 40
         else 0
     }
 
     def yahtzee(dice: Dice) = {
+        println("got here")
+        println(dice.mkString(","))
         if (dice.exists(_ == 5)) 50
         else 0
     }

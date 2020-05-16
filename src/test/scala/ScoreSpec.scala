@@ -1,4 +1,4 @@
-
+import main.Score
 import org.scalatest._
 
 class ScoreSpec extends FlatSpec with Matchers {

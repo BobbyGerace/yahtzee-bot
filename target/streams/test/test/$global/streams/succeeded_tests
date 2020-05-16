@@ -1,6 +1,7 @@
 #Successful Tests
-#Wed May 13 21:50:14 EDT 2020
+#Fri May 15 22:58:48 EDT 2020
 HelloSpec=1589114614940
-CombinationSpec=1589421014496
-ProbabiltySpec=1589421014476
-ScoreSpec=1589421014473
+ExpectationSpec=1589597927973
+CombinationSpec=1589597928073
+ProbabiltySpec=1589597928052
+ScoreSpec=1589597928076
