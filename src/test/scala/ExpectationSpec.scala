@@ -1,4 +1,5 @@
 import org.scalatest._
+import main.Expectation
 
 class ExpectationSpec extends FlatSpec with Matchers {
   val approxEq = (a: Double, b: Double) => Math.abs(a - b) < 0.0000001

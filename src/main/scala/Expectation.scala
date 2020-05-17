@@ -1,3 +1,5 @@
+package main
+
 import scala.collection.mutable
 import main.Score._
 import main.Combinations
@@ -141,6 +143,20 @@ object Expectation {
         CHANCE,
         YAHTZEE,
     );
+
+    def calculateStatesUpToNCategories(n: Int = 13): Array[Float] = {
+        val cache = Array.fill(YAHTZEE + YAHTZEE_BONUS){0f}
+        
+        for (i <- 1 to n) {
+            allStatesForNOpenCategories(i).par.foreach(s => { 
+                val value = new Expectation(s).rolls(Array(0, 0, 0, 0, 0, 0), 3, cache)
+                cache.update(s, value.toFloat)
+            })
+            println("Finished calculating states for " + n + "open categories")
+        }
+
+        cache
+    }
 
     def allStatesForNOpenCategories(n: Int) = {
         val categoryList = Combinations.choose(13, n)

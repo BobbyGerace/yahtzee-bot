@@ -1,4 +1,159 @@
-[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:149:118: ';' expected but ')' found.[0m
-[0m[[0m[31merror[0m] [0m[0m    println(states.filter(_ >= Expectation.YAHTZEE_BONUS + Expectation.YAHTZEE).map(_.toBinaryString).mkString("\n")))[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                                                                     ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:7:17: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val state = Expectation.YAHTZEE[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:13:33: not found: type Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val (value, category) = new Expectation(state).endOfTurn(roll, cache)[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:16:26: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    category shouldEqual Expectation.YAHTZEE[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:20:17: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val state = Expectation.UPPER_FIVE + 50[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:26:33: not found: type Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val (value, category) = new Expectation(state).endOfTurn(roll, cache)[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:29:26: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    category shouldEqual Expectation.UPPER_FIVE[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:33:17: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val state = Expectation.YAHTZEE_BONUS + Expectation.FULL_HOUSE + 50[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:33:45: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val state = Expectation.YAHTZEE_BONUS + Expectation.FULL_HOUSE + 50[0m
+[0m[[0m[31merror[0m] [0m[0m                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:39:33: not found: type Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val (value, category) = new Expectation(state).endOfTurn(roll, cache)[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:42:26: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    category shouldEqual Expectation.FULL_HOUSE[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:46:17: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val state = Expectation.FULL_HOUSE + 50[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:52:33: not found: type Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val (value, category) = new Expectation(state).endOfTurn(roll, cache)[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:55:26: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    category shouldEqual Expectation.FULL_HOUSE[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:59:17: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val state = Expectation.UPPER_TWO + 63[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:65:33: not found: type Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val (value, category) = new Expectation(state).endOfTurn(roll, cache)[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:68:26: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    category shouldEqual Expectation.UPPER_TWO[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:72:17: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val state = Expectation.LARGE_STRAIGHT + Expectation.SMALL_STRAIGHT[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:72:46: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val state = Expectation.LARGE_STRAIGHT + Expectation.SMALL_STRAIGHT[0m
+[0m[[0m[31merror[0m] [0m[0m                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:84:33: not found: type Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val (value, category) = new Expectation(state).endOfTurn(roll, cache)[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:87:26: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    category shouldEqual Expectation.SMALL_STRAIGHT[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:92:17: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val state = Expectation.YAHTZEE[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:96:21: not found: type Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val value = new Expectation(state).rolls(keeps, 1, cache)[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:101:17: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val state = Expectation.FULL_HOUSE[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:105:21: not found: type Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val value = new Expectation(state).rolls(keeps, 1, cache)[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:110:17: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val state = Expectation.YAHTZEE[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:114:29: not found: type Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val (value, kept) = new Expectation(state).keeps(roll, 1, cache)[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:115:14: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Any[0m
+[0m[[0m[31merror[0m] [0m[0m required: Double[0m
+[0m[[0m[31merror[0m] [0m[0m    approxEq(value, 50d / 6d) shouldBe true[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:120:17: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val state = Expectation.YAHTZEE[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:125:26: not found: type Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val (value, _) = new Expectation(state).keeps(roll, 2, cache)[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:129:12: value < is not a member of Any[0m
+[0m[[0m[31merror[0m] [0m[0m    (value < 50d) shouldBe true[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:130:12: value > is not a member of Any[0m
+[0m[[0m[31merror[0m] [0m[0m    (value > 0d) shouldBe true[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:134:17: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val state = Expectation.YAHTZEE[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:139:21: not found: type Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val value = new Expectation(state).rolls(roll, 3, cache)[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:147:18: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val states = Expectation.allStatesForNOpenCategories(1)[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:156:18: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val state1 = Expectation.YAHTZEE + Expectation.YAHTZEE_BONUS[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:156:40: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val state1 = Expectation.YAHTZEE + Expectation.YAHTZEE_BONUS[0m
+[0m[[0m[31merror[0m] [0m[0m                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:158:5: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    Expectation.stateIsPossible(state1) shouldBe false[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:160:18: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val state2 = Expectation.YAHTZEE + Expectation.FULL_HOUSE[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:160:40: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    val state2 = Expectation.YAHTZEE + Expectation.FULL_HOUSE[0m
+[0m[[0m[31merror[0m] [0m[0m                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:161:5: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    Expectation.stateIsPossible(state2) shouldBe true[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:166:7: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m      Expectation.UPPER_ONE[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:167:11: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m        + Expectation.UPPER_THREE [0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:168:11: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m        + Expectation.UPPER_FIVE[0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:169:11: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m        + Expectation.UPPER_SIX[0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:173:5: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    Expectation.stateIsPossible(state1) shouldBe false[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:176:7: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m      Expectation.UPPER_ONE[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:177:11: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m        + Expectation.UPPER_TWO  [0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:178:11: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m        + Expectation.UPPER_FOUR [0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:179:11: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m        + Expectation.UPPER_FIVE[0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:180:11: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m        + Expectation.UPPER_SIX[0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:183:5: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m    Expectation.stateIsPossible(state2) shouldBe true[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala:189:10: not found: value Expectation[0m
+[0m[[0m[31merror[0m] [0m[0m      if Expectation.stateIsPossible(s)[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0m52 errors found[0m
