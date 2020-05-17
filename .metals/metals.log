@@ -2254,3 +2254,43 @@ WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/mai
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 17, 2020 2:26:05 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 8953
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 17, 2020 2:33:51 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10132
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 17, 2020 2:47:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 11337
+May 17, 2020 2:47:39 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 11343
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 17, 2020 3:15:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 12343
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 17, 2020 4:41:49 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 12554
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala

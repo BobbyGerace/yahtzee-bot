@@ -146,7 +146,10 @@ class ExpectationSpec extends FlatSpec with Matchers {
   "allStatesForNCategories" should "return expected amount" in {
     val states = Expectation.allStatesForNOpenCategories(1)
 
-    states.length shouldEqual 13 * 2 * 64
+    println(states.filter(_ >= Expectation.YAHTZEE_BONUS + Expectation.YAHTZEE).map(_.toBinaryString).mkString("\n"))
+
+    // 64 impossible yahtzee bonuses and 2 impossible scores
+    states.length shouldEqual 13 * 2 * 64 - 2 - 64
   }
 
   "stateIsPossible" should "work for yahtzee bonus" in {

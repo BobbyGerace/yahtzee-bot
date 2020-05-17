@@ -11,7 +11,8 @@ class Expectation(state: Int) {
         if (endMemo.contains(hash(roll))) return endMemo.getOrElse(hash(roll), (0d, 0))
 
         val yahtzeeIdx = roll.indexOf(5)
-        val hasUnusableYahtzee = yahtzeeIdx != -1 && !((state & Expectation.YAHTZEE) > 0)
+        val rollIsYahtzee = yahtzeeIdx != -1
+        val hasUnusableYahtzee = rollIsYahtzee && !((state & Expectation.YAHTZEE) > 0)
         val hasYahtzeeBonus = (Expectation.YAHTZEE_BONUS & state) > 0 && hasUnusableYahtzee
         val canUseJoker = hasUnusableYahtzee && (Math.pow(2, yahtzeeIdx + 6).toInt & state) == 0
         
@@ -24,10 +25,16 @@ class Expectation(state: Int) {
             val nextUpperTotal = 
                 if (categoryIsUpper(category)) Math.min(currentUpperTotal + catScore, 63)
                 else currentUpperTotal
+            
+            val newYahtzeeBonus = 
+                if (rollIsYahtzee && category == Expectation.YAHTZEE) Expectation.YAHTZEE_BONUS
+                else 0
 
-            val nextState  = (state ^ category) - currentUpperTotal + nextUpperTotal
-
-            // TODO: Set yahtzee bonus on next state
+            val nextState  = (
+                (state ^ category) 
+                - currentUpperTotal + nextUpperTotal 
+                + newYahtzeeBonus
+            )
 
             val yahtzeeBonus = if (hasYahtzeeBonus) 100d else 0d
             val upperBonus = if (currentUpperTotal < 63 && nextUpperTotal == 63) 35d else 0d
@@ -136,14 +143,15 @@ object Expectation {
     );
 
     def allStatesForNOpenCategories(n: Int) = {
-        val categories = Combinations.choose(13, n)
+        val categoryList = Combinations.choose(13, n)
         
-        val all = for (c <- categories; bonus <- 0 to 1; upperScore <- 0 to 63) yield {
-            val categoryBits = c.foldLeft(0){ (prev, cat) => Math.pow(2, cat + 6).toInt }
+        val all = for (c <- categoryList; bonus <- 0 to 1; upperScore <- 0 to 63) yield {
+            val categoryBits = c.foldLeft(0){ (prev, cat) => prev + categories(cat)}
+
             bonus * YAHTZEE_BONUS + categoryBits + upperScore
         }
-        
-        all filter { s => true } 
+
+        all.filter(stateIsPossible)
     }
 
     def stateIsPossible(state: Int) = {
@@ -165,10 +173,7 @@ object Expectation {
             }
         }
 
-        val bonusIsPossible = !(
-            (state & YAHTZEE_BONUS) > 0 
-            && (state & YAHTZEE) > 0
-        )
+        val bonusIsPossible = state < YAHTZEE_BONUS + YAHTZEE
         
         val scorePossible = 
             if ((state & 63) == 63) true

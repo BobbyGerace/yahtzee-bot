@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala:157:44: value >= is not a member of Array[Int][0m
-[0m[[0m[31merror[0m] [0m[0m            else if (n == 63) s.map(_ * 5) >= 63[0m
-[0m[[0m[31merror[0m] [0m[0m                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala:151:38: value map is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m                println(categoryBits.map(_.toBinaryString).mkString("\n"))[0m
+[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m
