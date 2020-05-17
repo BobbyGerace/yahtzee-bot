@@ -30,17 +30,22 @@ object Combinations {
         result
     }
 
-    def allKeeps(initial: Array[Int], startIdx: Int = 0): Vector[Array[Int]] = {
-        val current = initial(startIdx);
-        if (startIdx == initial.length - 1) {
-            (0 to current).toVector.map((count: Int) => {
-                initial.updated(startIdx, current - count)
-            })
+    def allKeeps(initial: Array[Int], startIdx: Int = 0): mutable.ArrayBuffer[Array[Int]] = {
+        val result = mutable.ArrayBuffer[Array[Int]]()
+        def helper(initial: Array[Int], startIdx: Int): Unit = {
+            val current = initial(startIdx);
+            if (startIdx == initial.length - 1) {
+                for (count <- 0 to current) {
+                    result += initial.updated(startIdx, current - count)
+                }
+            }
+            else {
+                for ( count <- 0 to current) {
+                    helper(initial.updated(startIdx, current - count), startIdx + 1)
+                }
+            }
         }
-        else {
-            (0 to current).toVector.flatMap((count: Int) => {
-                allKeeps(initial.updated(startIdx, current - count), startIdx + 1)
-            })
-        }
+        helper(initial, startIdx)
+        result
     }
 }

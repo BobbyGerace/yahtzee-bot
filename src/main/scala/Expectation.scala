@@ -44,7 +44,7 @@ object Expectation {
 
         val currentUpperTotal = upperScoreFromState(state)
 
-        val potentialScores = openCategories.map(category => {
+        openCategories.map(category => {
             val catScore = score(category, roll, canUseJoker)
 
             val nextUpperTotal = 
@@ -60,9 +60,7 @@ object Expectation {
             val nextStateExpectation = if (openCategories.length == 1) 0 else cache(nextState)
 
             (addedScore + nextStateExpectation, category)
-        })
-
-        potentialScores.maxBy(_._1)
+        }).maxBy(_._1)
     }
 
     def rolls(state: Int, kept: Array[Int], rollsLeft: Int, cache: Array[Float]): Double = {

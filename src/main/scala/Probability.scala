@@ -2,9 +2,13 @@ package main
 
 object Probability {
     private def factorial(n: Int): Int = {
-        if (n < 1) throw new RuntimeException("Factorial less than one")
-        else if (n == 1) 1 
-        else n * factorial(n - 1)
+        n match {
+            case 1 => 1
+            case 2 => 2
+            case 3 => 6
+            case 4 => 24
+            case 5 => 120
+        }
     }
 
     def rollProbability(
