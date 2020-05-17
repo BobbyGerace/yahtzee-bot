@@ -1,6 +1,105 @@
+import scala.collection.mutable
 import main.Score._
 import main.Combinations
 import main.Probability
+
+class Expectation(state: Int) {
+    private val rollMemo = mutable.Map[(Int, Int), Double]()
+    private val keepMemo = mutable.Map[(Int, Int), (Double, Array[Int])]()
+    private val endMemo = mutable.Map[Int, (Double, Int)]()
+    def endOfTurn(roll: Array[Int], cache: Array[Float]): (Double, Int) = {
+        if (endMemo.contains(hash(roll))) return endMemo.getOrElse(hash(roll), (0d, 0))
+
+        val yahtzeeIdx = roll.indexOf(5)
+        val hasUnusableYahtzee = yahtzeeIdx != -1 && !((state & Expectation.YAHTZEE) > 0)
+        val hasYahtzeeBonus = (Expectation.YAHTZEE_BONUS & state) > 0 && hasUnusableYahtzee
+        val canUseJoker = hasUnusableYahtzee && (Math.pow(2, yahtzeeIdx + 6).toInt & state) == 0
+        
+        val currentUpperTotal = upperScoreFromState(state)
+        val openCategories = Expectation.categories.filter((c: Int) => (c & state) > 0)
+
+        val result = openCategories.map(category => {
+            val catScore = score(category, roll, canUseJoker)
+
+            val nextUpperTotal = 
+                if (categoryIsUpper(category)) Math.min(currentUpperTotal + catScore, 63)
+                else currentUpperTotal
+
+            val nextState  = (state ^ category) - currentUpperTotal + nextUpperTotal
+
+            val yahtzeeBonus = if (hasYahtzeeBonus) 100d else 0d
+            val upperBonus = if (currentUpperTotal < 63 && nextUpperTotal == 63) 35d else 0d
+
+            val addedScore = catScore.toDouble + yahtzeeBonus + upperBonus
+            val nextStateExpectation = if (openCategories.length == 1) 0 else cache(nextState)
+
+            (addedScore + nextStateExpectation, category)
+        }).maxBy(_._1)
+        
+        endMemo += (hash(roll) -> result)
+
+        result
+    }
+
+    def rolls(kept: Array[Int], rollsLeft: Int, cache: Array[Float]): Double = {
+        if (rollMemo.contains((hash(kept), rollsLeft))) return rollMemo.getOrElse((hash(kept), rollsLeft), 0d)
+        
+        val keptNum = kept.sum
+        val result = Combinations.allRolls(5 - keptNum, kept).map(roll => {
+            val (expectation, _) = 
+                if (rollsLeft == 1) endOfTurn(roll, cache)
+                else keeps(roll, rollsLeft - 1, cache)
+            val probability = Probability.rollProbability(roll, kept)
+            expectation * probability
+        }).sum
+
+        rollMemo += ((hash(kept), rollsLeft) -> result)
+
+        result
+    }
+
+    def keeps(roll: Array[Int], rollsLeft: Int, cache: Array[Float]): (Double, Array[Int]) = {
+        if (keepMemo.contains((hash(roll), rollsLeft))) {
+            return keepMemo.getOrElse((hash(roll), rollsLeft), (0d, Array(0, 0, 0, 0, 0, 0)))
+        }
+
+        val result = Combinations.allKeeps(roll).map(kept => {
+            val value = 
+                if (kept.sum == 5) endOfTurn(roll, cache)._1
+                else rolls(kept, rollsLeft, cache)
+            (value, kept)
+        }).maxBy(_._1)
+
+        keepMemo += ((hash(roll), rollsLeft) -> result)
+
+        result
+    }
+    
+    private def hash(arr: Array[Int]) = {
+        arr(0) * 1 + arr(1) * 10 + arr(2) * 100 + arr(3) * 1000 + arr(4) * 10000 + arr(5) * 100000
+    }
+
+    private def upperScoreFromState(state: Int) = state & 63
+    private def categoryIsUpper(c: Int) = c >= Expectation.UPPER_ONE && c <= Expectation.UPPER_SIX
+
+    private def score(category: Int, roll: Array[Int], useJoker: Boolean) = {
+        category match {
+            case Expectation.UPPER_ONE => upperCategory(1)(roll)
+            case Expectation.UPPER_TWO => upperCategory(2)(roll)
+            case Expectation.UPPER_THREE => upperCategory(3)(roll)
+            case Expectation.UPPER_FOUR => upperCategory(4)(roll)
+            case Expectation.UPPER_FIVE => upperCategory(5)(roll)
+            case Expectation.UPPER_SIX => upperCategory(6)(roll)
+            case Expectation.THREE_OF_A_KIND => threeOfAKind(roll, useJoker)
+            case Expectation.FOUR_OF_A_KIND => fourOfAKind(roll, useJoker)
+            case Expectation.FULL_HOUSE => fullHouse(roll, useJoker)
+            case Expectation.SMALL_STRAIGHT => smallStraight(roll, useJoker)
+            case Expectation.LARGE_STRAIGHT => largeStraight(roll, useJoker)
+            case Expectation.YAHTZEE => yahtzee(roll)
+            case Expectation.CHANCE => chance(roll)
+        }
+    }
+}
 
 object Expectation {
     val UPPER_ONE = Math.pow(2, 6).toInt;
@@ -33,75 +132,4 @@ object Expectation {
         CHANCE,
         YAHTZEE,
     );
-
-    def endOfTurn(state: Int, roll: Array[Int], cache: Array[Float]): (Double, Int) = {
-        val yahtzeeIdx = roll.indexOf(5)
-        val hasUnusableYahtzee = yahtzeeIdx != -1 && !((state & YAHTZEE) > 0)
-        val hasYahtzeeBonus = (YAHTZEE_BONUS & state) > 0 && hasUnusableYahtzee
-        val canUseJoker = hasUnusableYahtzee && (Math.pow(2, yahtzeeIdx + 6).toInt & state) == 0
-        
-        val openCategories = categories.filter((c: Int) => (c & state) > 0)
-
-        val currentUpperTotal = upperScoreFromState(state)
-
-        openCategories.map(category => {
-            val catScore = score(category, roll, canUseJoker)
-
-            val nextUpperTotal = 
-                if (categoryIsUpper(category)) Math.min(currentUpperTotal + catScore, 63)
-                else currentUpperTotal
-
-            val nextState  = (state ^ category) - currentUpperTotal + nextUpperTotal
-
-            val yahtzeeBonus = if (hasYahtzeeBonus) 100d else 0d
-            val upperBonus = if (currentUpperTotal < 63 && nextUpperTotal == 63) 35d else 0d
-
-            val addedScore = catScore.toDouble + yahtzeeBonus + upperBonus
-            val nextStateExpectation = if (openCategories.length == 1) 0 else cache(nextState)
-
-            (addedScore + nextStateExpectation, category)
-        }).maxBy(_._1)
-    }
-
-    def rolls(state: Int, kept: Array[Int], rollsLeft: Int, cache: Array[Float]): Double = {
-        val keptNum = kept.sum
-        Combinations.allRolls(5 - keptNum, kept).map(roll => {
-            val (expectation, _) = 
-                if (rollsLeft == 1) endOfTurn(state, roll, cache)
-                else keeps(state, roll, rollsLeft - 1, cache)
-            val probability = Probability.rollProbability(roll, kept)
-            expectation * probability
-        }).sum
-    }
-
-    def keeps(state: Int, roll: Array[Int], rollsLeft: Int, cache: Array[Float]): (Double, Array[Int]) = {
-        Combinations.allKeeps(roll).map(kept => {
-            val value = 
-                if (kept.sum == 5) endOfTurn(state, roll, cache)._1
-                else Expectation.rolls(state, kept, rollsLeft, cache)
-            (value, kept)
-        }).maxBy(_._1)
-    }
-
-    private def upperScoreFromState(state: Int) = state & 63
-    private def categoryIsUpper(c: Int) = c >= UPPER_ONE && c <= UPPER_SIX
-
-
-    private def score(category: Int, roll: Array[Int], useJoker: Boolean) = {
-        category match {
-            case UPPER_ONE => upperCategory(1)(roll)
-            case UPPER_TWO => upperCategory(2)(roll)
-            case UPPER_THREE => upperCategory(3)(roll)
-            case UPPER_FOUR => upperCategory(4)(roll)
-            case UPPER_FIVE => upperCategory(5)(roll)
-            case UPPER_SIX => upperCategory(6)(roll)
-            case THREE_OF_A_KIND => threeOfAKind(roll, useJoker)
-            case FOUR_OF_A_KIND => fourOfAKind(roll, useJoker)
-            case FULL_HOUSE => fullHouse(roll, useJoker)
-            case SMALL_STRAIGHT => smallStraight(roll, useJoker)
-            case LARGE_STRAIGHT => largeStraight(roll, useJoker)
-            case YAHTZEE => yahtzee(roll)
-            case CHANCE => chance(roll)
-        }
-    }
 }

@@ -10,7 +10,7 @@ class ExpectationSpec extends FlatSpec with Matchers {
 
     val cache = Array[Float]()
 
-    val (value, category) = Expectation.endOfTurn(state, roll, cache)
+    val (value, category) = new Expectation(state).endOfTurn(roll, cache)
 
     value shouldEqual 50
     category shouldEqual Expectation.YAHTZEE
@@ -23,7 +23,7 @@ class ExpectationSpec extends FlatSpec with Matchers {
 
     val cache = Array[Float]()
 
-    val (value, category) = Expectation.endOfTurn(state, roll, cache)
+    val (value, category) = new Expectation(state).endOfTurn(roll, cache)
 
     value shouldEqual 55
     category shouldEqual Expectation.UPPER_FIVE
@@ -36,7 +36,7 @@ class ExpectationSpec extends FlatSpec with Matchers {
 
     val cache = Array[Float]()
 
-    val (value, category) = Expectation.endOfTurn(state, roll, cache)
+    val (value, category) = new Expectation(state).endOfTurn(roll, cache)
 
     value shouldEqual 125
     category shouldEqual Expectation.FULL_HOUSE
@@ -49,7 +49,7 @@ class ExpectationSpec extends FlatSpec with Matchers {
 
     val cache = Array[Float]()
 
-    val (value, category) = Expectation.endOfTurn(state, roll, cache)
+    val (value, category) = new Expectation(state).endOfTurn(roll, cache)
 
     value shouldEqual 25
     category shouldEqual Expectation.FULL_HOUSE
@@ -62,7 +62,7 @@ class ExpectationSpec extends FlatSpec with Matchers {
 
     val cache = Array[Float]()
 
-    val (value, category) = Expectation.endOfTurn(state, roll, cache)
+    val (value, category) = new Expectation(state).endOfTurn(roll, cache)
 
     value shouldEqual 8
     category shouldEqual Expectation.UPPER_TWO
@@ -81,7 +81,7 @@ class ExpectationSpec extends FlatSpec with Matchers {
     cache.update(Expectation.SMALL_STRAIGHT, 20f)
     cache.update(Expectation.LARGE_STRAIGHT, 40f)
 
-    val (value, category) = Expectation.endOfTurn(state, roll, cache)
+    val (value, category) = new Expectation(state).endOfTurn(roll, cache)
 
     value shouldEqual 70
     category shouldEqual Expectation.SMALL_STRAIGHT
@@ -93,7 +93,7 @@ class ExpectationSpec extends FlatSpec with Matchers {
     val keeps = Array(0, 0, 0, 0, 0, 0)
     val cache = Array[Float]()
 
-    val value = Expectation.rolls(state, keeps, 1, cache)
+    val value = new Expectation(state).rolls(keeps, 1, cache)
     value shouldEqual 50d / Math.pow(6,4)
   }
 
@@ -102,7 +102,7 @@ class ExpectationSpec extends FlatSpec with Matchers {
     val keeps = Array(0, 0, 1, 0, 2, 0)
     val cache = Array[Float]()
 
-    val value = Expectation.rolls(state, keeps, 1, cache)
+    val value = new Expectation(state).rolls(keeps, 1, cache)
     value shouldEqual 25d * (1d / 36d + 1d / 18d)
   }
 
@@ -111,7 +111,7 @@ class ExpectationSpec extends FlatSpec with Matchers {
     val roll = Array(0, 0, 1, 0, 4, 0)
     val cache = Array[Float]()
 
-    val (value, kept) = Expectation.keeps(state, roll, 1, cache)
+    val (value, kept) = new Expectation(state).keeps(roll, 1, cache)
     approxEq(value, 50d / 6d) shouldBe true
     kept shouldEqual Array(0, 0, 0, 0, 4, 0)
   }
@@ -122,7 +122,7 @@ class ExpectationSpec extends FlatSpec with Matchers {
     val cache = Array[Float]()
 
     val t0 = System.nanoTime()
-    val (value, _) = Expectation.keeps(state, roll, 2, cache)
+    val (value, _) = new Expectation(state).keeps(roll, 2, cache)
     val t1 = System.nanoTime()
     println("Elapsed time: " + ((t1 - t0) / 1000000d) + "ms")
     println("value: " + value)
@@ -130,16 +130,16 @@ class ExpectationSpec extends FlatSpec with Matchers {
     (value > 0d) shouldBe true
   }
 
-  // "rolls" should "compute a widget" in {
-  //   val state = Expectation.YAHTZEE
-  //   val roll = Array(1, 1, 1, 1, 1, 0)
-  //   val cache = Array[Float]()
+  "rolls" should "compute a widget" in {
+    val state = Expectation.YAHTZEE
+    val roll = Array(0, 0, 0, 0, 0, 0)
+    val cache = Array[Float]()
 
-  //   val t0 = System.nanoTime()
-  //   val value = Expectation.rolls(state, roll, 2, cache)
-  //   val t1 = System.nanoTime()
-  //   println("Elapsed time: " + ((t1 - t0) / 1000000d) + "ms")
-  //   (value < 50d) shouldBe true
-  //   (value > 0d) shouldBe true
-  // }
+    val t0 = System.nanoTime()
+    val value = new Expectation(state).rolls(roll, 3, cache)
+    val t1 = System.nanoTime()
+    println("Elapsed time: " + ((t1 - t0) / 1000000d) + "ms")
+    (value < 50d) shouldBe true
+    (value > 0d) shouldBe true
+  }
 }
