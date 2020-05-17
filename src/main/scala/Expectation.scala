@@ -27,6 +27,8 @@ class Expectation(state: Int) {
 
             val nextState  = (state ^ category) - currentUpperTotal + nextUpperTotal
 
+            // TODO: Set yahtzee bonus on next state
+
             val yahtzeeBonus = if (hasYahtzeeBonus) 100d else 0d
             val upperBonus = if (currentUpperTotal < 63 && nextUpperTotal == 63) 35d else 0d
 
@@ -132,4 +134,46 @@ object Expectation {
         CHANCE,
         YAHTZEE,
     );
+
+    def allStatesForNOpenCategories(n: Int) = {
+        val categories = Combinations.choose(13, n)
+        
+        val all = for (c <- categories; bonus <- 0 to 1; upperScore <- 0 to 63) yield {
+            val categoryBits = c.foldLeft(0){ (prev, cat) => Math.pow(2, cat + 6).toInt }
+            bonus * YAHTZEE_BONUS + categoryBits + upperScore
+        }
+        
+        all filter { s => true } 
+    }
+
+    def stateIsPossible(state: Int) = {
+        val nums = for (
+            s <- 1 to 6 
+            if (state & Math.pow(2, s + 5).toInt) == 0
+        ) yield s
+
+        def scoreIsPossible(s: Array[Int], n: Int): Boolean = {
+            if (n == 0) true
+            else if (s.length == 0) false
+            else {
+                val xks = for (x <- s; k <- 1 to 5) yield (x, k)
+                
+                xks.exists { case (x, k) => {
+                    val kx = k * x
+                    kx <= n && scoreIsPossible(s.filter(_ != x), n - kx)
+                } }
+            }
+        }
+
+        val bonusIsPossible = !(
+            (state & YAHTZEE_BONUS) > 0 
+            && (state & YAHTZEE) > 0
+        )
+        
+        val scorePossible = 
+            if ((state & 63) == 63) true
+            else scoreIsPossible(nums.toArray, state & 63)
+
+        scorePossible && bonusIsPossible 
+    }
 }

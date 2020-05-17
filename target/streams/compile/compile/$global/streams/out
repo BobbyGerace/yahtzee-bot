@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala:11:73: not found: value kept[0m
-[0m[[0m[31merror[0m] [0m[0m        if (endMemo.contains(hash(roll))) return endMemo.getOrElse(hash(kept), (0d, 0))[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala:157:44: value >= is not a member of Array[Int][0m
+[0m[[0m[31merror[0m] [0m[0m            else if (n == 63) s.map(_ * 5) >= 63[0m
+[0m[[0m[31merror[0m] [0m[0m                                           ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

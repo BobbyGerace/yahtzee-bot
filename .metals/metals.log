@@ -2077,3 +2077,180 @@ WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/mai
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+INFO  started: Metals version 0.8.0 in workspace '/home/bobby/Documents/programming/yahtzee-bot'
+INFO  time: initialize in 4.73s
+INFO  skipping build import with status 'Requested'
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 17, 2020 8:53:42 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+INFO  no build target: using presentation compiler with only scala-library
+May 17, 2020 8:53:42 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3
+May 17, 2020 8:53:42 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
+May 17, 2020 8:53:42 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6
+May 17, 2020 8:53:42 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 9
+May 17, 2020 8:53:43 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 12
+May 17, 2020 8:53:43 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14
+May 17, 2020 8:53:43 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 15
+May 17, 2020 8:53:43 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 8
+May 17, 2020 8:53:43 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10
+May 17, 2020 8:53:43 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 19
+May 17, 2020 8:53:43 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 22
+May 17, 2020 8:53:43 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 21
+May 17, 2020 8:53:43 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 23
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 17, 2020 9:00:09 AM scala.meta.internal.pc.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.MetalsGlobal.metalsSeenFromType(MetalsGlobal.scala:634)
+	at scala.meta.internal.pc.Completions$CompletionPosition$CaseKeyword.<init>(Completions.scala:1443)
+	at scala.meta.internal.pc.Completions.fromIdentApply$1(Completions.scala:418)
+	at scala.meta.internal.pc.Completions.completionPositionUnsafe(Completions.scala:436)
+	at scala.meta.internal.pc.Completions.completionPositionUnsafe$(Completions.scala:404)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.Completions.completionPosition(Completions.scala:396)
+	at scala.meta.internal.pc.Completions.completionPosition$(Completions.scala:381)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:413)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:51)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:91)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:120)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:77)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:198)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+May 17, 2020 9:00:13 AM scala.meta.internal.pc.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.MetalsGlobal.metalsSeenFromType(MetalsGlobal.scala:634)
+	at scala.meta.internal.pc.Completions$CompletionPosition$CaseKeyword.<init>(Completions.scala:1443)
+	at scala.meta.internal.pc.Completions.fromIdentApply$1(Completions.scala:418)
+	at scala.meta.internal.pc.Completions.completionPositionUnsafe(Completions.scala:436)
+	at scala.meta.internal.pc.Completions.completionPositionUnsafe$(Completions.scala:404)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.Completions.completionPosition(Completions.scala:396)
+	at scala.meta.internal.pc.Completions.completionPosition$(Completions.scala:381)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:413)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:51)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:91)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:120)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:77)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:198)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+May 17, 2020 9:00:13 AM scala.meta.internal.pc.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.MetalsGlobal.metalsSeenFromType(MetalsGlobal.scala:634)
+	at scala.meta.internal.pc.Completions$CompletionPosition$CaseKeyword.<init>(Completions.scala:1443)
+	at scala.meta.internal.pc.Completions.fromIdentApply$1(Completions.scala:418)
+	at scala.meta.internal.pc.Completions.completionPositionUnsafe(Completions.scala:436)
+	at scala.meta.internal.pc.Completions.completionPositionUnsafe$(Completions.scala:404)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.Completions.completionPosition(Completions.scala:396)
+	at scala.meta.internal.pc.Completions.completionPosition$(Completions.scala:381)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:413)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:51)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:91)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:120)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:77)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:198)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 17, 2020 9:00:55 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1348
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 17, 2020 9:44:13 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3025
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 17, 2020 9:46:27 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3218
+May 17, 2020 10:09:54 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3446
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 17, 2020 10:10:48 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3544
+May 17, 2020 10:10:48 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3549
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 17, 2020 10:17:22 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4345
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala' because it doesn't belong to a build target.
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala

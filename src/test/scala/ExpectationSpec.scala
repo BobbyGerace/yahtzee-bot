@@ -142,4 +142,50 @@ class ExpectationSpec extends FlatSpec with Matchers {
     (value < 50d) shouldBe true
     (value > 0d) shouldBe true
   }
+
+  "allStatesForNCategories" should "return expected amount" in {
+    val states = Expectation.allStatesForNOpenCategories(1)
+
+    states.length shouldEqual 13 * 2 * 64
+  }
+
+  "stateIsPossible" should "work for yahtzee bonus" in {
+    val state1 = Expectation.YAHTZEE + Expectation.YAHTZEE_BONUS
+
+    Expectation.stateIsPossible(state1) shouldBe false
+
+    val state2 = Expectation.YAHTZEE + Expectation.FULL_HOUSE
+    Expectation.stateIsPossible(state2) shouldBe true
+  }
+
+  "stateIsPossible" should "work for score" in {
+    val state1 = (
+      Expectation.UPPER_ONE
+        + Expectation.UPPER_THREE 
+        + Expectation.UPPER_FIVE
+        + Expectation.UPPER_SIX
+        + 23
+    )
+
+    Expectation.stateIsPossible(state1) shouldBe false
+
+    val state2 = (
+      Expectation.UPPER_ONE
+        + Expectation.UPPER_TWO  
+        + Expectation.UPPER_FOUR 
+        + Expectation.UPPER_FIVE
+        + Expectation.UPPER_SIX
+        + 15
+    )
+    Expectation.stateIsPossible(state2) shouldBe true
+  }
+
+  "stateIsPossible" should "work for all combos" in {
+    val allTrue = for (
+      s <- 0 to 4095
+      if Expectation.stateIsPossible(s)
+    ) yield s
+
+    allTrue.length shouldEqual 4096 - 1260
+  }
 }
