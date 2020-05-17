@@ -152,7 +152,7 @@ object Expectation {
                 val value = new Expectation(s).rolls(Array(0, 0, 0, 0, 0, 0), 3, cache)
                 cache.update(s, value.toFloat)
             })
-            println("Finished calculating states for " + n + "open categories")
+            println("Finished calculating states for " + i + "open categories")
         }
 
         cache

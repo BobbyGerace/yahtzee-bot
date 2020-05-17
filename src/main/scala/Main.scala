@@ -5,9 +5,9 @@ import java.io.FileOutputStream
 object Main {
   def main(args: Array[String]): Unit = {
     val t0 = System.currentTimeMillis()
-    val cache = Expectation.calculateStatesUpToNCategories(1)
+    val cache = Expectation.calculateStatesUpToNCategories(13)
     val t1 = System.currentTimeMillis()
-    println("Elapsed time: " + ((t1 - t0) / (1000d * 3600)) + "min")
+    println("Elapsed time: " + ((t1 - t0) / (1000d * 60)) + " min")
 
     val filtered = cache.filter(_ > 0)
     println("Length: " + filtered.length)
