@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala:52:39: not found: value maxCategory[0m
-[0m[[0m[31merror[0m] [0m[0m            val nextState  = (state ^ maxCategory) - currentUpperTotal + nextUpperTotal[0m
-[0m[[0m[31merror[0m] [0m[0m                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala:17:22: not found: value ArrayBuffer[0m
+[0m[[0m[31merror[0m] [0m[0m        val result = ArrayBuffer[Array[Int]]()[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

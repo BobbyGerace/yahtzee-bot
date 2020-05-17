@@ -1630,3 +1630,222 @@ WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/mai
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 2352, 2352, 2367)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 2352, 2352, 2360)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 2352, 2352, 2361)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 2352, 2352, 2362)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 2352, 2352, 2362)
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 2352, 2352, 2362)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 2352, 2352, 2362)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 2352, 2352, 2362)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 2371, 2371, 2386)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 2371, 2371, 2379)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 2371, 2371, 2380)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Float]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 2371, 2371, 2383)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Float]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 2371, 2371, 2383)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala in Array[Float]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala, 2371, 2371, 2383)
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+May 16, 2020 4:18:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1428
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 16, 2020 4:21:04 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1960
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 16, 2020 4:25:41 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2803
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala' because it doesn't belong to a build target.
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+May 16, 2020 7:02:07 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4464
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ProbabiltySpec.scala' because it doesn't belong to a build target.
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 16, 2020 8:36:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5386
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+May 16, 2020 8:37:25 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5581
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+May 16, 2020 8:48:06 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6633
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 16, 2020 8:53:10 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7052
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 16, 2020 8:54:32 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7405
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 16, 2020 8:55:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7641
+May 16, 2020 8:55:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7650
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala' because it doesn't belong to a build target.
+May 16, 2020 9:00:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7813
+May 16, 2020 9:00:42 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7842
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+May 16, 2020 9:05:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 8356
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+May 16, 2020 9:09:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 8464
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala' because it doesn't belong to a build target.
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Probability.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 16, 2020 9:17:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 9742
+May 16, 2020 9:17:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 9868
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala' because it doesn't belong to a build target.
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+May 16, 2020 9:25:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10435
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+May 16, 2020 9:31:29 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10977
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+May 16, 2020 9:35:04 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 11138
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/ExpectationSpec.scala
+May 16, 2020 9:37:05 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 11490
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala, 446, 446, 456)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala in () => <error>RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala, 546, 557, 609)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala in () => <error>RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala, 552, 563, 615)
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala, 596, 596, 611)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala in Array[<error>]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala, 596, 596, 604)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala, 596, 596, 606)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala, 596, 596, 606)
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala, 596, 596, 606)
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+something's wrong: no file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala in Array[Int]RangePosition(file:///home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala, 1043, 1043, 1053)
+May 16, 2020 9:48:04 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 12675
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala' because it doesn't belong to a build target.
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/test/scala/CombinationsSpec.scala
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala' because it doesn't belong to a build target.
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala

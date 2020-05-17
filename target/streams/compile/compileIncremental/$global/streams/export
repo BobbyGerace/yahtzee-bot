@@ -1,1 +1,1 @@
-scalac -classpath /home/bobby/Documents/programming/yahtzee-bot/target/scala-2.12/classes -bootclasspath /home/bobby/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.8.jar /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+scalac -classpath /home/bobby/Documents/programming/yahtzee-bot/target/scala-2.12/classes -bootclasspath /home/bobby/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.8.jar /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Combinations.scala

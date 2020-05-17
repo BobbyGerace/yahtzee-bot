@@ -1,3 +1,5 @@
+import main.Probability
+import main.Combinations
 import org.scalatest._
 
 class ProbabiltySpec extends FlatSpec with Matchers {

@@ -1,3 +1,6 @@
+package main
+
+import scala.collection.mutable
 
 object Combinations {
     val emptyDiceGroup = Array(0, 0, 0, 0, 0, 0)
@@ -10,14 +13,33 @@ object Combinations {
         )
     }
 
-    def allRolls(n: Int, initial: Array[Int] = emptyDiceGroup, startIdx: Int = 0): Vector[Array[Int]] = {
+    def allRolls(n: Int, initial: Array[Int] = emptyDiceGroup, startIdx: Int = 0): mutable.ArrayBuffer[Array[Int]] = {
+        val result = mutable.ArrayBuffer[Array[Int]]()
+        def helper(n: Int, initial: Array[Int], startIdx: Int): Unit = {
+            val current = initial(startIdx);
+            if (startIdx == initial.length - 1) {
+               result += initial.updated(startIdx, n + current)
+            }
+            else {
+                for (count <- (0 to n)) {
+                    helper(n - count, initial.updated(startIdx, count + current), startIdx + 1)
+                }
+            }
+        }
+        helper(n, initial, startIdx)
+        result
+    }
+
+    def allKeeps(initial: Array[Int], startIdx: Int = 0): Vector[Array[Int]] = {
         val current = initial(startIdx);
         if (startIdx == initial.length - 1) {
-            Vector(initial.updated(startIdx, n + current));
+            (0 to current).toVector.map((count: Int) => {
+                initial.updated(startIdx, current - count)
+            })
         }
         else {
-            (0 to n).toVector.flatMap((count: Int) => {
-                allRolls(n - count, initial.updated(startIdx, count + current), startIdx + 1)
+            (0 to current).toVector.flatMap((count: Int) => {
+                allKeeps(initial.updated(startIdx, current - count), startIdx + 1)
             })
         }
     }

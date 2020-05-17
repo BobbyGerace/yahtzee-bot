@@ -1,4 +1,6 @@
 import main.Score._
+import main.Combinations
+import main.Probability
 
 object Expectation {
     val UPPER_ONE = Math.pow(2, 6).toInt;
@@ -61,6 +63,26 @@ object Expectation {
         })
 
         potentialScores.maxBy(_._1)
+    }
+
+    def rolls(state: Int, kept: Array[Int], rollsLeft: Int, cache: Array[Float]): Double = {
+        val keptNum = kept.sum
+        Combinations.allRolls(5 - keptNum, kept).map(roll => {
+            val (expectation, _) = 
+                if (rollsLeft == 1) endOfTurn(state, roll, cache)
+                else keeps(state, roll, rollsLeft - 1, cache)
+            val probability = Probability.rollProbability(roll, kept)
+            expectation * probability
+        }).sum
+    }
+
+    def keeps(state: Int, roll: Array[Int], rollsLeft: Int, cache: Array[Float]): (Double, Array[Int]) = {
+        Combinations.allKeeps(roll).map(kept => {
+            val value = 
+                if (kept.sum == 5) endOfTurn(state, roll, cache)._1
+                else Expectation.rolls(state, kept, rollsLeft, cache)
+            (value, kept)
+        }).maxBy(_._1)
     }
 
     private def upperScoreFromState(state: Int) = state & 63

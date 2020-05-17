@@ -1,3 +1,5 @@
+import scala.collection.mutable
+import main.Combinations
 import org.scalatest._
 
 class CombinationSpec extends FlatSpec with Matchers {
@@ -43,7 +45,7 @@ class CombinationSpec extends FlatSpec with Matchers {
     val initial = Array(0, 0, 0, 0, 0, 4)
     val result = Combinations.allRolls(1, initial)
 
-    result should contain theSameElementsAs Vector(
+    result should contain theSameElementsAs mutable.ArrayBuffer(
       Array(1, 0, 0, 0, 0, 4),
       Array(0, 1, 0, 0, 0, 4),
       Array(0, 0, 1, 0, 0, 4),
@@ -51,5 +53,35 @@ class CombinationSpec extends FlatSpec with Matchers {
       Array(0, 0, 0, 0, 1, 4),
       Array(0, 0, 0, 0, 0, 5),
     )
+  }
+
+  "The allKeeps function" should "work for large straight" in {
+    val result = Combinations.allKeeps(Array(1, 1, 1, 1, 1, 0))
+
+    result.length shouldEqual 32
+  }
+
+  "The allKeeps function" should "work for full house" in {
+    val result = Combinations.allKeeps(Array(0, 2, 0, 0, 3, 0))
+
+    result.length shouldEqual 12
+  }
+
+  "The allKeeps function" should "work for two pairs" in {
+    val result = Combinations.allKeeps(Array(0, 2, 0, 0, 1, 2))
+
+    result.length shouldEqual 18
+  }
+
+  "The allKeeps function" should "work for one pair" in {
+    val result = Combinations.allKeeps(Array(0, 2, 0, 1, 1, 1))
+
+    result.length shouldEqual 24
+  }
+
+  "The allKeeps function" should "work for yahtzee" in {
+    val result = Combinations.allKeeps(Array(0, 0, 0, 0, 0, 5))
+
+    result.length shouldEqual 6
   }
 }

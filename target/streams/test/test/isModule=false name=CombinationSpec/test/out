@@ -8,8 +8,21 @@
 [0m[[0m[0minfo[0m] [0m[0m[32mThe combo function[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should work for (n, 0)[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mThe allRolls function[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- should work for happy path[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should work for happy path *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  0 did not equal 252 (CombinationsSpec.scala:34)[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mThe allRolls function[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- should work with initial[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should work with initial *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  0 did not equal 56 (CombinationsSpec.scala:41)[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mThe allRolls function[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- should work for one dice[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should work for one dice *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ArrayBuffer() did not contain the same elements as ArrayBuffer(Array(1, 0, 0, 0, 0, 4), Array(0, 1, 0, 0, 0, 4), Array(0, 0, 1, 0, 0, 4), Array(0, 0, 0, 1, 0, 4), Array(0, 0, 0, 0, 1, 4), Array(0, 0, 0, 0, 0, 5)) (CombinationsSpec.scala:48)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mThe allKeeps function[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should work for large straight[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mThe allKeeps function[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should work for full house[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mThe allKeeps function[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should work for two pairs[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mThe allKeeps function[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should work for one pair[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mThe allKeeps function[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should work for yahtzee[0m[0m

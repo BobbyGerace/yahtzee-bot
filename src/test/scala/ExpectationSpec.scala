@@ -1,6 +1,8 @@
 import org.scalatest._
 
 class ExpectationSpec extends FlatSpec with Matchers {
+  val approxEq = (a: Double, b: Double) => Math.abs(a - b) < 0.0000001
+
   "endOfTurn" should "work for last yahtzee" in {
     val state = Expectation.YAHTZEE
 
@@ -84,4 +86,60 @@ class ExpectationSpec extends FlatSpec with Matchers {
     value shouldEqual 70
     category shouldEqual Expectation.SMALL_STRAIGHT
   }
+
+  "rolls" should "work for last yahtzee" in {
+
+    val state = Expectation.YAHTZEE
+    val keeps = Array(0, 0, 0, 0, 0, 0)
+    val cache = Array[Float]()
+
+    val value = Expectation.rolls(state, keeps, 1, cache)
+    value shouldEqual 50d / Math.pow(6,4)
+  }
+
+  "rolls" should "work for initial roll" in {
+    val state = Expectation.FULL_HOUSE
+    val keeps = Array(0, 0, 1, 0, 2, 0)
+    val cache = Array[Float]()
+
+    val value = Expectation.rolls(state, keeps, 1, cache)
+    value shouldEqual 25d * (1d / 36d + 1d / 18d)
+  }
+
+  "keeps" should "work for almost yahtzee" in {
+    val state = Expectation.YAHTZEE
+    val roll = Array(0, 0, 1, 0, 4, 0)
+    val cache = Array[Float]()
+
+    val (value, kept) = Expectation.keeps(state, roll, 1, cache)
+    approxEq(value, 50d / 6d) shouldBe true
+    kept shouldEqual Array(0, 0, 0, 0, 4, 0)
+  }
+
+  "keep" should "can start from first choice" in {
+    val state = Expectation.YAHTZEE
+    val roll = Array(1, 1, 1, 1, 1, 0)
+    val cache = Array[Float]()
+
+    val t0 = System.nanoTime()
+    val (value, _) = Expectation.keeps(state, roll, 2, cache)
+    val t1 = System.nanoTime()
+    println("Elapsed time: " + ((t1 - t0) / 1000000d) + "ms")
+    println("value: " + value)
+    (value < 50d) shouldBe true
+    (value > 0d) shouldBe true
+  }
+
+  // "rolls" should "compute a widget" in {
+  //   val state = Expectation.YAHTZEE
+  //   val roll = Array(1, 1, 1, 1, 1, 0)
+  //   val cache = Array[Float]()
+
+  //   val t0 = System.nanoTime()
+  //   val value = Expectation.rolls(state, roll, 2, cache)
+  //   val t1 = System.nanoTime()
+  //   println("Elapsed time: " + ((t1 - t0) / 1000000d) + "ms")
+  //   (value < 50d) shouldBe true
+  //   (value > 0d) shouldBe true
+  // }
 }

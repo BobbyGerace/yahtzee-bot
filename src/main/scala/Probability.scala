@@ -1,3 +1,5 @@
+package main
+
 object Probability {
     private def factorial(n: Int): Int = {
         if (n < 1) throw new RuntimeException("Factorial less than one")
@@ -11,7 +13,8 @@ object Probability {
     ): Double = {
         val (denom, count) = (diceGroup zip initialGroup).foldLeft((1, 0))(foldRolls)
 
-        factorial(count).toDouble / (denom * Math.pow(6, count)).toDouble 
+        if (count == 0) 1
+        else factorial(count).toDouble / (denom * Math.pow(6, count)).toDouble 
     }
 
     private def foldRolls(prev: (Int, Int), current: (Int, Int)) = {
