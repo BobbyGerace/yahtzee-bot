@@ -2494,3 +2494,17 @@ WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/mai
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Main.scala
 WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+INFO  shutting down Metals
+INFO  started: Metals version 0.8.0 in workspace '/home/bobby/Documents/programming/yahtzee-bot'
+INFO  time: initialize in 4.29s
+INFO  skipping build import with status 'Requested'
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
+May 18, 2020 7:59:06 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Main.scala
+May 18, 2020 7:59:07 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4
+INFO  no build target: using presentation compiler with only scala-library
+May 18, 2020 7:59:59 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16
+WARN  no build target for: /home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala
