@@ -124,9 +124,9 @@ object Expectation {
     val FULL_HOUSE = Math.pow(2, 14).toInt;
     val SMALL_STRAIGHT = Math.pow(2, 15).toInt;
     val LARGE_STRAIGHT = Math.pow(2, 16).toInt;
-    val CHANCE = Math.pow(2, 18).toInt;
-    val YAHTZEE = Math.pow(2, 19).toInt;
-    val YAHTZEE_BONUS = Math.pow(2, 20).toInt;
+    val CHANCE = Math.pow(2, 17).toInt;
+    val YAHTZEE = Math.pow(2, 18).toInt;
+    val YAHTZEE_BONUS = Math.pow(2, 19).toInt;
 
     val categories = Array( 
         UPPER_ONE,

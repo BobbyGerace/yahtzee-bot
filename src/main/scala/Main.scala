@@ -24,7 +24,7 @@ object Main {
   }
 
   def writeCacheToFile(cache: Array[Float]) = {
-    val out = new FileOutputStream("./table")
+    val out = new FileOutputStream("./public/table")
     val buffer = ByteBuffer.allocate(cache.length * 4)
     for (flt <- cache) {
       buffer.putFloat(flt)

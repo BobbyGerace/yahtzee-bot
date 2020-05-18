@@ -1,0 +1,19 @@
+{
+  "name": "yahtzee-bot",
+  "version": "1.0.0",
+  "description": "An implementation of an optimal yahtzee bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BobbyGerace/yahtzee-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BobbyGerace/yahtzee-bot/issues"
+  },
+  "homepage": "https://github.com/BobbyGerace/yahtzee-bot#readme"
+}
