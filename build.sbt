@@ -2,13 +2,36 @@ import Dependencies._
 
 ThisBuild / scalaVersion     := "2.12.8"
 ThisBuild / version          := "0.1.0-SNAPSHOT"
-ThisBuild / organization     := "com.example"
-ThisBuild / organizationName := "example"
 
-lazy val root = (project in file("."))
-  .settings(
+// lazy val root = (project in file("."))
+//   .settings(
+//     name := "yahtzee-bot",
+//     libraryDependencies += scalaTest % Test
+//   )
+
+
+lazy val root = project.in(file(".")).
+  aggregate(yahtzeeBot.js, yahtzeeBot.jvm).
+  settings(
+    publish := {},
+    publishLocal := {},
+  )
+
+lazy val yahtzeeBot = crossProject(JSPlatform, JVMPlatform).in(file(".")).
+  settings(
+    name := "yahtzee-bot",
+    version := "0.1-SNAPSHOT",
+  ).
+  jvmSettings(
+    // Add JVM-specific settings here
     name := "yahtzee-bot",
     libraryDependencies += scalaTest % Test
+  ).
+  jsSettings(
+    // Add JS-specific settings here
+    scalaJSUseMainModuleInitializer := true,
+    scalaJSLinkerConfig ~= { _.withModuleKind(ModuleKind.ESModule) },
+    // libraryDependencies += scalaTest % Test
   )
 
 // Uncomment the following for publishing to Sonatype.

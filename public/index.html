@@ -7,14 +7,10 @@
 
                 const buffer = await result.arrayBuffer();
 
-                const state = 2 ** 20 - 64 - 2 ** 17
+                const state = 2 ** 19 - 64 
 
-                const array = new Array(2 ** 19 + 2 ** 18).fill(0)
-                const dataView = new DataView(buffer);
-                for (let i = 0; i < array.length; i++) {
-                    array[i] = dataView.getFloat32(i * 4)
-                }
-                console.log(array[state])
+                window.dataView = new DataView(buffer);
+                    dataView.getFloat32(state * 4)
             }
 
             test()

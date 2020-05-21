@@ -1,7 +1,0 @@
-[0m[[0m[33mwarn[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala:5:13: imported `Combinations' is permanently hidden by definition of object Combinations in package main[0m
-[0m[[0m[33mwarn[0m] [0m[0mimport main.Combinations[0m
-[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/bobby/Documents/programming/yahtzee-bot/src/main/scala/Expectation.scala:6:13: imported `Probability' is permanently hidden by definition of object Probability in package main[0m
-[0m[[0m[33mwarn[0m] [0m[0mimport main.Probability[0m
-[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
