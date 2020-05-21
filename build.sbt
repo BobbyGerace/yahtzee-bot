@@ -3,13 +3,6 @@ import Dependencies._
 ThisBuild / scalaVersion     := "2.12.8"
 ThisBuild / version          := "0.1.0-SNAPSHOT"
 
-// lazy val root = (project in file("."))
-//   .settings(
-//     name := "yahtzee-bot",
-//     libraryDependencies += scalaTest % Test
-//   )
-
-
 lazy val root = project.in(file(".")).
   aggregate(yahtzeeBot.js, yahtzeeBot.jvm).
   settings(
@@ -30,7 +23,10 @@ lazy val yahtzeeBot = crossProject(JSPlatform, JVMPlatform).in(file(".")).
   jsSettings(
     // Add JS-specific settings here
     scalaJSUseMainModuleInitializer := true,
-    scalaJSLinkerConfig ~= { _.withModuleKind(ModuleKind.ESModule) },
+    // scalaJSLinkerConfig ~= { _.withModuleKind(ModuleKind.ESModule) },
+    artifactPath in fastOptJS in Compile :=
+      file("public/" + (moduleName in fastOptJS).value + ".js")
+
     // libraryDependencies += scalaTest % Test
   )
 

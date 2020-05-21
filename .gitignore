@@ -5,6 +5,7 @@ project/metals.sbt
 
 *.class
 *.log
+*.js.map
 
 # sbt specific
 
