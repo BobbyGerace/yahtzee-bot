@@ -1,29 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type="text/javascript">
-            const test = async () => {
-                const result = await fetch('./table')
-
-                const buffer = await result.arrayBuffer();
-
-                const state = 2 ** 19 - 64 
-
-                const dataView = new DataView(buffer);
-                window.array = [];
-                const length = buffer.byteLength / 4;
-                for (let i = 0; i < length; i++) {
-                    const value = dataView.getFloat32(i * 4);
-                    if (value > 0) {
-                        array[i] = value;
-                    }
-                }
-
-                console.log(array[state])
-            }
-
-            test()
-        </script>
         <script type="text/javascript" src="./yahtzee-bot.js"></script>
     </head>
     <body>

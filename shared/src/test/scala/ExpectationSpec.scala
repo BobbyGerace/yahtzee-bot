@@ -1,7 +1,9 @@
 import org.scalatest._
 import main.Expectation
+import main.ArrayCache
 
 class ExpectationSpec extends FlatSpec with Matchers {
+  val createCache = (arr: Array[Float]) => new ArrayCache(arr)
   val approxEq = (a: Double, b: Double) => Math.abs(a - b) < 0.0000001
 
   "endOfTurn" should "work for last yahtzee" in {
@@ -9,9 +11,9 @@ class ExpectationSpec extends FlatSpec with Matchers {
 
     val roll = Array(0, 0, 5, 0, 0, 0)
 
-    val cache = Array[Float]()
+    val cache = createCache(Array[Float]())
 
-    val (value, category) = new Expectation(state).endOfTurn(roll, cache)
+    val (value, category) = new Expectation(state, cache).endOfTurn(roll)
 
     value shouldEqual 50
     category shouldEqual Expectation.YAHTZEE
@@ -22,9 +24,9 @@ class ExpectationSpec extends FlatSpec with Matchers {
 
     val roll = Array(0, 1, 0, 0, 4, 0)
 
-    val cache = Array[Float]()
+    val cache = createCache(Array[Float]())
 
-    val (value, category) = new Expectation(state).endOfTurn(roll, cache)
+    val (value, category) = new Expectation(state, cache).endOfTurn(roll)
 
     value shouldEqual 55
     category shouldEqual Expectation.UPPER_FIVE
@@ -35,9 +37,9 @@ class ExpectationSpec extends FlatSpec with Matchers {
 
     val roll = Array(0, 0, 0, 0, 5, 0)
 
-    val cache = Array[Float]()
+    val cache = createCache(Array[Float]())
 
-    val (value, category) = new Expectation(state).endOfTurn(roll, cache)
+    val (value, category) = new Expectation(state, cache).endOfTurn(roll)
 
     value shouldEqual 125
     category shouldEqual Expectation.FULL_HOUSE
@@ -48,9 +50,9 @@ class ExpectationSpec extends FlatSpec with Matchers {
 
     val roll = Array(0, 0, 0, 0, 5, 0)
 
-    val cache = Array[Float]()
+    val cache = createCache(Array[Float]())
 
-    val (value, category) = new Expectation(state).endOfTurn(roll, cache)
+    val (value, category) = new Expectation(state, cache).endOfTurn(roll)
 
     value shouldEqual 25
     category shouldEqual Expectation.FULL_HOUSE
@@ -61,9 +63,9 @@ class ExpectationSpec extends FlatSpec with Matchers {
 
     val roll = Array(0, 4, 0, 0, 1, 0)
 
-    val cache = Array[Float]()
+    val cache = createCache(Array[Float]())
 
-    val (value, category) = new Expectation(state).endOfTurn(roll, cache)
+    val (value, category) = new Expectation(state, cache).endOfTurn(roll)
 
     value shouldEqual 8
     category shouldEqual Expectation.UPPER_TWO
@@ -78,11 +80,11 @@ class ExpectationSpec extends FlatSpec with Matchers {
     // actually uses the cache. In this case it should 
     // pick the small straight because it's next state
     // expectation is larger, even if the score is smaller.
-    val cache = Array.fill(100000){0f}
-    cache.update(Expectation.SMALL_STRAIGHT, 20f)
-    cache.update(Expectation.LARGE_STRAIGHT, 40f)
+    val cache = createCache(Array.fill(100000){0f})
+    cache.put(Expectation.SMALL_STRAIGHT, 20f)
+    cache.put(Expectation.LARGE_STRAIGHT, 40f)
 
-    val (value, category) = new Expectation(state).endOfTurn(roll, cache)
+    val (value, category) = new Expectation(state, cache).endOfTurn(roll)
 
     value shouldEqual 70
     category shouldEqual Expectation.SMALL_STRAIGHT
@@ -92,27 +94,27 @@ class ExpectationSpec extends FlatSpec with Matchers {
 
     val state = Expectation.YAHTZEE
     val keeps = Array(0, 0, 0, 0, 0, 0)
-    val cache = Array[Float]()
+    val cache = createCache(Array[Float]())
 
-    val value = new Expectation(state).rolls(keeps, 1, cache)
+    val value = new Expectation(state, cache).rolls(keeps, 1)
     value shouldEqual 50d / Math.pow(6,4)
   }
 
   "rolls" should "work for initial roll" in {
     val state = Expectation.FULL_HOUSE
     val keeps = Array(0, 0, 1, 0, 2, 0)
-    val cache = Array[Float]()
+    val cache = createCache(Array[Float]())
 
-    val value = new Expectation(state).rolls(keeps, 1, cache)
+    val value = new Expectation(state, cache).rolls(keeps, 1)
     value shouldEqual 25d * (1d / 36d + 1d / 18d)
   }
 
   "keeps" should "work for almost yahtzee" in {
     val state = Expectation.YAHTZEE
     val roll = Array(0, 0, 1, 0, 4, 0)
-    val cache = Array[Float]()
+    val cache = createCache(Array[Float]())
 
-    val (value, kept) = new Expectation(state).keeps(roll, 1, cache)
+    val (value, kept) = new Expectation(state, cache).keeps(roll, 1)
     approxEq(value, 50d / 6d) shouldBe true
     kept shouldEqual Array(0, 0, 0, 0, 4, 0)
   }
@@ -120,10 +122,10 @@ class ExpectationSpec extends FlatSpec with Matchers {
   "keep" should "can start from first choice" in {
     val state = Expectation.YAHTZEE
     val roll = Array(1, 1, 1, 1, 1, 0)
-    val cache = Array[Float]()
+    val cache = createCache(Array[Float]())
 
     val t0 = System.nanoTime()
-    val (value, _) = new Expectation(state).keeps(roll, 2, cache)
+    val (value, _) = new Expectation(state, cache).keeps(roll, 2)
     val t1 = System.nanoTime()
     println("Elapsed time: " + ((t1 - t0) / 1000000d) + "ms")
     println("value: " + value)
@@ -134,10 +136,10 @@ class ExpectationSpec extends FlatSpec with Matchers {
   "rolls" should "compute a widget" in {
     val state = Expectation.YAHTZEE
     val roll = Array(0, 0, 0, 0, 0, 0)
-    val cache = Array[Float]()
+    val cache = createCache(Array[Float]())
 
     val t0 = System.nanoTime()
-    val value = new Expectation(state).rolls(roll, 3, cache)
+    val value = new Expectation(state, cache).rolls(roll, 3)
     val t1 = System.nanoTime()
     println("Elapsed time: " + ((t1 - t0) / 1000000d) + "ms")
     (value < 50d) shouldBe true

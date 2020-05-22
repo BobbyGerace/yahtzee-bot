@@ -3,11 +3,11 @@ package main
 import scala.collection.mutable
 import main.Score._
 
-class Expectation(state: Int) {
+class Expectation(state: Int, cache: StateCache) {
     private val rollMemo = mutable.Map[(Int, Int), Double]()
     private val keepMemo = mutable.Map[(Int, Int), (Double, Array[Int])]()
     private val endMemo = mutable.Map[Int, (Double, Int)]()
-    def endOfTurn(roll: Array[Int], cache: Array[Float]): (Double, Int) = {
+    def endOfTurn(roll: Array[Int]): (Double, Int) = {
         if (endMemo.contains(hash(roll))) return endMemo.getOrElse(hash(roll), (0d, 0))
 
         val yahtzeeIdx = roll.indexOf(5)
@@ -40,7 +40,7 @@ class Expectation(state: Int) {
             val upperBonus = if (currentUpperTotal < 63 && nextUpperTotal == 63) 35d else 0d
 
             val addedScore = catScore.toDouble + yahtzeeBonus + upperBonus
-            val nextStateExpectation = if (openCategories.length == 1) 0 else cache(nextState)
+            val nextStateExpectation = if (openCategories.length == 1) 0 else cache.get(nextState)
 
             (addedScore + nextStateExpectation, category)
         }).maxBy(_._1)
@@ -50,14 +50,14 @@ class Expectation(state: Int) {
         result
     }
 
-    def rolls(kept: Array[Int], rollsLeft: Int, cache: Array[Float]): Double = {
+    def rolls(kept: Array[Int], rollsLeft: Int): Double = {
         if (rollMemo.contains((hash(kept), rollsLeft))) return rollMemo.getOrElse((hash(kept), rollsLeft), 0d)
         
         val keptNum = kept.sum
         val result = Combinations.allRolls(5 - keptNum, kept).map(roll => {
             val (expectation, _) = 
-                if (rollsLeft == 1) endOfTurn(roll, cache)
-                else keeps(roll, rollsLeft - 1, cache)
+                if (rollsLeft == 1) endOfTurn(roll)
+                else keeps(roll, rollsLeft - 1)
             val probability = Probability.rollProbability(roll, kept)
             expectation * probability
         }).sum
@@ -67,15 +67,15 @@ class Expectation(state: Int) {
         result
     }
 
-    def keeps(roll: Array[Int], rollsLeft: Int, cache: Array[Float]): (Double, Array[Int]) = {
+    def keeps(roll: Array[Int], rollsLeft: Int): (Double, Array[Int]) = {
         if (keepMemo.contains((hash(roll), rollsLeft))) {
             return keepMemo.getOrElse((hash(roll), rollsLeft), (0d, Array(0, 0, 0, 0, 0, 0)))
         }
 
         val result = Combinations.allKeeps(roll).map(kept => {
             val value = 
-                if (kept.sum == 5) endOfTurn(roll, cache)._1
-                else rolls(kept, rollsLeft, cache)
+                if (kept.sum == 5) endOfTurn(roll)._1
+                else rolls(kept, rollsLeft)
             (value, kept)
         }).maxBy(_._1)
 
@@ -143,17 +143,17 @@ object Expectation {
     );
 
     def calculateStatesUpToNCategories(n: Int = 13): Array[Float] = {
-        val cache = Array.fill(YAHTZEE + YAHTZEE_BONUS){0f}
+        val cache = new ArrayCache(Array.fill(YAHTZEE + YAHTZEE_BONUS){0f})
         
         for (i <- 1 to n) {
             allStatesForNOpenCategories(i).par.foreach(s => { 
-                val value = new Expectation(s).rolls(Array(0, 0, 0, 0, 0, 0), 3, cache)
-                cache.update(s, value.toFloat)
+                val value = new Expectation(s, cache).rolls(Array(0, 0, 0, 0, 0, 0), 3 )
+                cache.put(s, value.toFloat)
             })
             println("Finished calculating states for " + i + " open categories")
         }
 
-        cache
+        cache.toArray
     }
 
     def allStatesForNOpenCategories(n: Int) = {

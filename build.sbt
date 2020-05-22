@@ -25,7 +25,8 @@ lazy val yahtzeeBot = crossProject(JSPlatform, JVMPlatform).in(file(".")).
     scalaJSUseMainModuleInitializer := true,
     // scalaJSLinkerConfig ~= { _.withModuleKind(ModuleKind.ESModule) },
     artifactPath in fastOptJS in Compile :=
-      file("public/" + (moduleName in fastOptJS).value + ".js")
+      file("public/" + (moduleName in fastOptJS).value + ".js"),
+    libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "1.0.0"
 
     // libraryDependencies += scalaTest % Test
   )
