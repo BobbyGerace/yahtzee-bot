@@ -22,7 +22,7 @@ lazy val yahtzeeBot = crossProject(JSPlatform, JVMPlatform).in(file(".")).
   ).
   jsSettings(
     // Add JS-specific settings here
-    scalaJSUseMainModuleInitializer := true,
+    // scalaJSUseMainModuleInitializer := true,
     // scalaJSLinkerConfig ~= { _.withModuleKind(ModuleKind.ESModule) },
     artifactPath in fastOptJS in Compile :=
       file("public/" + (moduleName in fastOptJS).value + ".js"),
