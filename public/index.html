@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="./main.css" />
         <script type="text/javascript">
             const worker = new Worker('worker.js');
 
@@ -19,6 +20,123 @@
         </script>
     </head>
     <body>
-        Hello world!
+        <div id="root">
+            <div class="game-container">
+                <div class="score-card-container">
+                    <table class="score-card can-select">
+                        <tr class="header-row">
+                            <th>Upper Section</th>
+                            <th>How to Score</th>
+                            <th>You</th>
+                            <th>YahtzeeBot</th>
+                        </tr>
+                        <tr class="category-row open">
+                            <td>Aces <span class="die-icon">⚀</span></td>
+                            <td>Count and add only Aces</td>
+                            <td class="score-cell potential">5</td>
+                            <td class="score-cell">0</td>
+                        </tr>
+                        <tr class="category-row">
+                            <td>Twos <span class="die-icon">⚁</span> </td>
+                            <td>Count and add only Twos</td>
+                            <td class="score-cell">4</td>
+                            <td class="score-cell">0</td>
+                        </tr>
+                        <tr class="category-row open">
+                            <td>Threes <span class="die-icon">⚂</span> </td>
+                            <td>Count and add only Threes</td>
+                            <td class="score-cell potential zero">0</td>
+                            <td class="score-cell">0</td>
+                        </tr>
+                        <tr class="category-row open">
+                            <td>Fours <span class="die-icon">⚃</span> </td>
+                            <td>Count and add only Fours</td>
+                            <td class="score-cell potential">16</td>
+                            <td class="score-cell">0</td>
+                        </tr>
+                        <tr class="category-row">
+                            <td>Fives <span class="die-icon">⚄</span></td>
+                            <td>Count and add only Fives</td>
+                            <td class="score-cell">4</td>
+                            <td class="score-cell">0</td>
+                        </tr>
+                        <tr class="category-row">
+                            <td>Sixes<span class="die-icon">⚅</span></td>
+                            <td>Count and add only Sixes</td>
+                            <td class="score-cell">4</td>
+                            <td class="score-cell">0</td>
+                        </tr>
+                        <tr class="category-row bonus">
+                            <th>Bonus</th>
+                            <td>Score 35 if upper total is 63 or over</td>
+                            <td class="score-cell">4</td>
+                            <td class="score-cell">0</td>
+                        </tr>
+                    </table>
+                    <table class="score-card">
+                        <tr class="header-row">
+                            <th colspan="4">Lower Section</th>
+                        </tr>
+                        <tr class="category-row">
+                            <td>3 of a Kind</td>
+                            <td>Add total of all dice</td>
+                            <td class="score-cell">4</td>
+                            <td class="score-cell">0</td>
+                        </tr>
+                        <tr class="category-row">
+                            <td>4 of a Kind</td>
+                            <td>Add total of all dice</td>
+                            <td class="score-cell">4</td>
+                            <td class="score-cell">0</td>
+                        </tr>
+                        <tr class="category-row open">
+                            <td>Full House</td>
+                            <td>Score 25</td>
+                            <td class="score-cell potential">25</td>
+                            <td class="score-cell">0</td>
+                        </tr>
+                        <tr class="category-row">
+                            <td>Small Straight</td>
+                            <td>Score 30 if Sequence of 4</td>
+                            <td class="score-cell">4</td>
+                            <td class="score-cell">0</td>
+                        </tr>
+                        <tr class="category-row">
+                            <td>Large Straight</td>
+                            <td>Score 40 if Sequence of 5</td>
+                            <td class="score-cell">4</td>
+                            <td class="score-cell">0</td>
+                        </tr>
+                        <tr class="category-row">
+                            <td>Yahtzee</td>
+                            <td>Score 50 if 5 of a kind</td>
+                            <td class="score-cell">4</td>
+                            <td class="score-cell">0</td>
+                        </tr>
+                        <tr class="category-row">
+                            <td>Chance</td>
+                            <td>Score total of all dice</td>
+                            <td class="score-cell">4</td>
+                            <td class="score-cell">0</td>
+                        </tr>
+                        <tr class="category-row bonus">
+                            <th>Yahtzee Bonus</th>
+                            <td>Score 100 for each bonus</td>
+                            <td class="score-cell">4</td>
+                            <td class="score-cell">0</td>
+                        </tr>
+                        <tr class="total">
+                            <th>Total</th>
+                            <td></td>
+                            <td>4</td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="controls-container">
+                    
+                </div>
+            </div>
+        </div>
     </body>
 </html>
