@@ -1,345 +1,348 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="./main.css" />
-        <link rel="stylesheet" type="text/css" href="./dice.css" />
-    </head>
-    <body>
-        <div id="root">
-            <div class="game-container">
-                <div class="score-card-container">
-                    <table class="score-card can-select">
-                        <tr class="header-row">
-                            <th>Upper Section</th>
-                            <th>How to Score</th>
-                            <th>You</th>
-                            <th>YahtzeeBot</th>
-                        </tr>
-                        <tr class="category-row open">
-                            <td>Aces <span class="die-icon">⚀</span></td>
-                            <td class="how-to">Count and add only Aces</td>
-                            <td class="score-cell potential">5</td>
-                            <td class="score-cell">0</td>
-                        </tr>
-                        <tr class="category-row">
-                            <td>Twos <span class="die-icon">⚁</span> </td>
-                            <td class="how-to">Count and add only Twos</td>
-                            <td class="score-cell">4</td>
-                            <td class="score-cell">0</td>
-                        </tr>
-                        <tr class="category-row open">
-                            <td>Threes <span class="die-icon">⚂</span> </td>
-                            <td class="how-to">Count and add only Threes</td>
-                            <td class="score-cell potential zero">0</td>
-                            <td class="score-cell">0</td>
-                        </tr>
-                        <tr class="category-row open">
-                            <td>Fours <span class="die-icon">⚃</span> </td>
-                            <td class="how-to">Count and add only Fours</td>
-                            <td class="score-cell potential">16</td>
-                            <td class="score-cell">0</td>
-                        </tr>
-                        <tr class="category-row">
-                            <td>Fives <span class="die-icon">⚄</span></td>
-                            <td class="how-to">Count and add only Fives</td>
-                            <td class="score-cell">4</td>
-                            <td class="score-cell">0</td>
-                        </tr>
-                        <tr class="category-row">
-                            <td>Sixes<span class="die-icon">⚅</span></td>
-                            <td class="how-to">Count and add only Sixes</td>
-                            <td class="score-cell">4</td>
-                            <td class="score-cell">0</td>
-                        </tr>
-                        <tr class="category-row bonus">
-                            <th>Bonus</th>
-                            <td class="how-to">Score 35 if upper total is 63 or over</td>
-                            <td class="score-cell">4</td>
-                            <td class="score-cell">0</td>
-                        </tr>
-                    </table>
-                    <table class="score-card">
-                        <tr class="header-row">
-                            <th colspan="4">Lower Section</th>
-                        </tr>
-                        <tr class="category-row">
-                            <td>3 of a Kind</td>
-                            <td class="how-to">Add total of all dice</td>
-                            <td class="score-cell">4</td>
-                            <td class="score-cell">0</td>
-                        </tr>
-                        <tr class="category-row">
-                            <td>4 of a Kind</td>
-                            <td class="how-to">Add total of all dice</td>
-                            <td class="score-cell">4</td>
-                            <td class="score-cell">0</td>
-                        </tr>
-                        <tr class="category-row open">
-                            <td>Full House</td>
-                            <td class="how-to">Score 25</td>
-                            <td class="score-cell potential">25</td>
-                            <td class="score-cell">0</td>
-                        </tr>
-                        <tr class="category-row">
-                            <td>Small Straight</td>
-                            <td class="how-to">Score 30 if Sequence of 4</td>
-                            <td class="score-cell">4</td>
-                            <td class="score-cell">0</td>
-                        </tr>
-                        <tr class="category-row">
-                            <td>Large Straight</td>
-                            <td class="how-to">Score 40 if Sequence of 5</td>
-                            <td class="score-cell">4</td>
-                            <td class="score-cell">0</td>
-                        </tr>
-                        <tr class="category-row">
-                            <td>Yahtzee</td>
-                            <td class="how-to">Score 50 if 5 of a kind</td>
-                            <td class="score-cell">4</td>
-                            <td class="score-cell">0</td>
-                        </tr>
-                        <tr class="category-row">
-                            <td>Chance</td>
-                            <td class="how-to">Score total of all dice</td>
-                            <td class="score-cell">4</td>
-                            <td class="score-cell">0</td>
-                        </tr>
-                        <tr class="category-row bonus">
-                            <th>Yahtzee Bonus</th>
-                            <td class="how-to">Score 100 for each bonus</td>
-                            <td class="score-cell">4</td>
-                            <td class="score-cell">0</td>
-                        </tr>
-                        <tr class="total">
-                            <th>Total</th>
-                            <td></td>
-                            <td>4</td>
-                            <td>0</td>
-                        </tr>
-                    </table>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+    <link rel="stylesheet" type="text/css" href="./dice.css" />
+</head>
+
+<body>
+    <div id="root">
+        <div class="game-container">
+            <div class="score-card-container">
+                <table class="score-card can-select">
+                    <tr class="header-row">
+                        <th>Upper Section</th>
+                        <th>How to Score</th>
+                        <th>You</th>
+                        <th>YahtzeeBot</th>
+                    </tr>
+                    <tr class="category-row open">
+                        <td>Aces <span class="die-icon">⚀</span></td>
+                        <td class="how-to">Count and add only Aces</td>
+                        <td class="score-cell potential">5</td>
+                        <td class="score-cell">0</td>
+                    </tr>
+                    <tr class="category-row">
+                        <td>Twos <span class="die-icon">⚁</span> </td>
+                        <td class="how-to">Count and add only Twos</td>
+                        <td class="score-cell">4</td>
+                        <td class="score-cell">0</td>
+                    </tr>
+                    <tr class="category-row open">
+                        <td>Threes <span class="die-icon">⚂</span> </td>
+                        <td class="how-to">Count and add only Threes</td>
+                        <td class="score-cell potential zero">0</td>
+                        <td class="score-cell">0</td>
+                    </tr>
+                    <tr class="category-row open">
+                        <td>Fours <span class="die-icon">⚃</span> </td>
+                        <td class="how-to">Count and add only Fours</td>
+                        <td class="score-cell potential">16</td>
+                        <td class="score-cell">0</td>
+                    </tr>
+                    <tr class="category-row">
+                        <td>Fives <span class="die-icon">⚄</span></td>
+                        <td class="how-to">Count and add only Fives</td>
+                        <td class="score-cell">4</td>
+                        <td class="score-cell">0</td>
+                    </tr>
+                    <tr class="category-row">
+                        <td>Sixes<span class="die-icon">⚅</span></td>
+                        <td class="how-to">Count and add only Sixes</td>
+                        <td class="score-cell">4</td>
+                        <td class="score-cell">0</td>
+                    </tr>
+                    <tr class="category-row bonus">
+                        <th>Bonus</th>
+                        <td class="how-to">Score 35 if upper total is 63 or over</td>
+                        <td class="score-cell">4</td>
+                        <td class="score-cell">0</td>
+                    </tr>
+                </table>
+                <table class="score-card">
+                    <tr class="header-row">
+                        <th colspan="4">Lower Section</th>
+                    </tr>
+                    <tr class="category-row">
+                        <td>3 of a Kind</td>
+                        <td class="how-to">Add total of all dice</td>
+                        <td class="score-cell">4</td>
+                        <td class="score-cell">0</td>
+                    </tr>
+                    <tr class="category-row">
+                        <td>4 of a Kind</td>
+                        <td class="how-to">Add total of all dice</td>
+                        <td class="score-cell">4</td>
+                        <td class="score-cell">0</td>
+                    </tr>
+                    <tr class="category-row open">
+                        <td>Full House</td>
+                        <td class="how-to">Score 25</td>
+                        <td class="score-cell potential">25</td>
+                        <td class="score-cell">0</td>
+                    </tr>
+                    <tr class="category-row">
+                        <td>Small Straight</td>
+                        <td class="how-to">Score 30 if Sequence of 4</td>
+                        <td class="score-cell">4</td>
+                        <td class="score-cell">0</td>
+                    </tr>
+                    <tr class="category-row">
+                        <td>Large Straight</td>
+                        <td class="how-to">Score 40 if Sequence of 5</td>
+                        <td class="score-cell">4</td>
+                        <td class="score-cell">0</td>
+                    </tr>
+                    <tr class="category-row">
+                        <td>Yahtzee</td>
+                        <td class="how-to">Score 50 if 5 of a kind</td>
+                        <td class="score-cell">4</td>
+                        <td class="score-cell">0</td>
+                    </tr>
+                    <tr class="category-row">
+                        <td>Chance</td>
+                        <td class="how-to">Score total of all dice</td>
+                        <td class="score-cell">4</td>
+                        <td class="score-cell">0</td>
+                    </tr>
+                    <tr class="category-row bonus">
+                        <th>Yahtzee Bonus</th>
+                        <td class="how-to">Score 100 for each bonus</td>
+                        <td class="score-cell">4</td>
+                        <td class="score-cell">0</td>
+                    </tr>
+                    <tr class="total">
+                        <th>Total</th>
+                        <td></td>
+                        <td>4</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="controls-container">
+
+                <div class="dice">
+                    <div class="die-list even-roll selected" data-roll="1" id="die-1">
+                        <div class="die-item" data-side="1">
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="2">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="3">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="4">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="5">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="6">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="die-list even-roll" data-roll="1" id="die2">
+                        <div class="die-item" data-side="1">
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="2">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="3">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="4">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="5">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="6">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="die-list even-roll" data-roll="1" id="die-3">
+                        <div class="die-item" data-side="1">
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="2">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="3">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="4">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="5">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="6">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="die-list even-roll" data-roll="1" id="die-4">
+                        <div class="die-item" data-side="1">
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="2">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="3">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="4">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="5">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="6">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="die-list even-roll" data-roll="1" id="die-5">
+                        <div class="die-item" data-side="1">
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="2">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="3">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="4">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="5">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="die-item" data-side="6">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="controls-container">
-                    
-                    <div class="dice">
-      <div class="die-list even-roll selected" data-roll="1" id="die-1">
-        <div class="die-item" data-side="1">
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="2">
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="3">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="4">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="5">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="6">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-      </div>
-      <div class="die-list even-roll" data-roll="1" id="die2">
-        <div class="die-item" data-side="1">
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="2">
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="3">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="4">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="5">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="6">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-      </div>
-      <div class="die-list even-roll" data-roll="1" id="die-3">
-        <div class="die-item" data-side="1">
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="2">
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="3">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="4">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="5">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="6">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-      </div>
-      <div class="die-list even-roll" data-roll="1" id="die-4">
-        <div class="die-item" data-side="1">
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="2">
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="3">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="4">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="5">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="6">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-      </div>
-      <div class="die-list even-roll" data-roll="1" id="die-5">
-        <div class="die-item" data-side="1">
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="2">
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="3">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="4">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="5">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div class="die-item" data-side="6">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-      </div>
-    </div>
-    <button type="button" id="roll-button">Roll Dice</button>
-                </div>
+                <button type="button" id="roll-button">Roll Dice</button>
             </div>
         </div>
-        <script type="text/javascript">
-            const worker = new Worker('worker.js');
+    </div>
+    <script type="text/javascript">
+        const worker = new Worker('worker.js');
 
-            worker.onmessage = (e) => {
-                console.log(e.data);
-            }
+        worker.onmessage = (e) => {
+            console.log(e.data);
+        }
 
-            setTimeout(() => {
-                worker.postMessage({
-                    action: 'choose',
-                    state: 2 ** 17 + 2 ** 18,
-                    roll: [0, 0, 0, 0, 0, 5],
-                    rollsLeft: 2
-                });
-            }, 2000)
+        setTimeout(() => {
+            worker.postMessage({
+                action: 'choose',
+                state: 2 ** 17 + 2 ** 18,
+                roll: [0, 0, 0, 0, 0, 5],
+                rollsLeft: 2
+            });
+        }, 2000)
 
-            function rollDice() {
-  const dice = [...document.querySelectorAll(".die-list")];
-  dice.forEach((die, i) => {
-      setTimeout(() => {
+        function rollDice() {
+            const dice = [...document.querySelectorAll(".die-list")];
+            dice.forEach((die, i) => {
+                setTimeout(() => {
 
-    toggleClasses(die);
-    die.dataset.roll = getRandomNumber(1, 6);
-      }, i * 100);
-  });
-}
+                    toggleClasses(die);
+                    die.dataset.roll = getRandomNumber(1, 6);
+                }, i * 100);
+            });
+        }
 
-function toggleClasses(die) {
-  die.classList.toggle("odd-roll");
-  die.classList.toggle("even-roll");
-}
+        function toggleClasses(die) {
+            die.classList.toggle("odd-roll");
+            die.classList.toggle("even-roll");
+        }
 
-function getRandomNumber(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+        function getRandomNumber(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
 
-document.getElementById("roll-button").addEventListener("click", rollDice);
-        </script>
-    </body>
+        document.getElementById("roll-button").addEventListener("click", rollDice);
+    </script>
+</body>
+
 </html>
