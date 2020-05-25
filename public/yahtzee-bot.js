@@ -1602,6 +1602,24 @@ function $m_ju_Arrays$() {
   };
   return $n_ju_Arrays$
 }
+const $p_Ljsmain_Main$__category$lzycompute$1__sr_LazyInt__Lmain_Expectation__AI__I = (function($thiz, category$lzy$1, expectation$1, roll$2) {
+  if ((category$lzy$1 === null)) {
+    throw new $c_jl_NullPointerException()
+  };
+  if (category$lzy$1.sr_LazyInt__f__initialized) {
+    return category$lzy$1.sr_LazyInt__f__value
+  } else {
+    const x1 = expectation$1.endOfTurn__AI__T2(roll$2);
+    if ((x1 === null)) {
+      throw new $c_s_MatchError(x1)
+    };
+    const category = x1._2$mcI$sp__I();
+    return category$lzy$1.initialize__I__I(category)
+  }
+});
+const $p_Ljsmain_Main$__category$1__sr_LazyInt__Lmain_Expectation__AI__I = (function($thiz, category$lzy$1, expectation$1, roll$2) {
+  return (category$lzy$1.sr_LazyInt__f__initialized ? category$lzy$1.sr_LazyInt__f__value : $p_Ljsmain_Main$__category$lzycompute$1__sr_LazyInt__Lmain_Expectation__AI__I($thiz, category$lzy$1, expectation$1, roll$2))
+});
 class $c_Ljsmain_Main$ extends $c_O {
   constructor() {
     super();
@@ -1635,7 +1653,7 @@ class $c_Ljsmain_Main$ extends $c_O {
     const data = msg.data;
     const action = $as_T(data.action);
     if ((action === "choose")) {
-      const $$x2 = $uI(data.state);
+      const $$x2 = this.messageToState__Ljsmain_IncomingMessage__I(data);
       const array = data.roll;
       const len = $uI(array.length);
       const result = $newArrayObject($d_I.getArrayOf(), [len]);
@@ -1723,7 +1741,13 @@ class $c_Ljsmain_Main$ extends $c_O {
     }
   };
   makeChoice__I__AI__I__Ljsmain_DataViewCache__s_util_Either(state, roll, rollsLeft, cache) {
+    const category$lzy = new $c_sr_LazyInt();
     const expectation = new $c_Lmain_Expectation(state, cache);
+    if ((rollsLeft === 0)) {
+      $m_s_package$();
+      const value = $p_Ljsmain_Main$__category$1__sr_LazyInt__Lmain_Expectation__AI__I(this, category$lzy, expectation, roll);
+      return new $c_s_util_Right(value)
+    };
     const x1 = expectation.keeps__AI__I__T2(roll, 2);
     if ((x1 === null)) {
       throw new $c_s_MatchError(x1)
@@ -1750,17 +1774,70 @@ class $c_Ljsmain_Main$ extends $c_O {
       break
     };
     if (($uI($$x1) === 5)) {
-      const x1$2 = expectation.endOfTurn__AI__T2(roll);
-      if ((x1$2 === null)) {
-        throw new $c_s_MatchError(x1$2)
-      };
-      const category = x1$2._2$mcI$sp__I();
       $m_s_package$();
-      return new $c_s_util_Right(category)
+      const value$1 = $p_Ljsmain_Main$__category$1__sr_LazyInt__Lmain_Expectation__AI__I(this, category$lzy, expectation, roll);
+      return new $c_s_util_Right(value$1)
     } else {
       $m_s_package$();
       return new $c_s_util_Left(keeps)
     }
+  };
+  messageToState__Ljsmain_IncomingMessage__I(message) {
+    const yahtzeeBonus = ($uZ(message.yahtzeeBonusAvailable) ? $m_Lmain_Expectation$().Lmain_Expectation$__f_YAHTZEE_BONUS : 0);
+    const array = message.openCategories;
+    const len = $uI(array.length);
+    const result = $newArrayObject($d_T.getArrayOf(), [len]);
+    const len$1 = result.u.length;
+    let i = 0;
+    let j = 0;
+    const x = $uI(array.length);
+    const x$1 = ((x < len$1) ? x : len$1);
+    const that = result.u.length;
+    const end = ((x$1 < that) ? x$1 : that);
+    while ((i < end)) {
+      const $$x1 = j;
+      const index = i;
+      result.set($$x1, array[index]);
+      i = ((1 + i) | 0);
+      j = ((1 + j) | 0)
+    };
+    let elems = null;
+    elems = [];
+    let i$1 = 0;
+    const len$2 = result.u.length;
+    while ((i$1 < len$2)) {
+      const index$1 = i$1;
+      const arg1 = result.get(index$1);
+      const categoryName = $as_T(arg1);
+      const elem = $m_Ljsmain_Main$().stringToCategory__T__I(categoryName);
+      elems.push(elem);
+      i$1 = ((1 + i$1) | 0)
+    };
+    const xs = $makeNativeArrayWrapper($d_I.getArrayOf(), elems);
+    const num = $m_s_math_Numeric$IntIsIntegral$();
+    let start = 0;
+    const end$1 = xs.u.length;
+    let z = 0;
+    let $$x2;
+    while (true) {
+      if ((start !== end$1)) {
+        const temp$start = ((1 + start) | 0);
+        const arg1$1 = z;
+        const idx = start;
+        const arg2 = xs.get(idx);
+        const x$2 = $uI(arg1$1);
+        const temp$z = $f_s_math_Numeric$IntIsIntegral__plus__I__I__I(num, x$2, arg2);
+        start = temp$start;
+        z = temp$z;
+        continue
+      };
+      $$x2 = z;
+      break
+    };
+    const categories = $uI($$x2);
+    const a = $uI(message.upperScore);
+    const upperScore = ((a < 63) ? a : 63);
+    return ((((yahtzeeBonus + categories) | 0) + upperScore) | 0)
   };
   categoryToString__I__T(category) {
     if (($m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_ONE === category)) {
@@ -1791,6 +1868,37 @@ class $c_Ljsmain_Main$ extends $c_O {
       return "chance"
     } else {
       throw new $c_s_MatchError(category)
+    }
+  };
+  stringToCategory__T__I(categoryName) {
+    if ((categoryName === "one")) {
+      return $m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_ONE
+    } else if ((categoryName === "two")) {
+      return $m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_TWO
+    } else if ((categoryName === "three")) {
+      return $m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_THREE
+    } else if ((categoryName === "four")) {
+      return $m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_FOUR
+    } else if ((categoryName === "five")) {
+      return $m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_FIVE
+    } else if ((categoryName === "six")) {
+      return $m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_SIX
+    } else if ((categoryName === "threeOfAKind")) {
+      return $m_Lmain_Expectation$().Lmain_Expectation$__f_THREE_OF_A_KIND
+    } else if ((categoryName === "fourOfAKind")) {
+      return $m_Lmain_Expectation$().Lmain_Expectation$__f_FOUR_OF_A_KIND
+    } else if ((categoryName === "fullHouse")) {
+      return $m_Lmain_Expectation$().Lmain_Expectation$__f_FULL_HOUSE
+    } else if ((categoryName === "smallStraight")) {
+      return $m_Lmain_Expectation$().Lmain_Expectation$__f_SMALL_STRAIGHT
+    } else if ((categoryName === "largeStraight")) {
+      return $m_Lmain_Expectation$().Lmain_Expectation$__f_LARGE_STRAIGHT
+    } else if ((categoryName === "yahtzee")) {
+      return $m_Lmain_Expectation$().Lmain_Expectation$__f_YAHTZEE
+    } else if ((categoryName === "chance")) {
+      return $m_Lmain_Expectation$().Lmain_Expectation$__f_CHANCE
+    } else {
+      throw new $c_s_MatchError(categoryName)
     }
   };
   $js$exported$meth$main__O() {
@@ -6456,6 +6564,30 @@ function $m_s_reflect_ClassTag$() {
   };
   return $n_s_reflect_ClassTag$
 }
+class $c_sr_LazyInt extends $c_O {
+  constructor() {
+    super();
+    this.sr_LazyInt__f__initialized = false;
+    this.sr_LazyInt__f__value = 0
+  };
+  initialize__I__I(value) {
+    this.sr_LazyInt__f__value = value;
+    this.sr_LazyInt__f__initialized = true;
+    return value
+  };
+  toString__T() {
+    return ("LazyInt " + (this.sr_LazyInt__f__initialized ? ("of: " + this.sr_LazyInt__f__value) : "thunk"))
+  };
+}
+const $d_sr_LazyInt = new $TypeData().initClass({
+  sr_LazyInt: 0
+}, false, "scala.runtime.LazyInt", {
+  sr_LazyInt: 1,
+  O: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_sr_LazyInt.prototype.$classData = $d_sr_LazyInt;
 class $c_sr_LazyRef extends $c_O {
   constructor() {
     super();

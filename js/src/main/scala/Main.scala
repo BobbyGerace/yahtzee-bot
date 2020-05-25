@@ -39,7 +39,7 @@ object Main {
         val action = data.action
 
         action match {
-            case "choose" => chooseMove(data.state, data.roll.toArray, data.rollsLeft)
+            case "choose" => chooseMove(messageToState(data), data.roll.toArray, data.rollsLeft)
             case _ =>
                 js.Dynamic.global.postMessage(s"Received: $action")
         }
@@ -64,7 +64,6 @@ object Main {
                     js.Dynamic.literal("message" -> "cacheNotLoaded")
                 )
         }
-
     }
 
     def makeChoice(
@@ -73,16 +72,32 @@ object Main {
         rollsLeft: Int, 
         cache: DataViewCache
     ): Either[Array[Int], Int] = {
+
         val expectation = new Expectation(state, cache)
+
+        lazy val (_, category) = expectation.endOfTurn(roll)
+        if (rollsLeft == 0) return Right(category)
+
         val (_, keeps) = expectation.keeps(roll, 2)
 
         if (keeps.sum == 5) {
-            val (_, category) = expectation.endOfTurn(roll)
             Right(category)
         }
         else {
             Left(keeps)
         }
+    }
+
+    def messageToState(message: IncomingMessage): Int = {
+        val yahtzeeBonus = 
+            if (message.yahtzeeBonusAvailable) Expectation.YAHTZEE_BONUS
+            else 0
+
+        val categories = message.openCategories.toArray.map(stringToCategory).sum
+
+        val upperScore = Math.min(message.upperScore, 63)
+
+        yahtzeeBonus + categories + upperScore
     }
 
     def categoryToString(category: Int): String = {
@@ -102,11 +117,31 @@ object Main {
             case Expectation.CHANCE => "chance"
         }
     }
+
+    def stringToCategory(categoryName: String): Int = {
+        categoryName match {
+            case "one" => Expectation.UPPER_ONE 
+            case "two" => Expectation.UPPER_TWO
+            case "three" => Expectation.UPPER_THREE
+            case "four" => Expectation.UPPER_FOUR
+            case "five" => Expectation.UPPER_FIVE
+            case "six" => Expectation.UPPER_SIX
+            case "threeOfAKind" => Expectation.THREE_OF_A_KIND
+            case "fourOfAKind" => Expectation.FOUR_OF_A_KIND
+            case "fullHouse" => Expectation.FULL_HOUSE
+            case "smallStraight" => Expectation.SMALL_STRAIGHT
+            case "largeStraight" => Expectation.LARGE_STRAIGHT
+            case "yahtzee" => Expectation.YAHTZEE
+            case "chance" => Expectation.CHANCE
+        }
+    }
 }
 
 trait IncomingMessage extends js.Object{
     val action: String
-    val state: Int
     val roll: js.Array[Int]
     val rollsLeft: Int
+    val openCategories: js.Array[String]
+    val upperScore: Int
+    val yahtzeeBonusAvailable: Boolean
 }

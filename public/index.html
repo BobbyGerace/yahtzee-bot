@@ -8,7 +8,26 @@
 
 <body>
     <div id="root">
+
         <div class="game-container">
+
+            <div class="menu-container container">
+                <h1>Yahtzee</h1>
+                <p>
+                    <button class="medium">Play solo</button>
+                </p>
+                <p>
+                    <button class="medium">Play against bot</button>
+                </p>
+                <p>
+                    <a href="https://github.com/BobbyGerace/yahtzee-bot">View source on Github</a>
+                </p>
+            </div>
+
+            <div class="loading-container container">
+                <div class="lds-facebook"><div></div><div></div><div></div></div>
+            </div>
+
             <div class="score-card-container container">
                 <table class="score-card can-select">
                     <tr class="header-row">
@@ -315,9 +334,11 @@
         setTimeout(() => {
             worker.postMessage({
                 action: 'choose',
-                state: 2 ** 17 + 2 ** 18,
-                roll: [0, 0, 0, 0, 0, 5],
-                rollsLeft: 2
+                roll: [0, 0, 5, 0, 0, 0],
+                rollsLeft: 2,
+                openCategories: ['yahtzee', 'five'],
+                upperScore: 62,
+                yahtzeeBonusAvailable: false
             });
         }, 2000)
 

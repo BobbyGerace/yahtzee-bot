@@ -73,8 +73,7 @@ table.score-card.can-select
 
 button {
     align-self: center;
-    background-color:
-    #2e74fc;
+    background-color: hsl(220, 80%, 57%);
     border: none;
     color: #333;
     font-size: 1.25rem;
@@ -88,7 +87,11 @@ button {
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}
 .large {
-    width: 100%;
+    width: 450px;
+}
+
+.medium {
+    width: 275px;
 }
 
 button:hover {
@@ -100,6 +103,37 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.menu-container {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.game-container.playing.loading .score-card-container,
+.game-container.playing.loading .controls-container,
+.game-container .score-card-container,
+.game-container .controls-container {
+    display: none;
+}
+
+.game-container.playing .menu-container {
+    display: none;
+}
+
+.loading-container {
+    display: none;
+    padding-top: 200px;
+    text-align: center;
+}
+
+.game-container.playing.loading .loading-container {
+    display: block;
+}
+
+.game-container.playing .score-card-container,
+.game-container.playing .controls-container{
+    display: block;
 }
 
 .container {
@@ -131,11 +165,45 @@ button:hover {
         border-top: 1px solid black;
     }
 
-    .large {
-        width: 450px;
-    }
-
     .score-card-container {
         padding-bottom: 250px;
     }
+
+}
+
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: hsl(220, 80%, 57%);
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
 }
