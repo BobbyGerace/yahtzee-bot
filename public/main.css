@@ -70,3 +70,72 @@ table.score-card.can-select
     float: right;
     margin-right: 5px;
 }
+
+button {
+    align-self: center;
+    background-color:
+    #2e74fc;
+    border: none;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: 600;
+    justify-self: center;
+    padding: 0.9rem 2rem;
+    color: white;
+    outline: 0;
+}
+
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+.large {
+    width: 100%;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin: 25px;
+    width: 450px;
+}
+
+.controls-container {
+    text-align: center;
+}
+
+.turn-message {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.help-text {
+    color: #555;
+    font-style: italic;
+}
+
+@media (max-width: 1000px) {
+    .controls-container {
+        position: fixed;
+        background-color:
+        white;
+        width: 100%;
+        bottom: 0;
+        border-top: 1px solid black;
+    }
+
+    .large {
+        width: 450px;
+    }
+
+    .score-card-container {
+        padding-bottom: 250px;
+    }
+}
