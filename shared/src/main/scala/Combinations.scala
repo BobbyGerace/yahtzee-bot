@@ -5,6 +5,16 @@ import scala.collection.mutable
 object Combinations {
     val emptyDiceGroup = Array(0, 0, 0, 0, 0, 0)
 
+    /**
+      * Calculate all possible ways to choose k from n,
+      * represented as an array of Ints
+      * 
+      * e.g., choose(3, 2) = [[0, 1], [0, 2], [1,2]]
+      *
+      * @param n
+      * @param k
+      * @param startIdx
+      */
     def choose(n: Int, k: Int, startIdx: Int = 0): List[List[Int]] = {
         if (k == 0) List.empty
         else if (k == 1) (0 to n - 1).toList.map(i => List(i + startIdx))
@@ -13,6 +23,16 @@ object Combinations {
         )
     }
 
+    /**
+      * All possible unique roll combinations starting from some initial
+      * set of dice. A DiceGroup here is acutally a list of counts.
+      * 
+      * e.g., two 3's and three 5's looks like [0, 0, 2, 0, 3, 0]
+      *
+      * @param n
+      * @param initial
+      * @param startIdx
+      */
     def allRolls(n: Int, initial: Array[Int] = emptyDiceGroup, startIdx: Int = 0): mutable.ArrayBuffer[Array[Int]] = {
         val result = mutable.ArrayBuffer[Array[Int]]()
         def putValues(n: Int, initial: Array[Int], startIdx: Int): Unit = {
@@ -30,6 +50,13 @@ object Combinations {
         result
     }
 
+    /**
+      * All possible ways to choose dice to keep given some roll.
+      *
+      * @param initial
+      * @param startIdx
+      * @return
+      */
     def allKeeps(initial: Array[Int], startIdx: Int = 0): mutable.ArrayBuffer[Array[Int]] = {
         val result = mutable.ArrayBuffer[Array[Int]]()
         def putValues(initial: Array[Int], startIdx: Int): Unit = {

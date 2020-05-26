@@ -10,6 +10,12 @@ import main.Expectation
 
 import scala.concurrent.ExecutionContext.Implicits.global
 
+/**
+  * This code runs in a web worker. It loads the table file,
+  * and calculates the optimal strategy for various game states.
+  * It also provides a nice API so that the client doesn't have
+  * to worry about calculating the cache index from state.
+  */
 @JSExportTopLevel("Main")
 object Main {
     var cache: Option[DataViewCache] = None

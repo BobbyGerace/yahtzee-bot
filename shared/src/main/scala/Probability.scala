@@ -4,6 +4,14 @@ object Probability {
     private def factorial(n: Int): Int = 
         if (n == 1) 1 else n * factorial(n - 1)
 
+    /**
+      * Calculates the probabilty of a roll, given some initial
+      * set of kept dice
+      *
+      * @param diceGroup
+      * @param initialGroup
+      * @return
+      */
     def rollProbability(
         diceGroup: Array[Int], 
         initialGroup: Array[Int] = Combinations.emptyDiceGroup

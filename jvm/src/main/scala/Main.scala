@@ -3,6 +3,11 @@ import java.nio.ByteBuffer
 import java.io.FileOutputStream
 
 object Main {
+
+  /**
+    * Compute the expectations values for all starting states,
+    * and write the resulting cache out to a file.
+    */
   def main(args: Array[String]): Unit = {
     val t0 = System.currentTimeMillis()
     val cache = Expectation.calculateStatesUpToNCategories(13)
@@ -12,6 +17,7 @@ object Main {
     val filtered = cache.filter(_ > 0)
     println("Length: " + filtered.length)
 
+    // Should be ~254.59
     val startState = Expectation.categories.sum
     println("Start Expectation: " + cache(startState))
 

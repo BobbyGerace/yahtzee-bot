@@ -3,10 +3,34 @@ package main
 import scala.collection.mutable
 import main.Score._
 
+/**
+  * Calculates expectation values for various game states. An expectation
+  * value is the average increase in points that can be expected for the
+  * rest of the game, given that the optimal strategy is used. Each instance
+  * of this class takes a state, which represents the state of the game at 
+  * the beginning of the turn, and a cache, which contains cached expectation
+  * values for other such states. The state is represented as an Int, with the
+  * first bit representing whether yahtzee bonus is available, the next 13
+  * bits represent whether each of the thirteen categories is open (1) or 
+  * used (0). The last 6 bits represent the total score of the upper section,
+  * capped at 63. This integer also serves as the index of the corresponding
+  * expectation value in the cache.
+  *
+  * @param state
+  * @param cache
+  */
 class Expectation(state: Int, cache: StateCache) {
     private val rollMemo = mutable.Map[(Int, Int), Double]()
     private val keepMemo = mutable.Map[(Int, Int), (Double, Array[Int])]()
     private val endMemo = mutable.Map[Int, (Double, Int)]()
+
+    /**
+      * Calculates the expectation value for a given roll at the end of a
+      * turn. Returns a tuple of the value, and the chosen category.
+      *
+      * @param roll
+      * @return
+      */
     def endOfTurn(roll: Array[Int]): (Double, Int) = {
         if (endMemo.contains(hash(roll))) return endMemo.getOrElse(hash(roll), (0d, 0))
 
@@ -50,6 +74,14 @@ class Expectation(state: Int, cache: StateCache) {
         result
     }
 
+    /**
+      * Gets the expectation value of a given set of kept dice by calculating
+      * the average of all possible rolls.
+      *
+      * @param kept
+      * @param rollsLeft
+      * @return
+      */
     def rolls(kept: Array[Int], rollsLeft: Int): Double = {
         if (rollMemo.contains((hash(kept), rollsLeft))) return rollMemo.getOrElse((hash(kept), rollsLeft), 0d)
         
@@ -67,6 +99,14 @@ class Expectation(state: Int, cache: StateCache) {
         result
     }
 
+    /**
+      * Gets the expectation value of the best possible set of kept dice.
+      * Returns a tuple of the value, and which dice to keep
+      *
+      * @param roll
+      * @param rollsLeft
+      * @return
+      */
     def keeps(roll: Array[Int], rollsLeft: Int): (Double, Array[Int]) = {
         if (keepMemo.contains((hash(roll), rollsLeft))) {
             return keepMemo.getOrElse((hash(roll), rollsLeft), (0d, Array(0, 0, 0, 0, 0, 0)))
@@ -84,6 +124,7 @@ class Expectation(state: Int, cache: StateCache) {
         result
     }
     
+    // Generate a unique number for a set of dice, used to memoize values
     private def hash(arr: Array[Int]) = {
         arr(0) * 1 + arr(1) * 10 + arr(2) * 100 + arr(3) * 1000 + arr(4) * 10000 + arr(5) * 100000
     }
@@ -91,6 +132,14 @@ class Expectation(state: Int, cache: StateCache) {
     private def upperScoreFromState(state: Int) = state & 63
     private def categoryIsUpper(c: Int) = c >= Expectation.UPPER_ONE && c <= Expectation.UPPER_SIX
 
+    /**
+      * Get a score for a given roll, without accounting for bonuses
+      *
+      * @param category
+      * @param roll
+      * @param useJoker
+      * @return
+      */
     private def score(category: Int, roll: Array[Int], useJoker: Boolean) = {
         category match {
             case Expectation.UPPER_ONE => upperCategory(1)(roll)
@@ -142,6 +191,15 @@ object Expectation {
         YAHTZEE,
     );
 
+    /**
+      * Calculate expectation value for all possible states,
+      * starting with fewer open categories (so they're available
+      * in the cache for earlier game states). Use n = 13 to calculate
+      * all states
+      *
+      * @param n
+      * @return
+      */
     def calculateStatesUpToNCategories(n: Int = 13): Array[Float] = {
         val cache = new ArrayCache(Array.fill(YAHTZEE + YAHTZEE_BONUS){0f})
         
@@ -168,6 +226,16 @@ object Expectation {
         all.filter(stateIsPossible)
     }
 
+    /**
+      * Some states aren't possible: Yahtzee bonuses if
+      * yahtzee category is open, or certain upper scores
+      * in combination with certain open categories. 
+      * Figure that out here so that we don't have to waste
+      * time calculating them
+      *
+      * @param state
+      * @return
+      */
     def stateIsPossible(state: Int) = {
         val nums = for (
             s <- 1 to 6 
