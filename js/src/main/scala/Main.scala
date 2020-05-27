@@ -24,7 +24,7 @@ object Main {
     def main(): Unit = { 
         js.Dynamic.global.onmessage = onMessage _
 
-        val response = Fetch.fetch("./table").toFuture
+        val response = Fetch.fetch("/table").toFuture
 
         val arrayBuffer = response flatMap { res => 
             res.arrayBuffer().toFuture

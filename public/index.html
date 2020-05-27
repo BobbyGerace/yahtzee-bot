@@ -9,15 +9,18 @@
 <body>
     <div id="root">
 
-        <div class="game-container">
+        <div id="game-container" class="loading">
 
             <div class="menu-container container">
                 <h1>Yahtzee</h1>
                 <p>
-                    <button class="medium">Play solo</button>
+                    <button class="medium" id="play-solo">Play solo</button>
                 </p>
                 <p>
-                    <button class="medium">Play against bot</button>
+                    <button class="medium" id="play-bot">Play against bot</button>
+                </p>
+                <p>
+                    <button class="medium" id="bot-only">Bot only</button>
                 </p>
                 <p>
                     <a href="https://github.com/BobbyGerace/yahtzee-bot">View source on Github</a>
@@ -28,114 +31,115 @@
                 <div class="lds-facebook"><div></div><div></div><div></div></div>
             </div>
 
-            <div class="score-card-container container">
+            <div id="score-card-container" class="container">
                 <table class="score-card can-select">
                     <tr class="header-row">
                         <th>Upper Section</th>
                         <th>How to Score</th>
-                        <th>You</th>
-                        <th>YahtzeeBot</th>
+                        <th id="player-0-name"></th>
+                        <th id="player-1-name"></th>
                     </tr>
-                    <tr class="category-row open">
+                    <tr id="upper-one" class="category-row">
                         <td>Aces <span class="die-icon">⚀</span></td>
                         <td class="how-to">Count and add only Aces</td>
-                        <td class="score-cell potential">5</td>
-                        <td class="score-cell">0</td>
+                        <td class="score-cell" data-player="0">0</td>
+                        <td class="score-cell" data-player="1">0</td>
                     </tr>
-                    <tr class="category-row">
+                    <tr id="upper-two" class="category-row">
                         <td>Twos <span class="die-icon">⚁</span> </td>
                         <td class="how-to">Count and add only Twos</td>
-                        <td class="score-cell">4</td>
-                        <td class="score-cell">0</td>
+                        <td class="score-cell" data-player="0">0</td>
+                        <td class="score-cell" data-player="1">0</td>
                     </tr>
-                    <tr class="category-row open">
+                    <tr id="upper-three" class="category-row">
                         <td>Threes <span class="die-icon">⚂</span> </td>
                         <td class="how-to">Count and add only Threes</td>
-                        <td class="score-cell potential zero">0</td>
-                        <td class="score-cell">0</td>
+                        <td class="score-cell" data-player="0">0</td>
+                        <td class="score-cell" data-player="1">0</td>
                     </tr>
-                    <tr class="category-row open">
+                    <tr id="upper-four" class="category-row">
                         <td>Fours <span class="die-icon">⚃</span> </td>
                         <td class="how-to">Count and add only Fours</td>
-                        <td class="score-cell potential">16</td>
-                        <td class="score-cell">0</td>
+                        <td class="score-cell" data-player="0">0</td>
+                        <td class="score-cell" data-player="1">0</td>
                     </tr>
-                    <tr class="category-row">
+                    <tr id="upper-five" class="category-row">
                         <td>Fives <span class="die-icon">⚄</span></td>
                         <td class="how-to">Count and add only Fives</td>
-                        <td class="score-cell">4</td>
-                        <td class="score-cell">0</td>
+                        <td class="score-cell" data-player="0">0</td>
+                        <td class="score-cell" data-player="1">0</td>
                     </tr>
-                    <tr class="category-row">
+                    <tr id="upper-six" class="category-row">
                         <td>Sixes<span class="die-icon">⚅</span></td>
                         <td class="how-to">Count and add only Sixes</td>
-                        <td class="score-cell">4</td>
-                        <td class="score-cell">0</td>
+                        <td class="score-cell" data-player="0">0</td>
+                        <td class="score-cell" data-player="1">0</td>
                     </tr>
-                    <tr class="category-row bonus">
+                    <tr id="upper-bonus" class="category-row bonus">
                         <th>Bonus</th>
                         <td class="how-to">Score 35 if upper total is 63 or over</td>
-                        <td class="score-cell">4</td>
-                        <td class="score-cell">0</td>
+                        <td id="player-0-upper-bonus">0</td>
+                        <td id="player-1-upper-bonus">0</td>
                     </tr>
                 </table>
+
                 <table class="score-card">
                     <tr class="header-row">
                         <th colspan="4">Lower Section</th>
                     </tr>
-                    <tr class="category-row">
+                    <tr id="3-of-a-kind" class="category-row">
                         <td>3 of a Kind</td>
                         <td class="how-to">Add total of all dice</td>
-                        <td class="score-cell">4</td>
-                        <td class="score-cell">0</td>
+                        <td class="score-cell" data-player="0">0</td>
+                        <td class="score-cell" data-player="1">0</td>
                     </tr>
-                    <tr class="category-row">
+                    <tr id="4-of-a-kind" class="category-row">
                         <td>4 of a Kind</td>
                         <td class="how-to">Add total of all dice</td>
-                        <td class="score-cell">4</td>
-                        <td class="score-cell">0</td>
+                        <td class="score-cell" data-player="0">0</td>
+                        <td class="score-cell" data-player="1">0</td>
                     </tr>
-                    <tr class="category-row open">
+                    <tr id="full-house" class="category-row">
                         <td>Full House</td>
                         <td class="how-to">Score 25</td>
-                        <td class="score-cell potential">25</td>
-                        <td class="score-cell">0</td>
+                        <td class="score-cell" data-player="0">0</td>
+                        <td class="score-cell" data-player="1">0</td>
                     </tr>
-                    <tr class="category-row">
+                    <tr id="small-straight" class="category-row">
                         <td>Small Straight</td>
                         <td class="how-to">Score 30 if Sequence of 4</td>
-                        <td class="score-cell">4</td>
-                        <td class="score-cell">0</td>
+                        <td class="score-cell" data-player="0">0</td>
+                        <td class="score-cell" data-player="1">0</td>
                     </tr>
-                    <tr class="category-row">
+                    <tr id="large-straight" class="category-row">
                         <td>Large Straight</td>
                         <td class="how-to">Score 40 if Sequence of 5</td>
-                        <td class="score-cell">4</td>
-                        <td class="score-cell">0</td>
+                        <td class="score-cell" data-player="0">0</td>
+                        <td class="score-cell" data-player="1">0</td>
                     </tr>
-                    <tr class="category-row">
+                    <tr id="yahtzee" class="category-row">
                         <td>Yahtzee</td>
                         <td class="how-to">Score 50 if 5 of a kind</td>
-                        <td class="score-cell">4</td>
-                        <td class="score-cell">0</td>
+                        <td class="score-cell" data-player="0">0</td>
+                        <td class="score-cell" data-player="1">0</td>
                     </tr>
-                    <tr class="category-row">
+                    <tr id="chance" class="category-row">
                         <td>Chance</td>
                         <td class="how-to">Score total of all dice</td>
-                        <td class="score-cell">4</td>
-                        <td class="score-cell">0</td>
+                        <td class="score-cell" data-player="0">0</td>
+                        <td class="score-cell" data-player="1">0</td>
                     </tr>
-                    <tr class="category-row bonus">
+                    <tr id="yahtzee-bonus" class="category-row bonus">
                         <th>Yahtzee Bonus</th>
                         <td class="how-to">Score 100 for each bonus</td>
-                        <td class="score-cell">4</td>
-                        <td class="score-cell">0</td>
+                        <td id="player-0-yahtzee-bonus">0</td>
+                        <td id="player-1-yahtzee-bonus">0</td>
                     </tr>
-                    <tr class="total">
+                    <tr id="total-score" class="total">
                         <th>Total</th>
                         <td></td>
-                        <td>4</td>
-                        <td>0</td>
+                        <td id="player-0-total">0</td>
+                        <td id="player-1-total">0</td>
                     </tr>
                 </table>
             </div>
@@ -143,6 +147,7 @@
             <div class="controls-container container">
                 <p class="turn-message">Your turn</p>
                 <p class="help-text">Select dice to keep and roll again, or click a category to score<p>
+
                 <div class="dice">
                     <div class="die-list even-roll selected" data-roll="1" id="die-1">
                         <div class="die-item" data-side="1">
@@ -320,51 +325,11 @@
                         </div>
                     </div>
                 </div>
+
                 <button type="button" id="roll-button" class="large">Roll Dice</button>
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        const worker = new Worker('worker.js');
-
-        worker.onmessage = (e) => {
-            console.log(e.data);
-        }
-
-        setTimeout(() => {
-            worker.postMessage({
-                action: 'choose',
-                roll: [0, 0, 5, 0, 0, 0],
-                rollsLeft: 2,
-                openCategories: ['yahtzee', 'five'],
-                upperScore: 62,
-                yahtzeeBonusAvailable: false
-            });
-        }, 2000)
-
-        function rollDice() {
-            const dice = [...document.querySelectorAll(".die-list")];
-            dice.forEach((die, i) => {
-                setTimeout(() => {
-
-                    toggleClasses(die);
-                    die.dataset.roll = getRandomNumber(1, 6);
-                }, i * 100);
-            });
-        }
-
-        function toggleClasses(die) {
-            die.classList.toggle("odd-roll");
-            die.classList.toggle("even-roll");
-        }
-
-        function getRandomNumber(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-
-        document.getElementById("roll-button").addEventListener("click", rollDice);
-    </script>
+    <script type="module" src="js/app.js"></script> 
 </body>
 </html>

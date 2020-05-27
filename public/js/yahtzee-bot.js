@@ -1630,7 +1630,7 @@ class $c_Ljsmain_Main$ extends $c_O {
   main__V() {
     onmessage = $m_sjs_js_Any$().fromFunction1__F1__sjs_js_Function1(new $c_sjsr_AnonFunction1(((this$1) => ((msg$2) => $m_Ljsmain_Main$().onMessage__Lorg_scalajs_dom_raw_MessageEvent__O(msg$2)))(this)));
     const $$x1 = $m_sjs_js_Thenable$ThenableOps$();
-    const p = fetch("./table");
+    const p = fetch("/table");
     const response = $$x1.toFuture$extension__sjs_js_Thenable__s_concurrent_Future(p);
     const f = new $c_sjsr_AnonFunction1(((this$2$1) => ((res$2) => {
       const $$x2 = $m_sjs_js_Thenable$ThenableOps$();

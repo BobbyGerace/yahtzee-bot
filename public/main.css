@@ -99,7 +99,7 @@ button:hover {
     opacity: 0.9;
 }
 
-.game-container {
+#game-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,14 +110,14 @@ button:hover {
     text-align: center;
 }
 
-.game-container.playing.loading .score-card-container,
-.game-container.playing.loading .controls-container,
-.game-container .score-card-container,
-.game-container .controls-container {
+#game-container.playing.loading #score-card-container,
+#game-container.playing.loading .controls-container,
+#game-container #score-card-container,
+#game-container .controls-container {
     display: none;
 }
 
-.game-container.playing .menu-container {
+#game-container.playing .menu-container {
     display: none;
 }
 
@@ -127,13 +127,22 @@ button:hover {
     text-align: center;
 }
 
-.game-container.playing.loading .loading-container {
+#game-container.playing.loading .loading-container {
     display: block;
 }
 
-.game-container.playing .score-card-container,
-.game-container.playing .controls-container{
+#game-container.playing #score-card-container,
+#game-container.playing .controls-container{
     display: block;
+}
+
+#score-card-container.single-player th:nth-child(4),
+#score-card-container.single-player td:nth-child(4) {
+    display: none;
+}
+
+#score-card-container.single-player .score-cell {
+    width: 200px;
 }
 
 .container {
@@ -165,7 +174,7 @@ button:hover {
         border-top: 1px solid black;
     }
 
-    .score-card-container {
+    #score-card-container {
         padding-bottom: 250px;
     }
 
