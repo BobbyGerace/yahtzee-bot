@@ -154,12 +154,12 @@ button:hover {
     text-align: center;
 }
 
-.turn-message {
+#turn-message {
     font-weight: 600;
     font-size: 20px;
 }
 
-.help-text {
+#help-text {
     color: #555;
     font-style: italic;
 }
@@ -215,4 +215,14 @@ button:hover {
     top: 24px;
     height: 32px;
   }
+}
+
+.hidden {
+    display: none;
+}
+
+button:disabled {
+    background-color: #dddddd;
+    color: #777777;
+    cursor: not-allowed;
 }

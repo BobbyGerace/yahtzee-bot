@@ -1,38 +1,22 @@
 import { qs } from './helpers.js';
 import ScoreCardView from './score-card-view.js';
+import PlayerControlsView from './player-controls-view.js';
 
 export default class MainView {
     constructor() {
         this.scoreCardView = new ScoreCardView();
+        this.playerControlsView = new PlayerControlsView();
 
         this.soloButton = qs('#play-solo');
         this.playBotButton = qs('#play-bot');
         this.botOnlyButton = qs('#bot-only');
         this.gameContainer = qs('#game-container');
 
-        function rollDice() {
-            const dice = [...document.querySelectorAll(".die-list")];
-            dice.forEach((die, i) => {
-                setTimeout(() => {
-
-                    toggleClasses(die);
-                    die.dataset.roll = getRandomNumber(1, 6);
-                }, i * 100);
-            });
-        }
-
-        function toggleClasses(die) {
-            die.classList.toggle("odd-roll");
-            die.classList.toggle("even-roll");
-        }
-
-        function getRandomNumber(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-
-        document.getElementById("roll-button").addEventListener("click", rollDice);
+        this.bindKeepToggle = this.playerControlsView.bindKeepToggle.bind(this.playerControlsView);
+        this.bindRollClicked = this.playerControlsView.bindRollClicked.bind(this.playerControlsView);
+        this.setDiceKept = this.playerControlsView.setDiceKept.bind(this.playerControlsView);
+        this.rollReceived = this.playerControlsView.rollReceived.bind(this.playerControlsView);
+        this.setTurn = this.playerControlsView.setTurn.bind(this.playerControlsView);
     }
 
     bindGameSelect(fn) {
@@ -50,5 +34,6 @@ export default class MainView {
     startGame(players) {
         this.gameContainer.classList.add('playing');
         this.scoreCardView.initialize(players);
+        this.playerControlsView.setTurn(players[0].isBot, 3);
     }
 }

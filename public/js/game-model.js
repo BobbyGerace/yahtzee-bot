@@ -1,6 +1,6 @@
 import Player from './player.js';
 
-const initialDice = [-1, -1, -1, -1, -1];
+const initialDice = [1, 1, 1, 1, 1];
 const initialKeeps = [false, false, false, false, false];
 
 export default class Game {
@@ -13,5 +13,24 @@ export default class Game {
         this.rollsLeft = 3;
 
         this.currentPlayerIdx = 0;
+    }
+
+    toggleKeep(diceIndex) {
+        this.keeps[diceIndex] = !this.keeps[diceIndex];
+    }
+
+    rollDice() {
+        this.dice = this.dice.map((die, i) => {
+            if (this.keeps[i]) return die;
+            else return Math.ceil(Math.random() * 6);
+        });
+
+        this.rollsLeft--;
+
+        this.keeps = initialKeeps;
+    }
+
+    currentPlayer() {
+        return this.players[this.currentPlayerIdx];
     }
 }
