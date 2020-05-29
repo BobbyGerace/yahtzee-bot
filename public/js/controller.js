@@ -8,6 +8,7 @@ export default class Controller {
         view.bindGameSelect(this.onGameSelect.bind(this));
         view.bindKeepToggle(this.onKeepToggle.bind(this));
         view.bindRollClicked(this.onRollClicked.bind(this));
+        view.bindCategorySelect(this.onCategorySelect.bind(this));
     }
 
     onCacheLoaded() {
@@ -46,7 +47,31 @@ export default class Controller {
                 this.model.currentPlayerIdx,
                 this.model.rollsLeft
             )
+        }
+    }
 
+    onCategorySelect(category) {
+        const playerIdx = this.model.currentPlayerIdx;
+        const player = this.model.currentPlayer();
+        const score = this.model.selectCategory(category);
+        if (score !== null) {
+            this.view.setTurn(
+                this.model.currentPlayer().isBot,
+                this.model.rollsLeft
+            );
+
+            this.view.categorySelected(category, playerIdx, score);
+
+            this.view.updateTotals(
+                playerIdx,
+                player.getTotal(),
+                player.getUpperBonus(),
+                player.getYahtzeeBonus(),
+            );
+
+            this.view.rollReceived(this.model.dice);
+            // TODO - Bug - select turn while keeps selected
+            // TODO - No roll on dice reset. maybe blank face?
         }
     }
 }

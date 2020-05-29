@@ -19,6 +19,9 @@ export default class MainView {
         this.setTurn = this.playerControlsView.setTurn.bind(this.playerControlsView);
 
         this.setCategories = this.scoreCardView.setCategories.bind(this.scoreCardView);
+        this.bindCategorySelect = this.scoreCardView.bindCategorySelect.bind(this.scoreCardView);
+        this.categorySelected = this.scoreCardView.categorySelected.bind(this.scoreCardView);
+        this.updateTotals = this.scoreCardView.updateTotals.bind(this.scoreCardView);
     }
 
     bindGameSelect(fn) {

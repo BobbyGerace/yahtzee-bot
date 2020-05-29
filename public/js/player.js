@@ -61,6 +61,8 @@ export default class Player {
 
         this.categories[categoryName] = score;
         if (hasYahtzeeBonus) this.yahtzeeBonuses++;
+
+        return score;
     }
 
     getUpperBonus() {
@@ -72,6 +74,14 @@ export default class Player {
 
     getYahtzeeBonus() {
         return this.yahtzeeBonuses * 100;
+    }
+
+    getTotal() {
+        const catSum = Object.values(this.categories)
+            .filter(c => c !== null)
+            .reduce((a, b) => a + b, 0);
+
+        return catSum + this.getUpperBonus() + this.getYahtzeeBonus();
     }
 
     diceToCounts(dice) {
@@ -86,12 +96,12 @@ export default class Player {
     }
 
     threeOfAKind(diceCounts, useJoker = false) {
-        if (diceCounts.some(d => d >= 3) || useJoker) return this.diceSum(dice);
+        if (diceCounts.some(d => d >= 3) || useJoker) return this.diceSum(diceCounts);
         else return 0;
     }
 
     fourOfAKind(diceCounts, useJoker = false) {
-        if (diceCounts.some(d => d >= 4) || useJoker) return this.diceSum(dice);
+        if (diceCounts.some(d => d >= 4) || useJoker) return this.diceSum(diceCounts);
         else return 0;
     }
 

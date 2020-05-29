@@ -37,18 +37,32 @@ export default class ScoreCardView {
         qs('#player-1-total').textContent = '0';
     }
 
+    clearCategories() {
+        // unset all potential scores
+        document.querySelectorAll('.potential')
+            .forEach(node => {
+                node.textContent = '';
+                node.classList.remove('zero');
+            });
+
+        document.querySelectorAll('.open')
+            .forEach(node => {
+                node.classList.remove('open');
+            });
+    }
+
     setCategories(potentialScores, playerIdx, rollsLeft) {
         if (rollsLeft > 2) return;
 
-        // unset all potential scores
-        document.querySelectorAll('.potential')
-            .forEach(node => node.textContent = '');
+        this.clearCategories();
 
         potentialScores.forEach(([category, score]) => {
             const row = qs(`[data-category="${category}"]`);
             const cell = row.querySelector(`[data-player="${playerIdx}"]`);
 
             row.classList.add('open');
+
+            if (score === 0) cell.classList.add('zero');
 
             cell.textContent = score;
         });
@@ -58,5 +72,28 @@ export default class ScoreCardView {
         if (!player) return '';
         else if (player.isBot) return 'Bot Score';
         else return 'Your Score';
+    }
+
+    bindCategorySelect(fn) {
+        document.querySelectorAll('[data-category]').forEach(row => {
+            row.addEventListener('click', () => fn(row.dataset.category));
+        });
+    }
+
+    categorySelected(category, playerIdx, score) {
+        const row = qs(`[data-category="${category}"`);
+        const cell = row.querySelector(`[data-player="${playerIdx}"]`)
+
+        this.clearCategories();
+
+        cell.classList.remove('zero');
+        cell.classList.remove('potential');
+        cell.textContent = score;
+    }
+
+    updateTotals(playerIdx, total, upperBonus, yahtzeeBonus) {
+        qs(`#player-${playerIdx}-total`).textContent = total;
+        qs(`#player-${playerIdx}-upper-bonus`).textContent = upperBonus;
+        qs(`#player-${playerIdx}-yahtzee-bonus`).textContent = yahtzeeBonus;
     }
 }
