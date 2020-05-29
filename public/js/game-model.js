@@ -33,4 +33,14 @@ export default class Game {
     currentPlayer() {
         return this.players[this.currentPlayerIdx];
     }
+
+    getPotentialScores() {
+        const player = this.currentPlayer();
+        return Object.entries(this.currentPlayer().categories)
+            .filter(([_, score]) => score === null)
+            .map(([category]) => [
+                category, 
+                player.getCategoryScore(category, this.dice)
+            ]);
+    }
 }

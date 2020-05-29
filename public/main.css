@@ -37,11 +37,11 @@ table.score-card td:nth-child(4) {
     width: 100px;
 }
 
-table.score-card.can-select tr.category-row.open {
+table.score-card tr.category-row.open {
     cursor: pointer;
 }
 
-table.score-card.can-select tr.category-row.open:hover {
+table.score-card tr.category-row.open:hover {
     background-color: #ecf9ff;
 }
 
@@ -50,7 +50,7 @@ td.score-cell.potential {
     user-select: none;
 }
 
-table.score-card.can-select 
+table.score-card
     tr.category-row.open:hover 
     td.score-cell.potential {
     color: #00994d;
@@ -58,7 +58,7 @@ table.score-card.can-select
     user-select: auto;
 }
 
-table.score-card.can-select 
+table.score-card
     tr.category-row.open:hover 
     td.score-cell.potential.zero {
     color: red;

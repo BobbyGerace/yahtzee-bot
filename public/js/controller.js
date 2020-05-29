@@ -33,11 +33,20 @@ export default class Controller {
     onRollClicked() {
         if (this.model.rollsLeft > 0) {
             this.model.rollDice();
+
             this.view.rollReceived(this.model.dice);
+
             this.view.setTurn(
                 this.model.currentPlayer().isBot,
                 this.model.rollsLeft
             );
+
+            this.view.setCategories(
+                this.model.getPotentialScores(),
+                this.model.currentPlayerIdx,
+                this.model.rollsLeft
+            )
+
         }
     }
 }

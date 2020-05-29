@@ -37,6 +37,23 @@ export default class ScoreCardView {
         qs('#player-1-total').textContent = '0';
     }
 
+    setCategories(potentialScores, playerIdx, rollsLeft) {
+        if (rollsLeft > 2) return;
+
+        // unset all potential scores
+        document.querySelectorAll('.potential')
+            .forEach(node => node.textContent = '');
+
+        potentialScores.forEach(([category, score]) => {
+            const row = qs(`[data-category="${category}"]`);
+            const cell = row.querySelector(`[data-player="${playerIdx}"]`);
+
+            row.classList.add('open');
+
+            cell.textContent = score;
+        });
+    }
+
     getPlayerTitle(player) {
         if (!player) return '';
         else if (player.isBot) return 'Bot Score';
