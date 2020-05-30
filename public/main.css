@@ -226,3 +226,19 @@ button:disabled {
     color: #777777;
     cursor: not-allowed;
 }
+
+#game-over-message,
+.score-message {
+    display: none;
+}
+
+.game-over .score-message {
+    display: block;
+}
+
+.game-over #roll-button,
+.game-over .dice,
+.game-over #help-text,
+.game-over #action-message {
+    display: none;
+}

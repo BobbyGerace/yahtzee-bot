@@ -3,6 +3,10 @@ import { diceToCounts } from './helpers.js';
 const noop = () => {};
 const BOT_DELAY = 1000;
 
+// TODO - Clean up bot timing stuff
+// TODO - Add game over view
+// TODO - Add back button
+
 export default class Bot {
     constructor() {
         this.latestRoll = [1, 1, 1, 1, 1];
@@ -98,7 +102,7 @@ export default class Bot {
 
         // If it's empty then roll
         if (typeof thisDie === 'undefined') {
-            setTimeout(() => this.rollRequestedListener(true), BOT_DELAY);
+            this.rollRequestedListener(true);
             return;
         }
 

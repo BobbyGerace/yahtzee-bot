@@ -84,7 +84,16 @@ export default class Controller {
             );
         }
 
-        this.maybeBotChoose();
+        if (this.model.isGameOver()) {
+            const players = this.model.players.map(p => ({
+                isBot: p.isBot,
+                score: p.getTotal(),
+            }));
+            this.view.setGameOver(players);
+        }
+        else {
+            this.maybeBotChoose();
+        }
     }
 
     onActionMessage(msg) {

@@ -59,4 +59,8 @@ export default class Game {
             return score;
         }
     }
+
+    isGameOver() {
+        return this.getPotentialScores().length === 0;
+    }
 }

@@ -18,6 +18,7 @@ export default class MainView {
         this.rollReceived = this.playerControlsView.rollReceived.bind(this.playerControlsView);
         this.setTurn = this.playerControlsView.setTurn.bind(this.playerControlsView);
         this.setActionMessage = this.playerControlsView.setActionMessage.bind(this.playerControlsView);
+        this.setGameOver = this.playerControlsView.setGameOver.bind(this.playerControlsView);
 
         this.setCategories = this.scoreCardView.setCategories.bind(this.scoreCardView);
         this.bindCategorySelect = this.scoreCardView.bindCategorySelect.bind(this.scoreCardView);

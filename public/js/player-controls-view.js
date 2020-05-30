@@ -10,7 +10,7 @@ export default class PlayerControlsView {
     }
 
     setTurn(isBot, rollsLeft) {
-        this.setActionMessage('');
+        this.reset();
 
         if (rollsLeft === 3) {
             // Unkeep dice
@@ -34,6 +34,32 @@ export default class PlayerControlsView {
             rollsLeft === 1 ? '1 roll left' : `${rollsLeft} rolls left`
 
         this.turnMessage.textContent = `${turnTitle} - ${rollsMessage}`;
+    }
+
+    setGameOver(players) {
+        qs('.controls-container').classList.add('game-over');
+
+        let gameMessage;
+        if (players.length === 1) {
+            gameMessage = 'Game over';
+        }
+        else if (players[0].score === players[1].score) {
+            gameMessage = 'Tie';
+        }
+        else if (players[0].score > players[1].score === players[0].isBot) {
+            gameMessage = 'Bot wins';
+        }
+        else {
+            gameMessage = 'You win';
+        }
+        
+        this.turnMessage.textContent = gameMessage;
+
+        players.forEach((p, i) => {
+            const possessive = p.isBot ? 'Bot\'s' : 'Your';
+
+            qs(`#p${i}-score`).textContent = `${possessive} score: ${p.score}`
+        });
     }
 
     setHelpText(isBot, rollsLeft) {
@@ -109,5 +135,12 @@ export default class PlayerControlsView {
         }
         this.actionMessage.textContent = msg;
     }
-}
 
+    reset() {
+        qs('.controls-container').classList.remove('game-over');
+        this.setActionMessage('');
+        document.querySelectorAll('.score-message').forEach((s) => {
+            s.textContent = '';
+        });
+    }
+}

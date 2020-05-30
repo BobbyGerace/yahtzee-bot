@@ -19,14 +19,13 @@ export default class Player {
             'largeStraight': null,
             'yahtzee': null,
             'chance': null,
-        }
+        };
         this.yahtzeeBonuses = 0;
     }
 
     getCategoryScore(categoryName, dice) {
         const counts = diceToCounts(dice);
         const hasUnusableYahtzee = counts.some(isYahtzee) && this.categories.yahtzee !== null;
-        const hasYahtzeeBonus = hasUnusableYahtzee && this.categories.yahtzee === 50;
         const canUseJoker = hasUnusableYahtzee && this.categories[counts.findIndex(isYahtzee)];
 
         switch(categoryName) {
