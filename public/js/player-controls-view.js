@@ -6,9 +6,22 @@ export default class PlayerControlsView {
         this.rollButton = qs('#roll-button');
         this.turnMessage = qs('#turn-message');
         this.helpText = qs('#help-text');
+        this.actionMessage = qs('#action-message');
     }
 
     setTurn(isBot, rollsLeft) {
+        this.setActionMessage('');
+
+        if (rollsLeft === 3) {
+            // Unkeep dice
+            document.querySelectorAll('.selected')
+                .forEach(node => {
+                    node.classList.remove('selected');
+                });
+
+            this.dieNodes.forEach(d => d.classList.add('blank'));
+        }
+
         this.setTitle(isBot, rollsLeft);
         this.setHelpText(isBot, rollsLeft);
         this.setButton(isBot, rollsLeft);
@@ -36,9 +49,11 @@ export default class PlayerControlsView {
     setButton(isBot, rollsLeft) {
         if (isBot) {
             this.rollButton.classList.add('hidden');
+            this.actionMessage.classList.remove('hidden');
         }
         else {
             this.rollButton.classList.remove('hidden');
+            this.actionMessage.classList.add('hidden');
         }
 
         if (rollsLeft < 1) this.rollButton.disabled = true;
@@ -75,6 +90,7 @@ export default class PlayerControlsView {
 
             setTimeout(() => {
                 die.dataset.roll = dieValue;
+                die.classList.remove('blank');
                 die.classList.toggle("odd-roll");
                 die.classList.toggle("even-roll");
             }, diceToRoll * 100);
@@ -86,4 +102,12 @@ export default class PlayerControlsView {
     bindRollClicked(fn) {
         this.rollButton.addEventListener('click', () => fn());
     }
+
+    setActionMessage(msg) {
+        if (!msg) {
+            msg = '\u00a0'; // nbsp
+        }
+        this.actionMessage.textContent = msg;
+    }
 }
+

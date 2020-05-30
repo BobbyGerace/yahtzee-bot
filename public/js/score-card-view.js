@@ -45,6 +45,7 @@ export default class ScoreCardView {
                 node.classList.remove('zero');
             });
 
+        // remove open categories
         document.querySelectorAll('.open')
             .forEach(node => {
                 node.classList.remove('open');

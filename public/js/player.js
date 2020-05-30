@@ -1,3 +1,7 @@
+import { diceToCounts } from './helpers.js';
+
+const isYahtzee = d => d === 5;
+
 export default class Player {
     constructor(isBot) {
         this.isBot = isBot;
@@ -20,10 +24,10 @@ export default class Player {
     }
 
     getCategoryScore(categoryName, dice) {
-        const counts = this.diceToCounts(dice);
-        const isYahtzee = d => d === 5;
-        const hasYahtzeeBonus = counts.some(isYahtzee) && this.categories.yahtzee !== null;
-        const canUseJoker = hasYahtzeeBonus && this.categories[counts.findIndex(isYahtzee)];
+        const counts = diceToCounts(dice);
+        const hasUnusableYahtzee = counts.some(isYahtzee) && this.categories.yahtzee !== null;
+        const hasYahtzeeBonus = hasUnusableYahtzee && this.categories.yahtzee === 50;
+        const canUseJoker = hasUnusableYahtzee && this.categories[counts.findIndex(isYahtzee)];
 
         switch(categoryName) {
             case '1':
@@ -53,9 +57,9 @@ export default class Player {
     }
 
     scoreCategory(categoryName, dice) {
-        const counts = this.diceToCounts(dice);
-        const isYahtzee = d => d === 5;
-        const hasYahtzeeBonus = counts.some(isYahtzee) && this.categories.yahtzee !== null;
+        const counts = diceToCounts(dice);
+        const hasUnusableYahtzee = counts.some(isYahtzee) && this.categories.yahtzee !== null;
+        const hasYahtzeeBonus = hasUnusableYahtzee && this.categories.yahtzee === 50;
 
         const score = this.getCategoryScore(categoryName, dice);
 
@@ -65,11 +69,13 @@ export default class Player {
         return score;
     }
 
-    getUpperBonus() {
-        const total = ['1', '2', '3', '4', '5', '6']
+    getUpperTotal() {
+        return ['1', '2', '3', '4', '5', '6']
             .reduce((total, category) => this.categories[category] + total, 0);
-        
-        return total >= 63 ? 35 : 0;
+    }
+
+    getUpperBonus() {
+        return this.getUpperTotal() >= 63 ? 35 : 0;
     }
 
     getYahtzeeBonus() {
@@ -82,13 +88,6 @@ export default class Player {
             .reduce((a, b) => a + b, 0);
 
         return catSum + this.getUpperBonus() + this.getYahtzeeBonus();
-    }
-
-    diceToCounts(dice) {
-        return dice.reduce((counts, die) => {
-            counts[die - 1]++;
-            return counts
-        }, [0, 0, 0, 0, 0, 0]);
     }
 
     upperCategory(n, diceCounts) {
@@ -140,8 +139,6 @@ export default class Player {
     }
 
     canUseJoker(counts) {
-        const isYahtzee = d => d === 5;
-
         return (
             counts.some(isYahtzee) && 
             this.categories.yahtzee !== null && 

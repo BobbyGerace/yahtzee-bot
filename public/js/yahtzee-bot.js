@@ -1841,17 +1841,17 @@ class $c_Ljsmain_Main$ extends $c_O {
   };
   categoryToString__I__T(category) {
     if (($m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_ONE === category)) {
-      return "one"
+      return "1"
     } else if (($m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_TWO === category)) {
-      return "two"
+      return "2"
     } else if (($m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_THREE === category)) {
-      return "three"
+      return "3"
     } else if (($m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_FOUR === category)) {
-      return "four"
+      return "4"
     } else if (($m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_FIVE === category)) {
-      return "five"
+      return "5"
     } else if (($m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_SIX === category)) {
-      return "six"
+      return "6"
     } else if (($m_Lmain_Expectation$().Lmain_Expectation$__f_THREE_OF_A_KIND === category)) {
       return "threeOfAKind"
     } else if (($m_Lmain_Expectation$().Lmain_Expectation$__f_FOUR_OF_A_KIND === category)) {
@@ -1871,17 +1871,17 @@ class $c_Ljsmain_Main$ extends $c_O {
     }
   };
   stringToCategory__T__I(categoryName) {
-    if ((categoryName === "one")) {
+    if ((categoryName === "1")) {
       return $m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_ONE
-    } else if ((categoryName === "two")) {
+    } else if ((categoryName === "2")) {
       return $m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_TWO
-    } else if ((categoryName === "three")) {
+    } else if ((categoryName === "3")) {
       return $m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_THREE
-    } else if ((categoryName === "four")) {
+    } else if ((categoryName === "4")) {
       return $m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_FOUR
-    } else if ((categoryName === "five")) {
+    } else if ((categoryName === "5")) {
       return $m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_FIVE
-    } else if ((categoryName === "six")) {
+    } else if ((categoryName === "6")) {
       return $m_Lmain_Expectation$().Lmain_Expectation$__f_UPPER_SIX
     } else if ((categoryName === "threeOfAKind")) {
       return $m_Lmain_Expectation$().Lmain_Expectation$__f_THREE_OF_A_KIND

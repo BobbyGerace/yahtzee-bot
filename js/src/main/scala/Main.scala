@@ -108,12 +108,12 @@ object Main {
 
     def categoryToString(category: Int): String = {
         category match {
-            case Expectation.UPPER_ONE => "one"
-            case Expectation.UPPER_TWO => "two"
-            case Expectation.UPPER_THREE => "three"
-            case Expectation.UPPER_FOUR => "four"
-            case Expectation.UPPER_FIVE => "five"
-            case Expectation.UPPER_SIX => "six"
+            case Expectation.UPPER_ONE => "1"
+            case Expectation.UPPER_TWO => "2"
+            case Expectation.UPPER_THREE => "3"
+            case Expectation.UPPER_FOUR => "4"
+            case Expectation.UPPER_FIVE => "5"
+            case Expectation.UPPER_SIX => "6"
             case Expectation.THREE_OF_A_KIND => "threeOfAKind"
             case Expectation.FOUR_OF_A_KIND => "fourOfAKind"
             case Expectation.FULL_HOUSE => "fullHouse"
@@ -126,12 +126,12 @@ object Main {
 
     def stringToCategory(categoryName: String): Int = {
         categoryName match {
-            case "one" => Expectation.UPPER_ONE 
-            case "two" => Expectation.UPPER_TWO
-            case "three" => Expectation.UPPER_THREE
-            case "four" => Expectation.UPPER_FOUR
-            case "five" => Expectation.UPPER_FIVE
-            case "six" => Expectation.UPPER_SIX
+            case "1" => Expectation.UPPER_ONE 
+            case "2" => Expectation.UPPER_TWO
+            case "3" => Expectation.UPPER_THREE
+            case "4" => Expectation.UPPER_FOUR
+            case "5" => Expectation.UPPER_FIVE
+            case "6" => Expectation.UPPER_SIX
             case "threeOfAKind" => Expectation.THREE_OF_A_KIND
             case "fourOfAKind" => Expectation.FOUR_OF_A_KIND
             case "fullHouse" => Expectation.FULL_HOUSE

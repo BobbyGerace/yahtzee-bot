@@ -169,6 +169,10 @@
   grid-area: nine;
 }
 
+.blank .dot {
+  visibility: hidden;
+}
+
 .selected .die-item {
     background-color: hsl(220, 97%, 80%);
 }

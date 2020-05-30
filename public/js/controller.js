@@ -5,6 +5,11 @@ export default class Controller {
         this.bot = bot;
 
         bot.bindCacheLoaded(this.onCacheLoaded.bind(this));
+        bot.bindKeepToggle(this.onKeepToggle.bind(this));
+        bot.bindRollClicked(this.onRollClicked.bind(this));
+        bot.bindCategorySelect(this.onCategorySelect.bind(this));
+        bot.bindActionMessage(this.onActionMessage.bind(this));
+
         view.bindGameSelect(this.onGameSelect.bind(this));
         view.bindKeepToggle(this.onKeepToggle.bind(this));
         view.bindRollClicked(this.onRollClicked.bind(this));
@@ -18,20 +23,25 @@ export default class Controller {
     onGameSelect(players) {
         this.model.initialize(players);
         this.view.startGame(this.model.players);
+
+        this.maybeBotChoose();
     }
 
-    onKeepToggle(diceIndex) {
+    onKeepToggle(diceIndex, fromBot) {
+        if (!this.playerIsAllowed(fromBot)) return;
+
         if (
             this.model.rollsLeft < 3 
             && this.model.rollsLeft > 0 
-            && !this.model.currentPlayer().isBot
         ) {
             this.model.toggleKeep(diceIndex);
             this.view.setDiceKept(diceIndex, this.model.keeps[diceIndex]);
         }
     }
 
-    onRollClicked() {
+    onRollClicked(fromBot) {
+        if (!this.playerIsAllowed(fromBot)) return;
+
         if (this.model.rollsLeft > 0) {
             this.model.rollDice();
 
@@ -46,11 +56,15 @@ export default class Controller {
                 this.model.getPotentialScores(),
                 this.model.currentPlayerIdx,
                 this.model.rollsLeft
-            )
+            );
         }
+
+        this.maybeBotChoose();
     }
 
-    onCategorySelect(category) {
+    onCategorySelect(category, fromBot) {
+        if (!this.playerIsAllowed(fromBot)) return;
+
         const playerIdx = this.model.currentPlayerIdx;
         const player = this.model.currentPlayer();
         const score = this.model.selectCategory(category);
@@ -68,10 +82,22 @@ export default class Controller {
                 player.getUpperBonus(),
                 player.getYahtzeeBonus(),
             );
-
-            this.view.rollReceived(this.model.dice);
-            // TODO - Bug - select turn while keeps selected
-            // TODO - No roll on dice reset. maybe blank face?
         }
+
+        this.maybeBotChoose();
+    }
+
+    onActionMessage(msg) {
+        this.view.setActionMessage(msg);
+    }
+
+    maybeBotChoose() {
+        if (this.model.currentPlayer().isBot) {
+            this.bot.makeChoice(this.model);
+        }
+    }
+
+    playerIsAllowed(fromBot = false) {
+        return this.model.currentPlayer().isBot === fromBot;
     }
 }
