@@ -86,11 +86,17 @@ export default class Controller {
         }
 
         if (this.model.isGameOver()) {
-            const players = this.model.players.map(p => ({
-                isBot: p.isBot,
-                score: p.getTotal(),
-            }));
-            this.view.setGameOver(players);
+            let prevTotal = window.totalScore || 0;
+            window.totalScore = prevTotal + this.model.players[0].getTotal();
+            let prevCount = window.count || 0;
+            window.count = prevCount + 1;
+            console.log('Average score over ' + window.count + ' games: ' + (window.totalScore / window.count));
+            this.onGameSelect([true]);
+            // const players = this.model.players.map(p => ({
+            //     isBot: p.isBot,
+            //     score: p.getTotal(),
+            // }));
+            // this.view.setGameOver(players);
         }
         else {
             this.maybeBotChoose();
