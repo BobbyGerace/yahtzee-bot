@@ -10,11 +10,14 @@ const BOT_DELAY = 1000;
 export default class Bot {
     constructor() {
         this.latestRoll = [1, 1, 1, 1, 1];
+        this.latestKeeps = [false, false, false, false, false];
         this.cacheLoadedListener = noop;
         this.rollRequestedListener = noop;
         this.categorySelectedListener = noop;
         this.keepToggleListener = noop;
         this.actionMessageListener = noop;
+
+        this.targetActionTime = 0;
 
         this.worker = new Worker('js/worker.js');
 
@@ -47,6 +50,8 @@ export default class Bot {
 
     makeChoice(model) {
         this.latestRoll = model.dice;
+        this.latestKeeps = model.keeps;
+        this.targetActionTime = Date.now() + this.getBotDelay() * 2;
 
         const roll = diceToCounts(model.dice);
         const rollsLeft = model.rollsLeft;
@@ -55,20 +60,20 @@ export default class Bot {
         const upperScore = model.currentPlayer().getUpperTotal();
         const yahtzeeBonusAvailable = model.currentPlayer().categories.yahtzee === 50;
 
-        setTimeout(() => {
-            if (rollsLeft === 3) return this.rollRequestedListener(true);
+        if (rollsLeft === 3) return this.atTargetTime(
+            () => this.rollRequestedListener(true)
+        );
 
-            const message = {
-                action: 'choose',
-                roll,
-                rollsLeft,
-                openCategories,
-                upperScore,
-                yahtzeeBonusAvailable,
-            };
+        const message = {
+            action: 'choose',
+            roll,
+            rollsLeft,
+            openCategories,
+            upperScore,
+            yahtzeeBonusAvailable,
+        };
 
-            this.worker.postMessage(message);
-        }, BOT_DELAY)
+        this.worker.postMessage(message);
     }
 
     handleMessage(data) {
@@ -77,7 +82,9 @@ export default class Bot {
                 this.cacheLoadedListener();
                 break;
             case 'keep':
-                this.doKeeps(data.value);
+                this.atTargetTime(() => {
+                    this.doKeeps(data.value);
+                });
                 const dice = sumKeeps(data.value)
                 const word = dice === 1 ? 'die' : 'dice';
                 this.actionMessageListener(`Keeping ${dice} ${word}`)
@@ -86,9 +93,9 @@ export default class Bot {
                 this.actionMessageListener(
                     `Choosing category: ${mapCategoryToLabel(data.value)}`
                 );
-                setTimeout(() => {
+                this.atTargetTime(() => {
                     this.categorySelectedListener(data.value, true);
-                }, BOT_DELAY * 2)
+                });
                 break;
             default:
                 break;
@@ -103,21 +110,44 @@ export default class Bot {
         // If it's empty then roll
         if (typeof thisDie === 'undefined') {
             this.rollRequestedListener(true);
-            return;
         }
 
-        if (keeps[keepIdx] > 0) {
+        // If we need to keep it and it's not already kept
+        else if (keeps[keepIdx] > 0 && !this.latestKeeps[idx]) {
             this.keepToggleListener(idx, true);
             const newKeeps = [...keeps];
             newKeeps[keepIdx]--;
 
-            // If we want to keep this one then wait a second
-            setTimeout(() => this.doKeeps(newKeeps, rest, idx + 1), BOT_DELAY);
+            setTimeout(() => this.doKeeps(newKeeps, rest, idx + 1), this.getBotDelay());
+        }
+        // If we need to keep it and it's already kept
+        else if (keeps[keepIdx] > 0 && this.latestKeeps[idx]) {
+            const newKeeps = [...keeps];
+            newKeeps[keepIdx]--;
+            this.doKeeps(newKeeps, rest, idx + 1);
+        }
+        // If we don't need to keep it and it is already kept
+        else if (keeps[keepIdx] === 0 && this.latestKeeps[idx]) {
+            this.keepToggleListener(idx, true);
+            const newKeeps = [...keeps];
+
+            setTimeout(() => this.doKeeps(newKeeps, rest, idx + 1), this.getBotDelay());
             return
         }
-
         // Otherwise proceed immeditely to the next one
-        this.doKeeps(keeps, rest, idx + 1);
+        else this.doKeeps(keeps, rest, idx + 1);
+    }
+
+    atTargetTime(fn) {
+        const now = Date.now();
+        if (now > this.targetActionTime) fn();
+        else setTimeout(fn, this.targetActionTime - now);
+    }
+
+    getBotDelay() {
+        const multiplier = document.querySelector('#bot-speed').value;
+ 
+        return isNaN(multiplier) ? BOT_DELAY : BOT_DELAY * multiplier;
     }
 }
 

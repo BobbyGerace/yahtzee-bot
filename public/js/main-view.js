@@ -22,6 +22,7 @@ export default class MainView {
 
         this.setCategories = this.scoreCardView.setCategories.bind(this.scoreCardView);
         this.bindCategorySelect = this.scoreCardView.bindCategorySelect.bind(this.scoreCardView);
+        this.bindBackToMenu = this.scoreCardView.bindBackToMenu.bind(this.scoreCardView);
         this.categorySelected = this.scoreCardView.categorySelected.bind(this.scoreCardView);
         this.updateTotals = this.scoreCardView.updateTotals.bind(this.scoreCardView);
     }
@@ -42,5 +43,9 @@ export default class MainView {
         this.gameContainer.classList.add('playing');
         this.scoreCardView.initialize(players);
         this.playerControlsView.setTurn(players[0].isBot, 3);
+    }
+
+    stopGame() {
+        this.gameContainer.classList.remove('playing');
     }
 }

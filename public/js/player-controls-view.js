@@ -110,7 +110,6 @@ export default class PlayerControlsView {
             const die = this.dieNodes[i];
 
             if (die.classList.contains('selected')) {
-                die.classList.remove('selected');
                 return; 
             }
 

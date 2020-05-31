@@ -81,6 +81,10 @@ export default class ScoreCardView {
         });
     }
 
+    bindBackToMenu(fn) {
+        qs('#back-to-menu').addEventListener('click', () => fn());
+    }
+
     categorySelected(category, playerIdx, score) {
         const row = qs(`[data-category="${category}"`);
         const cell = row.querySelector(`[data-player="${playerIdx}"]`)

@@ -13,6 +13,8 @@ export default class Game {
         this.rollsLeft = 3;
 
         this.currentPlayerIdx = 0;
+
+        this.gameStopped = false;
     }
 
     toggleKeep(diceIndex) {
@@ -26,8 +28,6 @@ export default class Game {
         });
 
         this.rollsLeft--;
-
-        this.keeps = initialKeeps();
     }
 
     currentPlayer() {
@@ -62,5 +62,9 @@ export default class Game {
 
     isGameOver() {
         return this.getPotentialScores().length === 0;
+    }
+
+    stopGame() {
+        this.gameStopped = true;
     }
 }

@@ -14,6 +14,7 @@ export default class Controller {
         view.bindKeepToggle(this.onKeepToggle.bind(this));
         view.bindRollClicked(this.onRollClicked.bind(this));
         view.bindCategorySelect(this.onCategorySelect.bind(this));
+        view.bindBackToMenu(this.onBackToMenu.bind(this));
     }
 
     onCacheLoaded() {
@@ -107,6 +108,12 @@ export default class Controller {
     }
 
     playerIsAllowed(fromBot = false) {
-        return this.model.currentPlayer().isBot === fromBot;
+        return !this.model.gameStopped 
+            && this.model.currentPlayer().isBot === fromBot;
+    }
+
+    onBackToMenu() {
+        this.model.stopGame();
+        this.view.stopGame();
     }
 }

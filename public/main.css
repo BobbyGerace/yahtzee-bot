@@ -242,3 +242,7 @@ button:disabled {
 .game-over #action-message {
     display: none;
 }
+
+.score-card-links {
+    text-align: center;
+}
