@@ -50,6 +50,10 @@ td.score-cell.potential {
     user-select: none;
 }
 
+td.score-cell {
+    line-height: 1;
+}
+
 table.score-card
     tr.category-row.open:hover 
     td.score-cell.potential {
@@ -246,3 +250,4 @@ button:disabled {
 .score-card-links {
     text-align: center;
 }
+

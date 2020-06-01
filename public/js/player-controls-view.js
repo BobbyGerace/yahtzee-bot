@@ -104,12 +104,13 @@ export default class PlayerControlsView {
         }
     }
 
-    rollReceived(newRoll) {
+    rollReceived(newRoll, resetKeeps = false) {
         let diceToRoll = 0;
         newRoll.forEach((dieValue, i) => {
             const die = this.dieNodes[i];
 
             if (die.classList.contains('selected')) {
+                if (resetKeeps) die.classList.remove('selected');
                 return; 
             }
 

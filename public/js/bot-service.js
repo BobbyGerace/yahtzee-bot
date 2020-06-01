@@ -1,11 +1,11 @@
 import { diceToCounts } from './helpers.js';
 
 const noop = () => {};
-const BOT_DELAY = 1000;
 
-// TODO - Clean up bot timing stuff
-// TODO - Add game over view
-// TODO - Add back button
+// Allow adjustment from the console
+console.log('Adjust window.BOT_DELAY to change bot speed');
+window.BOT_DELAY = 1000;
+
 
 export default class Bot {
     constructor() {
@@ -51,7 +51,7 @@ export default class Bot {
     makeChoice(model) {
         this.latestRoll = model.dice;
         this.latestKeeps = model.keeps;
-        this.targetActionTime = Date.now() + this.getBotDelay() * 2;
+        this.targetActionTime = Date.now() + this.getBotDelay();
 
         const roll = diceToCounts(model.dice);
         const rollsLeft = model.rollsLeft;
@@ -84,7 +84,7 @@ export default class Bot {
             case 'keep':
                 this.atTargetTime(() => {
                     this.doKeeps(data.value);
-                });
+                }, 3);
                 const dice = sumKeeps(data.value)
                 const word = dice === 1 ? 'die' : 'dice';
                 this.actionMessageListener(`Keeping ${dice} ${word}`)
@@ -95,7 +95,7 @@ export default class Bot {
                 );
                 this.atTargetTime(() => {
                     this.categorySelectedListener(data.value, true);
-                });
+                }, 3);
                 break;
             default:
                 break;
@@ -109,7 +109,7 @@ export default class Bot {
 
         // If it's empty then roll
         if (typeof thisDie === 'undefined') {
-            this.rollRequestedListener(true);
+            setTimeout(() => this.rollRequestedListener(true), this.getBotDelay() * 0.7);
         }
 
         // If we need to keep it and it's not already kept
@@ -118,7 +118,7 @@ export default class Bot {
             const newKeeps = [...keeps];
             newKeeps[keepIdx]--;
 
-            setTimeout(() => this.doKeeps(newKeeps, rest, idx + 1), this.getBotDelay());
+            setTimeout(() => this.doKeeps(newKeeps, rest, idx + 1), this.getBotDelay() * 0.7);
         }
         // If we need to keep it and it's already kept
         else if (keeps[keepIdx] > 0 && this.latestKeeps[idx]) {
@@ -131,23 +131,21 @@ export default class Bot {
             this.keepToggleListener(idx, true);
             const newKeeps = [...keeps];
 
-            setTimeout(() => this.doKeeps(newKeeps, rest, idx + 1), this.getBotDelay());
+            setTimeout(() => this.doKeeps(newKeeps, rest, idx + 1), this.getBotDelay() * 0.7);
             return
         }
         // Otherwise proceed immeditely to the next one
         else this.doKeeps(keeps, rest, idx + 1);
     }
 
-    atTargetTime(fn) {
+    atTargetTime(fn, multiplier = 1) {
         const now = Date.now();
-        if (now > this.targetActionTime) fn();
-        else setTimeout(fn, this.targetActionTime - now);
+        const timeOut = Math.max(this.targetActionTime - now, 0);
+        setTimeout(fn, timeOut * multiplier);
     }
 
     getBotDelay() {
-        const multiplier = document.querySelector('#bot-speed').value;
- 
-        return isNaN(multiplier) ? BOT_DELAY : BOT_DELAY * multiplier;
+        return window.BOT_DELAY;
     }
 }
 
