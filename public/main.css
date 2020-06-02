@@ -45,6 +45,10 @@ table.score-card tr.category-row.open:hover {
     background-color: #ecf9ff;
 }
 
+tr {
+    height: 50px;
+}
+
 td.score-cell.potential {
     color: transparent;
     user-select: none;
@@ -185,6 +189,9 @@ button:hover {
         padding-bottom: 290px;
     }
 
+    .container {
+        margin: 0;
+    }
 }
 
 .lds-facebook {
