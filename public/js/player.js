@@ -26,7 +26,9 @@ export default class Player {
     getCategoryScore(categoryName, dice) {
         const counts = diceToCounts(dice);
         const hasUnusableYahtzee = counts.some(isYahtzee) && this.categories.yahtzee !== null;
-        const canUseJoker = hasUnusableYahtzee && this.categories[counts.findIndex(isYahtzee)];
+        const canUseJoker = 
+            hasUnusableYahtzee 
+            && this.categories[counts.findIndex(isYahtzee) + 1];
 
         switch(categoryName) {
             case '1':
@@ -134,14 +136,6 @@ export default class Player {
         return diceCounts.reduce(
             (prev, value, idx) => prev + value * (idx + 1),  
             0
-        );
-    }
-
-    canUseJoker(counts) {
-        return (
-            counts.some(isYahtzee) && 
-            this.categories.yahtzee !== null && 
-            this.categories[counts.find(isYahtzee)] !== null
         );
     }
 
