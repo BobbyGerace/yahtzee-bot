@@ -41,8 +41,8 @@ table.score-card tr.category-row.open {
     cursor: pointer;
 }
 
-table.score-card tr.category-row.open:hover {
-    background-color: #ecf9ff;
+tr {
+    height: 50px;
 }
 
 td.score-cell.potential {
@@ -50,12 +50,22 @@ td.score-cell.potential {
     user-select: none;
 }
 
-table.score-card
-    tr.category-row.open:hover 
-    td.score-cell.potential {
-    color: #00994d;
-    font-weight: bold;
-    user-select: auto;
+td.score-cell {
+    line-height: 1;
+}
+
+@media (hover: hover) {
+    table.score-card
+        tr.category-row.open:hover 
+        td.score-cell.potential {
+        color: #00994d;
+        font-weight: bold;
+        user-select: auto;
+    }
+
+    table.score-card tr.category-row.open:hover {
+        background-color: #ecf9ff;
+    }
 }
 
 table.score-card
@@ -66,9 +76,8 @@ table.score-card
 
 .die-icon {
     font-size: 50px;
-    transform: translateY(-50%);
+    transform: rotate(90deg);
     float: right;
-    margin-right: 5px;
 }
 
 button {
@@ -87,7 +96,8 @@ button {
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}
 .large {
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
 }
 
 .medium {
@@ -146,12 +156,15 @@ button:hover {
 }
 
 .container {
-    margin: 25px;
+    margin: 25px 25px 0 25px;
+    padding-bottom: 25px;
     width: 450px;
 }
 
 .controls-container {
     text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #turn-message {
@@ -175,9 +188,12 @@ button:hover {
     }
 
     #score-card-container {
-        padding-bottom: 250px;
+        padding-bottom: 290px;
     }
 
+    .container {
+        margin: 0;
+    }
 }
 
 .lds-facebook {
@@ -246,3 +262,4 @@ button:disabled {
 .score-card-links {
     text-align: center;
 }
+

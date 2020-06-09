@@ -46,7 +46,7 @@ export default class Controller {
         if (this.model.rollsLeft > 0) {
             this.model.rollDice();
 
-            this.view.rollReceived(this.model.dice);
+            this.view.rollReceived(this.model.dice, this.model.rollsLeft === 0);
 
             this.view.setTurn(
                 this.model.currentPlayer().isBot,
@@ -82,6 +82,8 @@ export default class Controller {
                 player.getTotal(),
                 player.getUpperBonus(),
                 player.getYahtzeeBonus(),
+                player.getUpperTotal(),
+                player.getLowerTotal(),
             );
         }
 

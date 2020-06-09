@@ -1,6 +1,6 @@
 # YahtzeeBot
 
-This is a playable implementation of a bot using an optimal Yahtzee strategy as described in [this paper](http://gunpowder.cs.loyola.edu/~jglenn/research/optimal_yahtzee.pdf).
+This is a playable implementation of a bot using an optimal Yahtzee strategy as described in [this paper](http://gunpowder.cs.loyola.edu/~jglenn/research/optimal_yahtzee.pdf). You can play it [here](https://bobbygerace.github.io/yahtzee-bot).
 
 ## How it works
 
