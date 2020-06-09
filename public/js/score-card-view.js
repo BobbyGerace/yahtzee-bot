@@ -35,6 +35,12 @@ export default class ScoreCardView {
         qs('#player-1-yahtzee-bonus').textContent = '0';
         qs('#player-0-total').textContent = '0';
         qs('#player-1-total').textContent = '0';
+        qs('#player-0-upper-total').textContent = '0';
+        qs('#player-1-upper-total').textContent = '0';
+        qs('#player-0-lower-total').textContent = '0';
+        qs('#player-1-lower-total').textContent = '0';
+        qs('#player-0-upper-total-lower-card').textContent = '0';
+        qs('#player-1-upper-total-lower-card').textContent = '0';
     }
 
     clearCategories() {
