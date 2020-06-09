@@ -41,10 +41,6 @@ table.score-card tr.category-row.open {
     cursor: pointer;
 }
 
-table.score-card tr.category-row.open:hover {
-    background-color: #ecf9ff;
-}
-
 tr {
     height: 50px;
 }
@@ -58,12 +54,18 @@ td.score-cell {
     line-height: 1;
 }
 
-table.score-card
-    tr.category-row.open:hover 
-    td.score-cell.potential {
-    color: #00994d;
-    font-weight: bold;
-    user-select: auto;
+@media (hover: hover) {
+    table.score-card
+        tr.category-row.open:hover 
+        td.score-cell.potential {
+        color: #00994d;
+        font-weight: bold;
+        user-select: auto;
+    }
+
+    table.score-card tr.category-row.open:hover {
+        background-color: #ecf9ff;
+    }
 }
 
 table.score-card

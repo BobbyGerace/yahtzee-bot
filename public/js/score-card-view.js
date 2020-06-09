@@ -96,9 +96,13 @@ export default class ScoreCardView {
         cell.textContent = score;
     }
 
-    updateTotals(playerIdx, total, upperBonus, yahtzeeBonus) {
+    updateTotals(playerIdx, total, upperBonus, yahtzeeBonus, upperTotal, lowerTotal) {
         qs(`#player-${playerIdx}-total`).textContent = total;
         qs(`#player-${playerIdx}-upper-bonus`).textContent = upperBonus;
         qs(`#player-${playerIdx}-yahtzee-bonus`).textContent = yahtzeeBonus;
+        qs(`#player-${playerIdx}-yahtzee-bonus`).textContent = yahtzeeBonus;
+        qs(`#player-${playerIdx}-upper-total-lower-card`).textContent = upperTotal;
+        qs(`#player-${playerIdx}-upper-total`).textContent = upperTotal + upperBonus;
+        qs(`#player-${playerIdx}-lower-total`).textContent = lowerTotal + yahtzeeBonus;
     }
 }

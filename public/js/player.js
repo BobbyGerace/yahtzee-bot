@@ -75,6 +75,18 @@ export default class Player {
             .reduce((total, category) => this.categories[category] + total, 0);
     }
 
+    getLowerTotal() {
+        return [
+            'threeOfAKind',
+            'fourOfAKind',
+            'fullHouse',
+            'smallStraight',
+            'largeStraight',
+            'yahtzee',
+            'chance',
+        ].reduce((total, category) => this.categories[category] + total, 0);
+    }
+
     getUpperBonus() {
         return this.getUpperTotal() >= 63 ? 35 : 0;
     }

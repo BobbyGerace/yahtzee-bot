@@ -82,6 +82,8 @@ export default class Controller {
                 player.getTotal(),
                 player.getUpperBonus(),
                 player.getYahtzeeBonus(),
+                player.getUpperTotal(),
+                player.getLowerTotal(),
             );
         }
 
