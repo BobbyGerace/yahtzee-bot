@@ -1748,7 +1748,7 @@ class $c_Ljsmain_Main$ extends $c_O {
       const value = $p_Ljsmain_Main$__category$1__sr_LazyInt__Lmain_Expectation__AI__I(this, category$lzy, expectation, roll);
       return new $c_s_util_Right(value)
     };
-    const x1 = expectation.keeps__AI__I__T2(roll, 2);
+    const x1 = expectation.keeps__AI__I__T2(roll, rollsLeft);
     if ((x1 === null)) {
       throw new $c_s_MatchError(x1)
     };

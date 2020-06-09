@@ -84,7 +84,7 @@ object Main {
         lazy val (_, category) = expectation.endOfTurn(roll)
         if (rollsLeft == 0) return Right(category)
 
-        val (_, keeps) = expectation.keeps(roll, 2)
+        val (_, keeps) = expectation.keeps(roll, rollsLeft)
 
         if (keeps.sum == 5) {
             Right(category)
