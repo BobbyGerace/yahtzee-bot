@@ -17,7 +17,7 @@ export default class Bot {
         this.keepToggleListener = noop;
         this.actionMessageListener = noop;
 
-        this.targetActionTime = 0;
+        this.choiceRequestTime = 0;
 
         this.worker = new Worker('js/worker.js');
 
@@ -51,7 +51,7 @@ export default class Bot {
     makeChoice(model) {
         this.latestRoll = model.dice;
         this.latestKeeps = model.keeps;
-        this.targetActionTime = Date.now() + this.getBotDelay();
+        this.choiceRequestTime = Date.now();
 
         const roll = diceToCounts(model.dice);
         const rollsLeft = model.rollsLeft;
@@ -60,7 +60,7 @@ export default class Bot {
         const upperScore = model.currentPlayer().getUpperTotal();
         const yahtzeeBonusAvailable = model.currentPlayer().categories.yahtzee === 50;
 
-        if (rollsLeft === 3) return this.atTargetTime(
+        if (rollsLeft === 3) return this.withBotDelay(
             () => this.rollRequestedListener(true)
         );
 
@@ -77,12 +77,13 @@ export default class Bot {
     }
 
     handleMessage(data) {
+        console.log('messageReceived', data)
         switch(data.message) {
             case 'cacheLoaded':
                 this.cacheLoadedListener();
                 break;
             case 'keep':
-                this.atTargetTime(() => {
+                this.withBotDelay(() => {
                     this.doKeeps(data.value);
                 }, 3);
                 const dice = sumKeeps(data.value)
@@ -93,7 +94,7 @@ export default class Bot {
                 this.actionMessageListener(
                     `Choosing category: ${mapCategoryToLabel(data.value)}`
                 );
-                this.atTargetTime(() => {
+                this.withBotDelay(() => {
                     this.categorySelectedListener(data.value, true);
                 }, 3);
                 break;
@@ -138,10 +139,12 @@ export default class Bot {
         else this.doKeeps(keeps, rest, idx + 1);
     }
 
-    atTargetTime(fn, multiplier = 1) {
+    withBotDelay(fn, multiplier = 1) {
+        const targetTime = this.getBotDelay() * multiplier + this.choiceRequestTime;
         const now = Date.now();
-        const timeOut = Math.max(this.targetActionTime - now, 0);
-        setTimeout(fn, timeOut * multiplier);
+        const timeOut = Math.max(targetTime - now, 0);
+
+        setTimeout(fn, timeOut);
     }
 
     getBotDelay() {
