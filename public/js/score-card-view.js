@@ -107,7 +107,7 @@ export default class ScoreCardView {
         qs(`#player-${playerIdx}-upper-bonus`).textContent = upperBonus;
         qs(`#player-${playerIdx}-yahtzee-bonus`).textContent = yahtzeeBonus;
         qs(`#player-${playerIdx}-yahtzee-bonus`).textContent = yahtzeeBonus;
-        qs(`#player-${playerIdx}-upper-total-lower-card`).textContent = upperTotal;
+        qs(`#player-${playerIdx}-upper-total-lower-card`).textContent = upperTotal + upperBonus;
         qs(`#player-${playerIdx}-upper-total`).textContent = upperTotal + upperBonus;
         qs(`#player-${playerIdx}-lower-total`).textContent = lowerTotal + yahtzeeBonus;
     }
