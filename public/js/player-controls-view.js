@@ -82,8 +82,16 @@ export default class PlayerControlsView {
             this.actionMessage.classList.add('hidden');
         }
 
-        if (rollsLeft < 1) this.rollButton.disabled = true;
+        // Disable the button while the dice are rolling,
+        // only re-enable it if it's not the last roll
+        if (rollsLeft < 3) this.rollButton.disabled = true;
         else this.rollButton.disabled = false;
+
+        setTimeout(() => {
+            if (rollsLeft > 0) {
+                this.rollButton.disabled = false;
+            }
+        }, 1500);
 
         if (rollsLeft === 3) this.rollButton.textContent = 'Roll dice';
         else this.rollButton.textContent = 'Roll again';
