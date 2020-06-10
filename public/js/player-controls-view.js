@@ -87,11 +87,11 @@ export default class PlayerControlsView {
         if (rollsLeft < 3) this.rollButton.disabled = true;
         else this.rollButton.disabled = false;
 
-        setTimeout(() => {
-            if (rollsLeft > 0) {
+        if (rollsLeft > 0 && rollsLeft < 3) {
+            setTimeout(() => {
                 this.rollButton.disabled = false;
-            }
-        }, 1500);
+            }, 1500);
+        }
 
         if (rollsLeft === 3) this.rollButton.textContent = 'Roll dice';
         else this.rollButton.textContent = 'Roll again';
