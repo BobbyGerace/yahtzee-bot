@@ -66,12 +66,12 @@ td.score-cell {
     table.score-card tr.category-row.open:hover {
         background-color: #ecf9ff;
     }
-}
 
-table.score-card
-    tr.category-row.open:hover 
-    td.score-cell.potential.zero {
-    color: red;
+    table.score-card
+        tr.category-row.open:hover 
+        td.score-cell.potential.zero {
+        color: red;
+    }
 }
 
 .die-icon {
