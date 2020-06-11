@@ -28,7 +28,7 @@ export default class Player {
         const hasUnusableYahtzee = counts.some(isYahtzee) && this.categories.yahtzee !== null;
         const canUseJoker = 
             hasUnusableYahtzee 
-            && this.categories[counts.findIndex(isYahtzee) + 1];
+            && this.categories[counts.findIndex(isYahtzee) + 1] !== null;
 
         switch(categoryName) {
             case '1':
