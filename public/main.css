@@ -263,3 +263,47 @@ button:disabled {
     text-align: center;
 }
 
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #222;
+        color: #eee;
+    }
+
+    .score-card {
+        background-color: #383838;
+    }
+
+    table.score-card td.how-to {
+        background-color: #555;
+    }
+
+    a {
+        color: hsl(220, 80%, 65%);
+    }
+
+    #help-text {
+        color: #aaa;
+    }
+
+    button {
+        background-color: hsl(220, 80%, 35%);
+        color: #eee;
+    }
+
+    button:disabled {
+        background-color: #555;
+        color: #999;
+    }
+
+    @media (hover: hover) {
+        table.score-card tr.category-row.open:hover {
+            background-color: hsl(199, 100%, 21%);
+        }
+
+        table.score-card tr.category-row.open:hover td.score-cell.potential {
+            color: hsl(150, 100%, 47%);
+            font-weight: bold;
+            user-select: auto;
+        }
+    }
+}
