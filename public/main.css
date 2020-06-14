@@ -306,4 +306,10 @@ button:disabled {
             user-select: auto;
         }
     }
+   
+    @media (max-width: 1000px) {
+        .controls-container {
+            background-color: #222;
+        }
+    }
 }
