@@ -1,15 +1,22 @@
 import { qs } from './helpers.js';
+import { Dice } from './types.js';
 
 export default class PlayerControlsView {
+    dieNodes:  HTMLElement[];
+    rollButton: HTMLButtonElement;
+    turnMessage: Element;
+    helpText: Element;
+    actionMessage: Element;
+
     constructor() {
-        this.dieNodes = [...document.querySelectorAll('.die-list')];
-        this.rollButton = qs('#roll-button');
+        this.dieNodes = [...document.querySelectorAll('.die-list')] as HTMLElement[];
+        this.rollButton = qs('#roll-button') as HTMLButtonElement;
         this.turnMessage = qs('#turn-message');
         this.helpText = qs('#help-text');
         this.actionMessage = qs('#action-message');
     }
 
-    setTurn(isBot, rollsLeft) {
+    setTurn(isBot: boolean, rollsLeft: number) {
         this.reset();
 
         if (rollsLeft === 3) {
@@ -27,7 +34,7 @@ export default class PlayerControlsView {
         this.setButton(isBot, rollsLeft);
     }
 
-    setTitle(isBot, rollsLeft) {
+    setTitle(isBot: boolean, rollsLeft: number) {
         const turnTitle = isBot ? 'Bot\'s turn' : 'Your turn';
         
         const rollsMessage = 
@@ -36,7 +43,7 @@ export default class PlayerControlsView {
         this.turnMessage.textContent = `${turnTitle} - ${rollsMessage}`;
     }
 
-    setGameOver(players) {
+    setGameOver(players: { score: number, isBot: boolean }[]) {
         qs('.controls-container').classList.add('game-over');
 
         let gameMessage;
@@ -62,7 +69,7 @@ export default class PlayerControlsView {
         });
     }
 
-    setHelpText(isBot, rollsLeft) {
+    setHelpText(isBot: boolean, rollsLeft: number) {
         let helpMessage = '';
         if (isBot) helpMessage  = '';
         else if (rollsLeft === 3) helpMessage = 'Click the button to roll the dice';
@@ -72,7 +79,7 @@ export default class PlayerControlsView {
         this.helpText.textContent = helpMessage;
     }
 
-    setButton(isBot, rollsLeft) {
+    setButton(isBot: boolean, rollsLeft: number) {
         if (isBot) {
             this.rollButton.classList.add('hidden');
             this.actionMessage.classList.remove('hidden');
@@ -97,13 +104,13 @@ export default class PlayerControlsView {
         else this.rollButton.textContent = 'Roll again';
     }
 
-    bindKeepToggle(fn) {
+    bindKeepToggle(fn: (i: number) => void) {
         this.dieNodes.forEach((d, i) => {
             d.addEventListener('click', () => fn(i));
         });
     }
 
-    setDiceKept(diceIndex, isKept) {
+    setDiceKept(diceIndex: number, isKept: boolean) {
         if (isKept) {
             this.dieNodes[diceIndex].classList.add('selected');
         }
@@ -112,7 +119,7 @@ export default class PlayerControlsView {
         }
     }
 
-    rollReceived(newRoll, resetKeeps = false) {
+    rollReceived(newRoll: Dice, resetKeeps = false) {
         let diceToRoll = 0;
         newRoll.forEach((dieValue, i) => {
             const die = this.dieNodes[i];
@@ -123,7 +130,7 @@ export default class PlayerControlsView {
             }
 
             setTimeout(() => {
-                die.dataset.roll = dieValue;
+                die.dataset.roll = dieValue.toString();
                 die.classList.remove('blank');
                 die.classList.toggle("odd-roll");
                 die.classList.toggle("even-roll");
@@ -133,11 +140,11 @@ export default class PlayerControlsView {
         });
     }
 
-    bindRollClicked(fn) {
+    bindRollClicked(fn: () => void) {
         this.rollButton.addEventListener('click', () => fn());
     }
 
-    setActionMessage(msg) {
+    setActionMessage(msg: string) {
         if (!msg) {
             msg = '\u00a0'; // nbsp
         }

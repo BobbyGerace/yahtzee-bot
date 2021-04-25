@@ -3,7 +3,7 @@ import { Dice, DiceCounts } from './types';
 
 const isYahtzee = (d: number) => d === 5;
 
-const upperCategories = [1, 2, 3, 4, 5, 6] as const;
+const upperCategories = ['1', '2', '3', '4', '5', '6'] as const;
 const lowerCategories = [
     'threeOfAKind',
     'fourOfAKind',
@@ -50,20 +50,21 @@ export default class PlayerScoreCard {
     getCategoryScore(categoryName: CategoryName, dice: Dice) {
         const counts = diceToCounts(dice);
         const hasUnusableYahtzee = counts.some(isYahtzee) && this.categories.yahtzee !== null;
-        const upperCategoryNotOpen = this.categories[(counts.findIndex(isYahtzee) + 1) as UpperCategory] !== null;
+        const upperCategoryNotOpen = 
+            this.categories[(counts.findIndex(isYahtzee) + 1).toString() as UpperCategory] !== null;
 
         const canUseJoker = 
             hasUnusableYahtzee 
             && upperCategoryNotOpen;
 
         switch(categoryName) {
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-                return this.upperCategory(categoryName, counts);
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+                return this.upperCategory(parseInt(categoryName), counts);
             case 'threeOfAKind':
                 return this.threeOfAKind(counts, canUseJoker);
             case 'fourOfAKind':
@@ -97,8 +98,6 @@ export default class PlayerScoreCard {
     }
 
     getUpperTotal() {
-        const upperCategories: UpperCategory[] = [1, 2, 3, 4, 5, 6];
-
         return upperCategories
             .reduce((total, category) => (this.categories[category] ?? 0) + total, 0);
     }
@@ -124,7 +123,7 @@ export default class PlayerScoreCard {
         return catSum + this.getUpperBonus() + this.getYahtzeeBonus();
     }
 
-    upperCategory(n: UpperCategory, diceCounts: DiceCounts) {
+    upperCategory(n: number, diceCounts: DiceCounts) {
         return diceCounts[n - 1] * n
     }
 

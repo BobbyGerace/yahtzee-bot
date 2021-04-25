@@ -1,5 +1,14 @@
+import Bot from "./bot-service";
+import Game from "./game-model";
+import MainView from "./main-view";
+import { CategoryName } from "./player-score-card";
+
 export default class Controller {
-    constructor(view, model, bot) {
+    view: MainView;
+    model: Game;
+    bot: Bot;
+
+    constructor(view: MainView, model: Game, bot: any) {
         this.view = view;
         this.model = model;
         this.bot = bot;
@@ -11,24 +20,26 @@ export default class Controller {
         bot.bindActionMessage(this.onActionMessage.bind(this));
 
         view.bindGameSelect(this.onGameSelect.bind(this));
-        view.bindKeepToggle(this.onKeepToggle.bind(this));
-        view.bindRollClicked(this.onRollClicked.bind(this));
-        view.bindCategorySelect(this.onCategorySelect.bind(this));
-        view.bindBackToMenu(this.onBackToMenu.bind(this));
+        view.playerControls.bindKeepToggle(this.onKeepToggle.bind(this));
+        view.playerControls.bindRollClicked(this.onRollClicked.bind(this));
+        view.scoreCard.bindCategorySelect(this.onCategorySelect.bind(this));
+        view.scoreCard.bindBackToMenu(this.onBackToMenu.bind(this));
     }
 
     onCacheLoaded() {
         this.view.cacheLoaded();
     }
 
-    onGameSelect(players) {
+    onGameSelect(players: boolean[]) {
         this.model.initialize(players);
         this.view.startGame(this.model.players);
+
+        this.bot.setNewGame();
 
         this.maybeBotChoose();
     }
 
-    onKeepToggle(diceIndex, fromBot) {
+    onKeepToggle(diceIndex: number, fromBot?: boolean) {
         if (!this.playerIsAllowed(fromBot)) return;
 
         if (
@@ -36,25 +47,25 @@ export default class Controller {
             && this.model.rollsLeft > 0 
         ) {
             this.model.toggleKeep(diceIndex);
-            this.view.setDiceKept(diceIndex, this.model.keeps[diceIndex]);
+            this.view.playerControls.setDiceKept(diceIndex, this.model.keeps[diceIndex]);
         }
     }
 
-    onRollClicked(fromBot) {
+    onRollClicked(fromBot?: boolean) {
         if (!this.playerIsAllowed(fromBot)) return;
 
         if (this.model.rollsLeft > 0) {
             this.model.rollDice();
 
-            this.view.rollReceived(this.model.dice, this.model.rollsLeft === 0);
+            this.view.playerControls.rollReceived(this.model.dice, this.model.rollsLeft === 0);
 
-            this.view.setTurn(
+            this.view.playerControls.setTurn(
                 this.model.currentPlayer().isBot,
                 this.model.rollsLeft
             );
 
-            this.view.setCategories(
-                this.model.getPotentialScores(),
+            this.view.scoreCard.setCategories(
+                this.model.getPotentialScores() as [string, number][],
                 this.model.currentPlayerIdx,
                 this.model.rollsLeft
             );
@@ -63,21 +74,21 @@ export default class Controller {
         this.maybeBotChoose();
     }
 
-    onCategorySelect(category, fromBot) {
+    onCategorySelect(category: CategoryName, fromBot?: boolean) {
         if (!this.playerIsAllowed(fromBot)) return;
 
         const playerIdx = this.model.currentPlayerIdx;
         const player = this.model.currentPlayer();
         const score = this.model.selectCategory(category);
         if (score !== null) {
-            this.view.setTurn(
+            this.view.playerControls.setTurn(
                 this.model.currentPlayer().isBot,
                 this.model.rollsLeft
             );
 
-            this.view.categorySelected(category, playerIdx, score);
+            this.view.scoreCard.categorySelected(category.toString(), playerIdx, score);
 
-            this.view.updateTotals(
+            this.view.scoreCard.updateTotals(
                 playerIdx,
                 player.getTotal(),
                 player.getUpperBonus(),
@@ -92,15 +103,15 @@ export default class Controller {
                 isBot: p.isBot,
                 score: p.getTotal(),
             }));
-            this.view.setGameOver(players);
+            this.view.playerControls.setGameOver(players);
         }
         else {
             this.maybeBotChoose();
         }
     }
 
-    onActionMessage(msg) {
-        this.view.setActionMessage(msg);
+    onActionMessage(msg: string) {
+        this.view.playerControls.setActionMessage(msg);
     }
 
     maybeBotChoose() {

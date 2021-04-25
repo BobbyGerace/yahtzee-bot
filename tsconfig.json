@@ -1,15 +1,14 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "module": "amd",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
-    "outFile": "public/js/app.js"
+    "outDir": "public/js"
   },
-  "files": ["client/app.ts"],
+  "include": ["client"],
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Recommended"
 }
