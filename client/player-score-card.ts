@@ -1,9 +1,33 @@
 import { diceToCounts } from './helpers.js';
+import { Dice, DiceCounts } from './types';
 
-const isYahtzee = d => d === 5;
+const isYahtzee = (d: number) => d === 5;
 
-export default class Player {
-    constructor(isBot) {
+const upperCategories = ['1', '2', '3', '4', '5', '6'] as const;
+const lowerCategories = [
+    'threeOfAKind',
+    'fourOfAKind',
+    'fullHouse',
+    'smallStraight',
+    'largeStraight',
+    'yahtzee',
+    'chance',
+] as const;
+
+type UpperCategory = (typeof upperCategories)[number];
+type LowerCategory = (typeof lowerCategories)[number];
+export type CategoryName = UpperCategory | LowerCategory;
+
+type CategoryList = {
+    [C in CategoryName]: null | number;
+};
+
+export default class PlayerScoreCard {
+    isBot: boolean;
+    categories: CategoryList;
+    yahtzeeBonuses: number;
+
+    constructor(isBot: boolean) {
         this.isBot = isBot;
         this.categories = {
             '1': null,
@@ -23,12 +47,15 @@ export default class Player {
         this.yahtzeeBonuses = 0;
     }
 
-    getCategoryScore(categoryName, dice) {
+    getCategoryScore(categoryName: CategoryName, dice: Dice) {
         const counts = diceToCounts(dice);
         const hasUnusableYahtzee = counts.some(isYahtzee) && this.categories.yahtzee !== null;
+        const upperCategoryNotOpen = 
+            this.categories[(counts.findIndex(isYahtzee) + 1).toString() as UpperCategory] !== null;
+
         const canUseJoker = 
             hasUnusableYahtzee 
-            && this.categories[counts.findIndex(isYahtzee) + 1] !== null;
+            && upperCategoryNotOpen;
 
         switch(categoryName) {
             case '1':
@@ -49,7 +76,7 @@ export default class Player {
             case 'largeStraight':
                 return this.largeStraight(counts, canUseJoker);
             case 'yahtzee':
-                return this.yahtzee(counts, canUseJoker);
+                return this.yahtzee(counts);
             case 'chance':
                 return this.chance(counts);
             default:
@@ -57,7 +84,7 @@ export default class Player {
         }
     }
 
-    scoreCategory(categoryName, dice) {
+    scoreCategory(categoryName: CategoryName, dice: Dice) {
         const counts = diceToCounts(dice);
         const hasUnusableYahtzee = counts.some(isYahtzee) && this.categories.yahtzee !== null;
         const hasYahtzeeBonus = hasUnusableYahtzee && this.categories.yahtzee === 50;
@@ -71,20 +98,12 @@ export default class Player {
     }
 
     getUpperTotal() {
-        return ['1', '2', '3', '4', '5', '6']
-            .reduce((total, category) => this.categories[category] + total, 0);
+        return upperCategories
+            .reduce((total, category) => (this.categories[category] ?? 0) + total, 0);
     }
 
     getLowerTotal() {
-        return [
-            'threeOfAKind',
-            'fourOfAKind',
-            'fullHouse',
-            'smallStraight',
-            'largeStraight',
-            'yahtzee',
-            'chance',
-        ].reduce((total, category) => this.categories[category] + total, 0);
+        return lowerCategories.reduce((total, category) => (this.categories[category] ?? 0) + total, 0);
     }
 
     getUpperBonus() {
@@ -96,28 +115,29 @@ export default class Player {
     }
 
     getTotal() {
+        const hasBeenScored = (c: number | null): c is number => c !== null;
         const catSum = Object.values(this.categories)
-            .filter(c => c !== null)
+            .filter(hasBeenScored)
             .reduce((a, b) => a + b, 0);
 
         return catSum + this.getUpperBonus() + this.getYahtzeeBonus();
     }
 
-    upperCategory(n, diceCounts) {
+    upperCategory(n: number, diceCounts: DiceCounts) {
         return diceCounts[n - 1] * n
     }
 
-    threeOfAKind(diceCounts, useJoker = false) {
+    threeOfAKind(diceCounts: DiceCounts, useJoker = false) {
         if (diceCounts.some(d => d >= 3) || useJoker) return this.diceSum(diceCounts);
         else return 0;
     }
 
-    fourOfAKind(diceCounts, useJoker = false) {
+    fourOfAKind(diceCounts: DiceCounts, useJoker = false) {
         if (diceCounts.some(d => d >= 4) || useJoker) return this.diceSum(diceCounts);
         else return 0;
     }
 
-    fullHouse(diceCounts, useJoker = false) {
+    fullHouse(diceCounts: DiceCounts, useJoker = false) {
         if (
             (diceCounts.some(d => d == 2) && diceCounts.some(d => d == 3))
             || useJoker
@@ -125,33 +145,33 @@ export default class Player {
         else return 0;
     }
 
-    smallStraight(diceCounts, useJoker = false) {
+    smallStraight(diceCounts: DiceCounts, useJoker = false) {
         if (this.countConsecutive(diceCounts) >= 4 || useJoker) return 30;
         else return 0;
     }
 
-    largeStraight(diceCounts, useJoker = false) {
+    largeStraight(diceCounts: DiceCounts, useJoker = false) {
         if (this.countConsecutive(diceCounts) >= 5 || useJoker) return 40;
         else return 0;
     }
 
-    yahtzee(diceCounts) {
+    yahtzee(diceCounts: DiceCounts) {
         if (diceCounts.some(d => d == 5)) return 50;
         else return 0;
     }
 
-    chance (diceCounts) {
+    chance (diceCounts: DiceCounts) {
         return this.diceSum(diceCounts);
     }
 
-    diceSum(diceCounts) {
+    diceSum(diceCounts: DiceCounts) {
         return diceCounts.reduce(
             (prev, value, idx) => prev + value * (idx + 1),  
-            0
+            0 as number
         );
     }
 
-    countConsecutive(diceCounts) {
+    countConsecutive(diceCounts: DiceCounts) {
         const [max] = diceCounts.reduce(([max, currentSeq], n) => {
                 if (n == 0) return [max, 0];
                 else {

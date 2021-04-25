@@ -1,13 +1,18 @@
 import { qs } from './helpers.js';
+import PlayerScoreCard, { CategoryName } from './player-score-card.js';
 
 export default class ScoreCardView {
+    container: HTMLElement;
+    player0Name: HTMLElement;
+    player1Name: HTMLElement;
+
     constructor() {
-        this.container = qs('#score-card-container');
-        this.player0Name = qs('#player-0-name');
-        this.player1Name = qs('#player-1-name');
+        this.container = qs('#score-card-container') as HTMLElement;
+        this.player0Name = qs('#player-0-name') as HTMLElement;
+        this.player1Name = qs('#player-1-name') as HTMLElement;
     }
 
-    initialize(players) {
+    initialize(players: PlayerScoreCard[]) {
         // Set single player or not
         if (players.length === 1) this.container.classList.add('single-player');
         else this.container.classList.remove('single-player');
@@ -58,57 +63,67 @@ export default class ScoreCardView {
             });
     }
 
-    setCategories(potentialScores, playerIdx, rollsLeft) {
+    setCategories(potentialScores: [string, number][], playerIdx: number, rollsLeft: number) {
         if (rollsLeft > 2) return;
 
         this.clearCategories();
 
         potentialScores.forEach(([category, score]) => {
             const row = qs(`[data-category="${category}"]`);
-            const cell = row.querySelector(`[data-player="${playerIdx}"]`);
+            const cell = row.querySelector(`[data-player="${playerIdx}"]`)!;
 
             row.classList.add('open');
 
             if (score === 0) cell.classList.add('zero');
 
-            cell.textContent = score;
+            cell.textContent = score.toString();
         });
     }
 
-    getPlayerTitle(player) {
+    getPlayerTitle(player: PlayerScoreCard) {
         if (!player) return '';
         else if (player.isBot) return 'Bot Score';
         else return 'Your Score';
     }
 
-    bindCategorySelect(fn) {
+    bindCategorySelect(fn: (category: CategoryName) => void) {
         document.querySelectorAll('[data-category]').forEach(row => {
-            row.addEventListener('click', () => fn(row.dataset.category));
+            row.addEventListener(
+                'click', 
+                () => fn((row as HTMLElement).dataset.category as CategoryName)
+            );
         });
     }
 
-    bindBackToMenu(fn) {
+    bindBackToMenu(fn: () => void) {
         qs('#back-to-menu').addEventListener('click', () => fn());
     }
 
-    categorySelected(category, playerIdx, score) {
+    categorySelected(category: string, playerIdx: number, score: number) {
         const row = qs(`[data-category="${category}"`);
-        const cell = row.querySelector(`[data-player="${playerIdx}"]`)
+        const cell = row.querySelector(`[data-player="${playerIdx}"]`)!;
 
         this.clearCategories();
 
         cell.classList.remove('zero');
         cell.classList.remove('potential');
-        cell.textContent = score;
+        cell.textContent = score.toString();
     }
 
-    updateTotals(playerIdx, total, upperBonus, yahtzeeBonus, upperTotal, lowerTotal) {
-        qs(`#player-${playerIdx}-total`).textContent = total;
-        qs(`#player-${playerIdx}-upper-bonus`).textContent = upperBonus;
-        qs(`#player-${playerIdx}-yahtzee-bonus`).textContent = yahtzeeBonus;
-        qs(`#player-${playerIdx}-yahtzee-bonus`).textContent = yahtzeeBonus;
-        qs(`#player-${playerIdx}-upper-total-lower-card`).textContent = upperTotal + upperBonus;
-        qs(`#player-${playerIdx}-upper-total`).textContent = upperTotal + upperBonus;
-        qs(`#player-${playerIdx}-lower-total`).textContent = lowerTotal + yahtzeeBonus;
+    updateTotals(
+        playerIdx: number, 
+        total: number, 
+        upperBonus: number, 
+        yahtzeeBonus: number, 
+        upperTotal: number, 
+        lowerTotal: number
+    ) {
+        qs(`#player-${playerIdx}-total`).textContent = total.toString();
+        qs(`#player-${playerIdx}-upper-bonus`).textContent = upperBonus.toString();
+        qs(`#player-${playerIdx}-yahtzee-bonus`).textContent = yahtzeeBonus.toString();
+        qs(`#player-${playerIdx}-yahtzee-bonus`).textContent = yahtzeeBonus.toString();
+        qs(`#player-${playerIdx}-upper-total-lower-card`).textContent = upperTotal + upperBonus.toString();
+        qs(`#player-${playerIdx}-upper-total`).textContent = upperTotal + upperBonus.toString();
+        qs(`#player-${playerIdx}-lower-total`).textContent = lowerTotal + yahtzeeBonus.toString();
     }
 }

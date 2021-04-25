@@ -1,26 +1,41 @@
+import Game from './game-model.js';
 import { diceToCounts } from './helpers.js';
+import { CategoryName } from './player-score-card.js';
 
 const noop = () => {};
 
+declare global {
+    interface Window {
+        BOT_DELAY: number;
+        worker: Worker;
+    }
+}
 // Allow adjustment from the console
 console.log('Adjust window.BOT_DELAY to change bot speed');
 window.BOT_DELAY = 1000;
 
+type CacheLoadedListener = () => void;
+type RollRequestedListener = (fromBot?: boolean) => void;
+type CategorySelectedListener = (category: CategoryName, fromBot?: boolean) => void;
+type KeepToggleListener = (diceIndex: number, fromBot?: boolean) => void;
+type ActionMessageListener = (msg: string) => void;
 
 export default class Bot {
+    gameId = 0;
+    latestRoll = [1, 1, 1, 1, 1];
+    latestKeeps = [false, false, false, false, false];
+    cacheLoadedListener: CacheLoadedListener = noop;
+    rollRequestedListener: RollRequestedListener = noop;
+    categorySelectedListener: CategorySelectedListener = noop;
+    keepToggleListener: KeepToggleListener = noop;
+    actionMessageListener: ActionMessageListener = noop;
+    worker = new Worker('js/worker.js');
+
+    futureAction = new FutureAction();
+
+    choiceRequestTime = 0;
+
     constructor() {
-        this.latestRoll = [1, 1, 1, 1, 1];
-        this.latestKeeps = [false, false, false, false, false];
-        this.cacheLoadedListener = noop;
-        this.rollRequestedListener = noop;
-        this.categorySelectedListener = noop;
-        this.keepToggleListener = noop;
-        this.actionMessageListener = noop;
-
-        this.choiceRequestTime = 0;
-
-        this.worker = new Worker('js/worker.js');
-
         this.worker.onmessage = (e) => {
             this.handleMessage(e.data);
         }
@@ -28,27 +43,32 @@ export default class Bot {
         window.worker = this.worker
     }
 
-    bindCacheLoaded(fn) {
+    setNewGame() {
+        this.gameId++;
+        this.futureAction.clear();
+    }
+
+    bindCacheLoaded(fn: CacheLoadedListener) {
         this.cacheLoadedListener = fn;
     }
 
-    bindRollClicked(fn) {
+    bindRollClicked(fn: RollRequestedListener) {
         this.rollRequestedListener = fn;
     }
 
-    bindCategorySelect(fn) {
+    bindCategorySelect(fn: CategorySelectedListener) {
         this.categorySelectedListener = fn;
     }
 
-    bindKeepToggle(fn) {
+    bindKeepToggle(fn: KeepToggleListener) {
         this.keepToggleListener = fn;
     }
 
-    bindActionMessage(fn) {
+    bindActionMessage(fn: ActionMessageListener) {
         this.actionMessageListener = fn;
     }
 
-    makeChoice(model) {
+    makeChoice(model: Game) {
         this.latestRoll = model.dice;
         this.latestKeeps = model.keeps;
         this.choiceRequestTime = Date.now();
@@ -71,12 +91,16 @@ export default class Bot {
             openCategories,
             upperScore,
             yahtzeeBonusAvailable,
+            gameId: this.gameId
         };
 
         this.worker.postMessage(message);
     }
 
-    handleMessage(data) {
+    handleMessage(data: BotMessage) {
+        // Make sure to ignore messages queued up from previous games
+        if (data.message !== 'cacheLoaded' && data.gameId !== this.gameId) return;
+
         console.log('messageReceived', data)
         switch(data.message) {
             case 'cacheLoaded':
@@ -103,14 +127,14 @@ export default class Bot {
         }
     }
 
-    doKeeps(keeps, dice = this.latestRoll, idx = 0) {
+    doKeeps(keeps: number[], dice = this.latestRoll, idx = 0) {
         // Keep one dice at a time
         const [thisDie, ...rest] = dice;
         const keepIdx = thisDie - 1;
 
         // If it's empty then roll
         if (typeof thisDie === 'undefined') {
-            setTimeout(() => this.rollRequestedListener(true), this.getBotDelay() * 0.7);
+            this.futureAction.set(() => this.rollRequestedListener(true), this.getBotDelay() * 0.7);
         }
 
         // If we need to keep it and it's not already kept
@@ -119,7 +143,7 @@ export default class Bot {
             const newKeeps = [...keeps];
             newKeeps[keepIdx]--;
 
-            setTimeout(() => this.doKeeps(newKeeps, rest, idx + 1), this.getBotDelay() * 0.7);
+            this.futureAction.set(() => this.doKeeps(newKeeps, rest, idx + 1), this.getBotDelay() * 0.7);
         }
         // If we need to keep it and it's already kept
         else if (keeps[keepIdx] > 0 && this.latestKeeps[idx]) {
@@ -132,19 +156,19 @@ export default class Bot {
             this.keepToggleListener(idx, true);
             const newKeeps = [...keeps];
 
-            setTimeout(() => this.doKeeps(newKeeps, rest, idx + 1), this.getBotDelay() * 0.7);
+            this.futureAction.set(() => this.doKeeps(newKeeps, rest, idx + 1), this.getBotDelay() * 0.7);
             return
         }
         // Otherwise proceed immeditely to the next one
         else this.doKeeps(keeps, rest, idx + 1);
     }
 
-    withBotDelay(fn, multiplier = 1) {
+    withBotDelay(fn: () => void, multiplier = 1) {
         const targetTime = this.getBotDelay() * multiplier + this.choiceRequestTime;
         const now = Date.now();
         const timeOut = Math.max(targetTime - now, 0);
 
-        setTimeout(fn, timeOut);
+        this.futureAction.set(fn, timeOut);
     }
 
     getBotDelay() {
@@ -152,7 +176,28 @@ export default class Bot {
     }
 }
 
-const mapCategoryToLabel = (name) => {
+/**
+ * A small class to manage multiple simultaneous setTimeout states
+ */
+class FutureAction {
+    private timeouts = new Set<number>();
+
+    set(fn: () => void, wait = 0) {
+        const timeout = setTimeout(() => {
+            fn();
+            this.timeouts.delete(timeout);
+        }, wait);
+
+        this.timeouts.add(timeout);
+    }
+
+    clear() {
+        this.timeouts.forEach(t => clearTimeout(t));
+        this.timeouts.clear();
+    }
+}
+
+const mapCategoryToLabel = (name: CategoryName) => {
     return {
         '1': 'Upper One',
         '2': 'Upper Two',
@@ -170,4 +215,9 @@ const mapCategoryToLabel = (name) => {
     }[name];
 }
 
-const sumKeeps = (keeps) => keeps.reduce((a, b) => a + b, 0);
+const sumKeeps = (keeps: number[]) => keeps.reduce((a, b) => a + b, 0);
+
+type BotMessage =
+    | { message: 'cacheLoaded' }
+    | { message: 'keep', value: number[], gameId: number  }
+    | { message: 'category', value: CategoryName, gameId: number  };

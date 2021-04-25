@@ -1671,7 +1671,7 @@ class $c_Ljsmain_Main$ extends $c_O {
         i = ((1 + i) | 0);
         j = ((1 + j) | 0)
       };
-      this.chooseMove__I__AI__I__V($$x2, result, $uI(data.rollsLeft));
+      this.chooseMove__I__AI__I__I__V($$x2, result, $uI(data.rollsLeft), $uI(data.gameId));
       return (void 0)
     } else {
       const $$x3 = postMessage;
@@ -1679,7 +1679,7 @@ class $c_Ljsmain_Main$ extends $c_O {
       return $$x3(s)
     }
   };
-  chooseMove__I__AI__I__V(state, roll, rollsLeft) {
+  chooseMove__I__AI__I__I__V(state, roll, rollsLeft, gameId) {
     const this$1 = this.Ljsmain_Main$__f_cache;
     let result;
     if (this$1.isEmpty__Z()) {
@@ -1711,7 +1711,8 @@ class $c_Ljsmain_Main$ extends $c_O {
           };
           $$x1({
             "message": "keep",
-            "value": result$1
+            "value": result$1,
+            "gameId": gameId
           });
           break matchEnd11
         }
@@ -1725,7 +1726,8 @@ class $c_Ljsmain_Main$ extends $c_O {
           const s = this.categoryToString__I__T(category);
           $$x2({
             "message": "category",
-            "value": s
+            "value": s,
+            "gameId": gameId
           });
           break matchEnd11
         }

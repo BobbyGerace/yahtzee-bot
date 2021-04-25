@@ -45,24 +45,29 @@ object Main {
         val action = data.action
 
         action match {
-            case "choose" => chooseMove(messageToState(data), data.roll.toArray, data.rollsLeft)
+            case "choose" => chooseMove(messageToState(data), data.roll.toArray, data.rollsLeft, data.gameId)
             case _ =>
                 js.Dynamic.global.postMessage(s"Received: $action")
         }
     }
 
-    def chooseMove(state: Int, roll: Array[Int], rollsLeft: Int): Unit = {
+    def chooseMove(state: Int, roll: Array[Int], rollsLeft: Int, gameId: Int): Unit = {
         val result = cache.map(makeChoice(state, roll, rollsLeft, _))
         result match {
             case Some(Left(keeps)) => 
                 js.Dynamic.global.postMessage(
-                    js.Dynamic.literal("message" -> "keep", "value" -> keeps.toJSArray)
+                    js.Dynamic.literal(
+                        "message" -> "keep", 
+                        "value" -> keeps.toJSArray,
+                        "gameId" -> gameId
+                    )
                 )
             case Some(Right(category)) => 
                 js.Dynamic.global.postMessage(
                     js.Dynamic.literal(
                         "message" -> "category", 
-                        "value" -> categoryToString(category)
+                        "value" -> categoryToString(category),
+                        "gameId" -> gameId
                     )
                 )
             case None => 
@@ -150,4 +155,5 @@ trait IncomingMessage extends js.Object{
     val openCategories: js.Array[String]
     val upperScore: Int
     val yahtzeeBonusAvailable: Boolean
+    val gameId: Int
 }

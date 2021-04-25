@@ -21,6 +21,6 @@ lazy val yahtzeeBot = crossProject(JSPlatform, JVMPlatform).in(file(".")).
   ).
   jsSettings(
     artifactPath in fastOptJS in Compile :=
-      file("public/js/" + (moduleName in fastOptJS).value + ".js"),
+      file("client/" + (moduleName in fastOptJS).value + ".js"),
     libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "1.0.0",
   )

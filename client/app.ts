@@ -6,4 +6,5 @@ import Bot from './bot-service.js';
 const view = new View();
 const game = new Game();
 const bot = new Bot();
+
 new Controller(view, game, bot);
