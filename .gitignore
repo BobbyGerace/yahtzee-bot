@@ -27,4 +27,5 @@ project/plugins/project/
 
 node_modules
 
-public/js
+public/build
+.DS_Store
