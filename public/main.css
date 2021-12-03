@@ -47,6 +47,27 @@ button:hover {
   opacity: 0.9;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #222;
+    color: #eee;
+  }
+
+  a {
+    color: hsl(220, 80%, 65%);
+  }
+
+  button {
+    background-color: hsl(220, 80%, 35%);
+    color: #eee;
+  }
+
+  button:disabled {
+    background-color: #555;
+    color: #999;
+  }
+}
+
 /* old code below */
 @media (min-width: 5000px) {
   table.score-card th,

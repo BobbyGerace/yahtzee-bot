@@ -1,20 +1,36 @@
-
 <script lang="ts">
-    // TODO - clean this up... just did this to make the warnings go away
-    let className: string = '';
-    let otherClassName: string = '';
-
-    export let icon: string = '';
+    type RowType = 'category' | 'bonus' | 'total';
+    export let open: boolean = false;
+    export let rowType: RowType;
+    export let name: string;
+    export let icon: string | null = null;
     export let howTo: string = '';
-    export let score1: string = '';
-    export let score2: string = '';
+    export let potential: number | null = null;
+    export let score1: number | null = null;
+    export let score2: number | null = null;
 </script>
 
-<tr data-category="1" class="{className} category-row">
-    <td>Aces <span class="die-icon">⚀</span></td>
-    <td class="how-to">Count and add only Aces</td>
-    <td class="{otherClassName} score-cell" data-player="0">0</td>
-    <td class="score-cell" data-player="1">0</td>
+<tr class:category-row={rowType === 'category'} class:open>
+    <td>{name} 
+        {#if icon}
+            <span class="die-icon">{icon}</span>
+        {/if}
+    </td>
+    <td class:how-to={!!howTo}>{howTo}</td>
+    <td 
+        class:potential={typeof potential === 'number'} 
+        class:zero={potential === 0}
+        class="score-cell" 
+    >
+        {score1 ?? ''}
+    </td>
+    <td 
+        class:potential={typeof potential === 'number'} 
+        class:zero={potential === 0}
+        class="score-cell" 
+    >
+        {score2 ?? ''}
+    </td>
 </tr>
 
 <style>
@@ -27,15 +43,82 @@
         height: 50px;
     }
 
-    @media (hover: hover) {
-        .category-row.open:hover {
-        background-color: hsl(199, 100%, 21%);
+    td:first-child {
+        text-align: left;
+        width: 150px;
+        line-height: 100%;
     }
 
-    td.score-cell.potential {
-        color: hsl(150, 100%, 47%);
-        font-weight: bold;
-        user-select: auto;
+    .how-to {
+        width: 100px;
+        font-size: small;
+        background-color: #eee;
     }
-}
+
+    td:nth-child(3),
+    td:nth-child(4) {
+        width: 100px;
+    }
+
+    tr.category-row.open {
+        cursor: pointer;
+    }
+    td.score-cell.potential {
+        color: transparent;
+        user-select: none;
+    }
+
+    td.score-cell {
+        line-height: 1;
+    }
+
+    td {
+        border: 1px solid black;
+    }
+
+    .die-icon {
+        font-size: 50px;
+        transform: rotate(90deg);
+        float: right;
+    }
+
+
+    @media (hover: hover) {
+        .category-row.open:hover {
+            background-color: hsl(199, 100%, 21%);
+        }
+
+        td.score-cell.potential {
+            color: hsl(150, 100%, 47%);
+            font-weight: bold;
+            user-select: auto;
+        }
+
+        tr.category-row.open:hover {
+            background-color: #ecf9ff;
+        }
+
+        .category-row.open:hover td.score-cell.potential.zero {
+            color: red;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .how-to {
+            background-color: #555;
+        }
+
+        @media (hover: hover) {
+            tr.category-row.open:hover {
+                background-color: hsl(199, 100%, 21%);
+            }
+
+            tr.category-row.open:hover td.score-cell.potential {
+                color: hsl(150, 100%, 47%);
+                font-weight: bold;
+                user-select: auto;
+            }
+        }
+    }
+
 </style>
